@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0813"/>
+      <stop offset="100%" stop-color="#190e2b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24153b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#140a24" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bgGrad2)"/>
+  
+  <circle cx="300" cy="200" r="180" fill="#ec4899" opacity="0.12" filter="url(#glowPurple)"/>
+  <circle cx="1000" cy="500" r="220" fill="#8b5cf6" opacity="0.12" filter="url(#glowPurple)"/>
+
+  <!-- Top Header -->
+  <rect x="80" y="50" width="1120" height="70" rx="16" fill="url(#cardGrad2)" stroke="#3b1d5c" stroke-width="1.5"/>
+  <circle cx="120" cy="85" r="8" fill="#ec4899"/>
+  <circle cx="145" cy="85" r="8" fill="#a855f7"/>
+  <circle cx="170" cy="85" r="8" fill="#6366f1"/>
+  <text x="210" y="92" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Lib le Lib</text>
+  <text x="320" y="92" fill="#d8b4fe" font-family="system-ui, sans-serif" font-size="16">Confidentiality-First Matching Platform</text>
+  
+  <rect x="960" y="68" width="210" height="34" rx="8" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="982" cy="85" r="5" fill="#ec4899"/>
+  <text x="998" y="91" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Privacy &amp; Security Audited</text>
+
+  <!-- Left Side: Mobile Phone Mockup -->
+  <g transform="translate(140, 150)">
+    <!-- Phone frame -->
+    <rect x="0" y="0" width="280" height="520" rx="40" fill="#090511" stroke="#4c1d95" stroke-width="3"/>
+    <!-- Speaker & Camera notch -->
+    <rect x="85" y="12" width="110" height="24" rx="12" fill="#1e1035"/>
+    
+    <!-- Phone Screen Content -->
+    <rect x="15" y="45" width="250" height="455" rx="26" fill="#170c29"/>
+    
+    <!-- Privacy Shield Icon Header -->
+    <circle cx="140" cy="95" r="28" fill="#8b5cf6" fill-opacity="0.2"/>
+    <text x="127" y="103" font-size="24">🔒</text>
+    <text x="140" y="145" text-anchor="middle" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">User Controlled Reveal</text>
+    <text x="140" y="165" text-anchor="middle" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">Backend Enforced Permissions</text>
+
+    <!-- Match Profile Card With Blurred Photo until consent -->
+    <rect x="30" y="185" width="220" height="200" rx="16" fill="#261245" stroke="#6d28d9" stroke-width="1"/>
+    <!-- Blurred avatar circle -->
+    <circle cx="140" cy="245" r="40" fill="#4c1d95" stroke="#ec4899" stroke-dasharray="4,4" stroke-width="2"/>
+    <text x="140" y="252" text-anchor="middle" fill="#f472b6" font-family="system-ui, sans-serif" font-size="14" font-weight="600">ANONYMIZED</text>
+    <text x="140" y="310" text-anchor="middle" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Candidate #9042</text>
+    <text x="140" y="330" text-anchor="middle" fill="#c084fc" font-family="system-ui, sans-serif" font-size="12">Addis Ababa • Verified Degree</text>
+    <rect x="65" y="348" width="150" height="24" rx="6" fill="#10b981" fill-opacity="0.2"/>
+    <text x="140" y="364" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600">✓ Bio &amp; Age Verified</text>
+
+    <!-- Request Reveal Button -->
+    <rect x="30" y="405" width="220" height="40" rx="10" fill="url(#purpleGrad)"/>
+    <text x="140" y="430" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Mutual Disclosure Request</text>
+
+    <!-- Home indicator -->
+    <rect x="90" y="505" width="100" height="4" rx="2" fill="#4c1d95"/>
+  </g>
+
+  <!-- Right Side: Security Architecture & Admin Dashboard -->
+  <g transform="translate(470, 150)">
+    <rect x="0" y="0" width="730" height="520" rx="20" fill="url(#cardGrad2)" stroke="#3b1d5c" stroke-width="1.5"/>
+    
+    <text x="35" y="45" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Architecture: Separation of Concerns &amp; Privacy Boundaries</text>
+    <text x="35" y="70" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="14">Sensitive profile disclosures are evaluated strictly at the NestJS/PostgreSQL backend layer</text>
+
+    <!-- Flow Cards -->
+    <!-- Card 1: Mobile Client -->
+    <rect x="35" y="100" width="195" height="150" rx="12" fill="#190e2b" stroke="#6d28d9"/>
+    <text x="50" y="130" fill="#ec4899" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Mobile Client</text>
+    <text x="50" y="155" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="12">React Native + Expo</text>
+    <text x="50" y="180" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Client-side token storage</text>
+    <text x="50" y="200" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Obfuscated identifiers</text>
+    <text x="50" y="220" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Zero raw sensitive data</text>
+
+    <!-- Arrow 1 -->
+    <text x="245" y="180" fill="#a855f7" font-size="20">→</text>
+
+    <!-- Card 2: NestJS API -->
+    <rect x="275" y="100" width="200" height="150" rx="12" fill="#190e2b" stroke="#8b5cf6"/>
+    <text x="290" y="130" fill="#8b5cf6" font-family="system-ui, sans-serif" font-size="14" font-weight="700">NestJS Core Backend</text>
+    <text x="290" y="155" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="12">AuthGuard &amp; Policy Matrix</text>
+    <text x="290" y="180" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Strict Field Disclosure</text>
+    <text x="290" y="200" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Consent State Machine</text>
+    <text x="290" y="220" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Verified Age Calculation</text>
+
+    <!-- Arrow 2 -->
+    <text x="490" y="180" fill="#a855f7" font-size="20">→</text>
+
+    <!-- Card 3: Neon PostgreSQL -->
+    <rect x="520" y="100" width="180" height="150" rx="12" fill="#190e2b" stroke="#ec4899"/>
+    <text x="535" y="130" fill="#ec4899" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Neon PostgreSQL</text>
+    <text x="535" y="155" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="12">Encrypted Records</text>
+    <text x="535" y="180" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Separate profile schemas</text>
+    <text x="535" y="200" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Salted photo hashes</text>
+    <text x="535" y="220" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">• Row-level auditing</text>
+
+    <!-- Bottom Section: Administrative Portal Review -->
+    <rect x="35" y="280" width="665" height="210" rx="14" fill="#120820" stroke="#3b1d5c"/>
+    <text x="60" y="315" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Separate Web Administrative Portal (Moderation &amp; Invariant Checks)</text>
+    
+    <g transform="translate(60, 335)">
+      <rect x="0" y="0" width="190" height="60" rx="8" fill="#1f1035"/>
+      <text x="15" y="25" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">Disclosure Requests</text>
+      <text x="15" y="48" fill="#fdf4ff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">328 Active</text>
+
+      <rect x="210" y="0" width="190" height="60" rx="8" fill="#1f1035"/>
+      <text x="225" y="25" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">Identity Verifications</text>
+      <text x="225" y="48" fill="#10b981" font-family="system-ui, sans-serif" font-size="18" font-weight="700">99.1% Valid</text>
+
+      <rect x="420" y="0" width="190" height="60" rx="8" fill="#1f1035"/>
+      <text x="435" y="25" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="12">Revoked Access</text>
+      <text x="435" y="48" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Instant Flush</text>
+    </g>
+
+    <text x="60" y="430" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🛡️ Engineering Focus: Privacy, authorization, and data isolation guaranteed on the server side rather than hiding UI elements.</text>
+    <text x="60" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🔒 Current Status: Under security audit review and domain invariant validation.</text>
+  </g>
+</svg>

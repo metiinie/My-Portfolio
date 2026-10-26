@@ -1,0 +1,258 @@
+.python-ai-section {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(11, 8, 12, 0) 0%, rgba(20, 14, 28, 0.5) 50%, rgba(11, 8, 12, 0) 100%);
+  z-index: 5;
+}
+
+.python-ai-container {
+  width: var(--cWidth, 85%);
+  max-width: var(--cMaxWidth, 1400px);
+  margin: 0 auto;
+}
+
+.python-ai-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.python-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(196, 129, 255, 0.08);
+  border: 1px solid rgba(196, 129, 255, 0.25);
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #c481ff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.badge-icon.python-color {
+  color: #38bdf8;
+}
+
+.badge-icon.ai-color {
+  color: #c481ff;
+}
+
+.python-ai-header h2 {
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+}
+
+.python-ai-header h2 span {
+  color: var(--accentColor, #c481ff);
+  font-style: italic;
+}
+
+.python-ai-subtitle {
+  font-size: clamp(15px, 1.3vw, 19px);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.python-ai-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.python-ai-story-card {
+  background: rgba(25, 18, 35, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 129, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.python-ai-story-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #38bdf8 0%, #c481ff 100%);
+}
+
+.python-ai-story-card h3 {
+  font-size: clamp(20px, 2vw, 26px);
+  color: #fff;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.python-ai-narrative {
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px 0;
+}
+
+.python-ai-principle {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(196, 129, 255, 0.06);
+  border-left: 2px solid var(--accentColor, #c481ff);
+  border-radius: 0 12px 12px 0;
+}
+
+.principle-icon {
+  font-size: 20px;
+  color: var(--accentColor, #c481ff);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.python-ai-principle blockquote {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.python-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.python-ai-card {
+  background: rgba(20, 15, 28, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.python-ai-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 129, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(196, 129, 255, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.python-bg {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.ai-bg {
+  background: rgba(196, 129, 255, 0.15);
+  color: #c481ff;
+  border: 1px solid rgba(196, 129, 255, 0.3);
+}
+
+.card-header h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.card-header span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+}
+
+.focus-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.list-icon {
+  font-size: 16px;
+  color: var(--accentColor, #c481ff);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-tags span {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .python-ai-section {
+    padding: 60px 0;
+  }
+
+  .python-ai-story-card {
+    padding: 24px;
+  }
+
+  .python-ai-card {
+    padding: 24px;
+  }
+
+  .python-ai-grid {
+    grid-template-columns: 1fr;
+  }
+}

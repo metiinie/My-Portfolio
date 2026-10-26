@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1215"/>
+      <stop offset="100%" stop-color="#112229"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142c34" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0c1b20" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glowTeal" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bgGrad3)"/>
+  <circle cx="250" cy="220" r="160" fill="#14b8a6" opacity="0.12" filter="url(#glowTeal)"/>
+  <circle cx="1050" cy="450" r="200" fill="#06b6d4" opacity="0.12" filter="url(#glowTeal)"/>
+
+  <!-- Top App Header -->
+  <rect x="80" y="50" width="1120" height="70" rx="16" fill="url(#cardGrad3)" stroke="#1e3e4a" stroke-width="1.5"/>
+  <circle cx="120" cy="85" r="8" fill="#14b8a6"/>
+  <circle cx="145" cy="85" r="8" fill="#06b6d4"/>
+  <circle cx="170" cy="85" r="8" fill="#38bdf8"/>
+  <text x="210" y="92" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Business Document Intelligence</text>
+  <text x="520" y="92" fill="#99f6e4" font-family="system-ui, sans-serif" font-size="16">Python · FastAPI · OCR · Schema Validation Pipeline</text>
+
+  <rect x="990" y="68" width="180" height="34" rx="8" fill="#14b8a6" fill-opacity="0.2" stroke="#14b8a6" stroke-width="1"/>
+  <circle cx="1012" cy="85" r="5" fill="#14b8a6"/>
+  <text x="1028" y="91" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Applied AI Prototype</text>
+
+  <!-- Left: Scanned Document with OCR Bounding Boxes -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="480" height="520" rx="16" fill="#0c171b" stroke="#1f3842" stroke-width="1.5"/>
+    
+    <!-- Paper Sheet -->
+    <rect x="35" y="30" width="410" height="460" rx="10" fill="#18282f" stroke="#2a4a57" stroke-width="1"/>
+    
+    <!-- Invoice Title -->
+    <text x="65" y="70" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">COMMERCIAL INVOICE</text>
+    <text x="350" y="70" fill="#14b8a6" font-family="monospace" font-size="14">#INV-2026-88</text>
+
+    <!-- OCR Bounding Box 1: Vendor -->
+    <rect x="65" y="95" width="220" height="32" rx="4" fill="#14b8a6" fill-opacity="0.1" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="75" y="116" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="13">Vendor: Awash Trading PLC</text>
+    <rect x="295" y="99" width="60" height="20" rx="4" fill="#14b8a6"/>
+    <text x="303" y="113" fill="#042f2e" font-family="system-ui, sans-serif" font-size="10" font-weight="700">99.4%</text>
+
+    <!-- OCR Bounding Box 2: Date & TIN -->
+    <rect x="65" y="140" width="180" height="32" rx="4" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="75" y="161" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="13">Date: 2026-10-18</text>
+    <rect x="255" y="144" width="60" height="20" rx="4" fill="#06b6d4"/>
+    <text x="263" y="158" fill="#083344" font-family="system-ui, sans-serif" font-size="10" font-weight="700">98.8%</text>
+
+    <!-- OCR Bounding Box 3: Total Amount (Verified) -->
+    <rect x="65" y="185" width="260" height="36" rx="4" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2"/>
+    <text x="75" y="208" fill="#10b981" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Total: 48,500.00 ETB</text>
+    <rect x="335" y="190" width="80" height="22" rx="4" fill="#10b981"/>
+    <text x="345" y="205" fill="#022c22" font-family="system-ui, sans-serif" font-size="11" font-weight="700">MATCHED</text>
+
+    <!-- Low Confidence Flag Box -->
+    <rect x="65" y="240" width="350" height="60" rx="6" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="80" y="265" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="13" font-weight="600">⚠️ Uncertain Field: Tax Reference Ref#</text>
+    <text x="80" y="285" fill="#fef3c7" font-family="system-ui, sans-serif" font-size="12">Extracted: "0048123-X" (Conf: 74%) → Flagged for Human Review</text>
+
+    <!-- Simulated Table Lines -->
+    <line x1="65" y1="325" x2="415" y2="325" stroke="#2a4a57" stroke-width="1"/>
+    <line x1="65" y1="365" x2="415" y2="365" stroke="#2a4a57" stroke-width="1"/>
+    <line x1="65" y1="405" x2="415" y2="405" stroke="#2a4a57" stroke-width="1"/>
+    <text x="65" y="348" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">1. Office Furniture Desk Unit</text>
+    <text x="360" y="348" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="12">28,000 ETB</text>
+    <text x="65" y="388" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">2. Ergonomic Mesh Chairs (x4)</text>
+    <text x="360" y="388" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="12">20,500 ETB</text>
+
+    <text x="65" y="450" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Deterministic validation checks: sum(items) == subtotal + tax</text>
+  </g>
+
+  <!-- Right: Extraction Pipeline & Schema Verification -->
+  <g transform="translate(620, 150)">
+    <rect x="0" y="0" width="580" height="520" rx="16" fill="url(#cardGrad3)" stroke="#1e3e4a" stroke-width="1.5"/>
+
+    <text x="35" y="45" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Python Extraction &amp; Evaluation Pipeline</text>
+    <text x="35" y="70" fill="#99f6e4" font-family="system-ui, sans-serif" font-size="14">Combining OCR, schema validation, confidence scoring &amp; audit trails</text>
+
+    <!-- Step 1 -->
+    <rect x="35" y="100" width="510" height="85" rx="10" fill="#091418" stroke="#1f3842"/>
+    <circle cx="65" cy="142" r="16" fill="#14b8a6"/>
+    <text x="60" y="148" fill="#042f2e" font-family="system-ui, sans-serif" font-weight="700">1</text>
+    <text x="100" y="132" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Deterministic Parsing + OCR Ingestion</text>
+    <text x="100" y="156" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">FastAPI receives PDF/Image → Pre-processing, grayscale &amp; bounding-box extraction</text>
+
+    <!-- Step 2 -->
+    <rect x="35" y="200" width="510" height="85" rx="10" fill="#091418" stroke="#1f3842"/>
+    <circle cx="65" cy="242" r="16" fill="#06b6d4"/>
+    <text x="60" y="248" fill="#083344" font-family="system-ui, sans-serif" font-weight="700">2</text>
+    <text x="100" y="232" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Schema Invariant Validation (Pydantic)</text>
+    <text x="100" y="256" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Rigid format rules: dates, currency format, vendor registration, arithmetic checks</text>
+
+    <!-- Step 3 -->
+    <rect x="35" y="300" width="510" height="85" rx="10" fill="#091418" stroke="#1f3842"/>
+    <circle cx="65" cy="342" r="16" fill="#38bdf8"/>
+    <text x="60" y="348" fill="#0c4a6e" font-family="system-ui, sans-serif" font-weight="700">3</text>
+    <text x="100" y="332" fill="#f0fdfa" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Uncertainty Scoring &amp; Human-in-the-Loop</text>
+    <text x="100" y="356" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Scores below threshold trigger interactive correction; logged for continuous eval</text>
+
+    <!-- Metrics -->
+    <g transform="translate(35, 405)">
+      <rect x="0" y="0" width="160" height="80" rx="8" fill="#091418" stroke="#1f3842"/>
+      <text x="15" y="30" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Field Accuracy</text>
+      <text x="15" y="62" fill="#14b8a6" font-family="system-ui, sans-serif" font-size="24" font-weight="700">96.8%</text>
+
+      <rect x="175" y="0" width="160" height="80" rx="8" fill="#091418" stroke="#1f3842"/>
+      <text x="190" y="30" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Schema Pass Rate</text>
+      <text x="190" y="62" fill="#06b6d4" font-family="system-ui, sans-serif" font-size="24" font-weight="700">99.2%</text>
+
+      <rect x="350" y="0" width="160" height="80" rx="8" fill="#091418" stroke="#1f3842"/>
+      <text x="365" y="30" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Avg Response</text>
+      <text x="365" y="62" fill="#10b981" font-family="system-ui, sans-serif" font-size="24" font-weight="700">320ms</text>
+    </g>
+  </g>
+</svg>
