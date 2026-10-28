@@ -66,55 +66,78 @@
     bottom: auto !important;
     transform: none !important;
     text-align: center;
-    margin-top: 20px;
-    /* Space between name and subtitles */
+    margin-top: 15px;
     z-index: 10;
     background: transparent;
-    padding-bottom: 50px;
-    /* Add bottom padding for scroll space */
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     height: auto !important;
-    /* Force auto height */
     width: 100% !important;
+    max-width: 100vw;
+    box-sizing: border-box;
     order: 3;
-    /* Third: Subtitles */
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .landing-tagline-prefix {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(194, 164, 255, 0.08);
+    border: 1px solid rgba(194, 164, 255, 0.18);
   }
 
   .landing-info h3 {
     text-align: center;
     display: block;
-    font-size: 16px !important;
+    font-size: 13px !important;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
     margin: 0;
   }
 
   .landing-career-wrapper {
-    width: 100%;
-    height: 44px;
+    width: auto;
+    max-width: 100%;
+    min-height: 48px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin: 4px 0 8px 0;
+    margin: 4px 0 10px 0;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(194, 164, 255, 0.05);
+    border: 1px solid rgba(194, 164, 255, 0.16);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
   }
 
   .landing-career-h2 {
-    font-size: 22px !important;
-    line-height: 1.2 !important;
+    font-size: clamp(15px, 4.2vw, 19px) !important;
+    line-height: 1.25 !important;
     text-align: center;
     justify-content: center;
     margin: 0 !important;
-    white-space: nowrap;
+    white-space: normal;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .landing-career-text {
+    white-space: normal;
+    text-align: center;
+    display: inline-block;
   }
 
   /* Show mobile photo */
@@ -355,6 +378,11 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  padding: 4px 14px 4px 10px;
+  border-radius: 20px;
+  background: rgba(194, 164, 255, 0.06);
+  border: 1px solid rgba(194, 164, 255, 0.18);
+  width: fit-content;
 }
 
 .landing-tagline-dot {
@@ -362,8 +390,9 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--accentColor, #c2a4ff);
-  box-shadow: 0 0 10px var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 12px 2px rgba(194, 164, 255, 0.7);
   animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 
 @keyframes pulseDot {
@@ -378,24 +407,41 @@
 }
 
 .landing-info h3 {
-  font-size: 22px;
+  font-size: 13px;
   letter-spacing: 2px;
-  font-weight: 300;
+  font-weight: 500;
+  text-transform: uppercase;
   color: var(--accentColor, #c2a4ff);
   margin: 0;
 }
 
-/* Single line animated career rotator */
+/* Redesigned animated career rotator card */
 .landing-career-wrapper {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  height: 58px;
+  min-height: 54px;
+  height: auto;
   overflow: hidden;
-  margin-top: 8px;
+  margin-top: 10px;
   margin-bottom: 6px;
-  width: max-content;
+  padding: 8px 18px;
+  width: fit-content;
   max-width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(194, 164, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(194, 164, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.4),
+    0 0 16px -4px rgba(194, 164, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
 }
 
 .landing-career-h2 {
@@ -403,9 +449,9 @@
   padding: 0;
   font-family: "Geist", sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.2;
-  letter-spacing: 1.5px;
+  font-size: clamp(20px, 1.85vw, 30px);
+  line-height: 1.25;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   white-space: nowrap;
   display: flex;
@@ -416,10 +462,15 @@
   display: inline-block;
   white-space: nowrap;
   color: #ffffff;
-  background: linear-gradient(135deg, #ffffff 40%, var(--accentColor, #c2a4ff) 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 20%,
+    #ebe2ff 60%,
+    var(--accentColor, #c2a4ff) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 35px rgba(194, 164, 255, 0.35);
+  text-shadow: 0 0 30px rgba(194, 164, 255, 0.35);
   will-change: transform, opacity, filter;
 }
 
@@ -434,8 +485,8 @@
 @keyframes careerSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(28px);
-    filter: blur(6px);
+    transform: translateY(20px);
+    filter: blur(4px);
   }
   100% {
     opacity: 1;
@@ -452,8 +503,8 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(-28px);
-    filter: blur(6px);
+    transform: translateY(-20px);
+    filter: blur(4px);
   }
 }
 
@@ -529,57 +580,59 @@
   }
 
   .landing-intro {
-    top: 48%;
+    top: 50%;
     left: auto;
-    right: 64%;
+    right: 62%;
     transform: translate(0%, -50%);
   }
 
   .landing-info {
     bottom: auto;
-    top: 48%;
+    top: 50%;
     z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 65%;
-    max-width: 34vw;
+    left: 58%;
+    max-width: min(560px, 40vw);
+    width: auto;
   }
 
   .landing-career-h2 {
-    font-size: clamp(28px, 2.5vw, 42px);
+    font-size: clamp(20px, 1.8vw, 30px);
   }
 
   .landing-career-wrapper {
-    height: 64px;
+    min-height: 56px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .landing-intro {
-    top: 48%;
+    top: 50%;
     left: auto;
-    right: 65%;
+    right: 62%;
     transform: translate(0%, -50%);
   }
 
   .landing-info {
     bottom: auto;
-    top: 48%;
+    top: 50%;
     z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 65%;
-    max-width: 34vw;
+    left: 58%;
+    max-width: min(600px, 40vw);
+    width: auto;
   }
 
   .landing-career-h2 {
-    font-size: clamp(30px, 2.6vw, 46px);
+    font-size: clamp(22px, 1.85vw, 32px);
   }
 
   .landing-career-wrapper {
-    height: 68px;
+    min-height: 58px;
   }
 }
 
@@ -593,16 +646,22 @@
     line-height: 55px;
   }
 
+  .landing-info {
+    left: 58%;
+    max-width: 660px;
+  }
+
   .landing-info h3 {
-    font-size: 28px;
+    font-size: 15px;
   }
 
   .landing-career-h2 {
-    font-size: 52px;
+    font-size: clamp(26px, 1.9vw, 36px);
   }
 
   .landing-career-wrapper {
-    height: 76px;
+    min-height: 64px;
+    padding: 10px 22px;
   }
 }
 
