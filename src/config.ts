@@ -18,6 +18,7 @@ export const config = {
         whatIBuild: [
             "Full-Stack Web Applications",
             "Cross-Platform Mobile Apps",
+            "Scalable ERP Systems",
             "Government & Business Systems",
             "Secure RESTful APIs & Services"
         ],

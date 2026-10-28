@@ -179,6 +179,8 @@
   height: 100%;
   position: relative;
   max-width: var(--cMaxWidth);
+  z-index: 20;
+  pointer-events: none;
 }
 
 .landing-circle1 {
@@ -337,9 +339,10 @@
 
 .landing-intro {
   position: absolute;
-  z-index: 9;
+  z-index: 20;
   top: 5%;
   left: 0;
+  pointer-events: auto;
 }
 
 .landing-intro h2 {
@@ -369,9 +372,10 @@
   transform: translateX(50%);
   bottom: 40px;
   top: inherit;
-  z-index: 9;
+  z-index: 20;
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
 }
 
 .landing-tagline-prefix {
@@ -570,8 +574,13 @@
   .character-model {
     height: 100vh;
     bottom: 0;
-    z-index: 11;
+    z-index: 5;
     position: fixed;
+    pointer-events: none;
+  }
+
+  .character-hover {
+    pointer-events: auto;
   }
 
   .character-model::after,
@@ -581,74 +590,95 @@
 
   .landing-intro {
     top: 50%;
-    left: auto;
-    right: 62%;
-    transform: translate(0%, -50%);
+    left: 2%;
+    right: auto;
+    transform: translateY(-50%);
+    max-width: clamp(280px, 28vw, 400px);
+    z-index: 20;
   }
 
   .landing-info {
     bottom: auto;
     top: 50%;
-    z-index: 10;
+    z-index: 20;
     text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 58%;
-    max-width: min(560px, 40vw);
-    width: auto;
+    transform: translateY(-50%);
+    left: auto;
+    right: 2%;
+    max-width: clamp(340px, 32vw, 460px);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .landing-career-h2 {
-    font-size: clamp(20px, 1.8vw, 30px);
+    font-size: clamp(16px, 1.45vw, 24px);
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+    white-space: normal;
   }
 
   .landing-career-wrapper {
-    min-height: 56px;
+    min-height: 52px;
+    max-width: 100%;
+    padding: 8px 16px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .landing-intro {
     top: 50%;
-    left: auto;
-    right: 62%;
-    transform: translate(0%, -50%);
+    left: 3%;
+    right: auto;
+    transform: translateY(-50%);
+    max-width: clamp(300px, 28vw, 420px);
+    z-index: 20;
   }
 
   .landing-info {
     bottom: auto;
     top: 50%;
-    z-index: 10;
+    z-index: 20;
     text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 58%;
-    max-width: min(600px, 40vw);
-    width: auto;
+    transform: translateY(-50%);
+    left: auto;
+    right: 3%;
+    max-width: clamp(360px, 32vw, 480px);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .landing-career-h2 {
-    font-size: clamp(22px, 1.85vw, 32px);
+    font-size: clamp(18px, 1.55vw, 26px);
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+    white-space: normal;
   }
 
   .landing-career-wrapper {
-    min-height: 58px;
+    min-height: 54px;
+    max-width: 100%;
+    padding: 8px 18px;
   }
 }
 
 @media screen and (min-width: 1600px) {
+  .landing-intro {
+    left: 4%;
+    max-width: 460px;
+  }
+
   .landing-intro h2 {
-    font-size: 35px;
+    font-size: 32px;
   }
 
   .landing-intro h1 {
-    font-size: 60px;
-    line-height: 55px;
+    font-size: 56px;
+    line-height: 52px;
   }
 
   .landing-info {
-    left: 58%;
-    max-width: 660px;
+    right: 4%;
+    max-width: 520px;
   }
 
   .landing-info h3 {
@@ -656,11 +686,11 @@
   }
 
   .landing-career-h2 {
-    font-size: clamp(26px, 1.9vw, 36px);
+    font-size: clamp(22px, 1.6vw, 30px);
   }
 
   .landing-career-wrapper {
-    min-height: 64px;
+    min-height: 60px;
     padding: 10px 22px;
   }
 }
