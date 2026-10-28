@@ -1,149 +1,148 @@
 # Awol Ibrahim Ayalew — Professional Portfolio & Engineering Showcase
 
-[![3D Developer Portfolio](https://img.shields.io/badge/Portfolio-Live_Preview-8b5cf6?style=for-the-badge&logo=vercel)](https://orion-personal-portfolio.vercel.app/)
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live_Preview-8b5cf6?style=for-the-badge&logo=vercel)](https://orion-personal-portfolio.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-metiinie-24292e?style=for-the-badge&logo=github)](https://github.com/metiinie)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-awolbuilds-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/awolbuilds/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-awolbuilds-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/awolbuilds)
 
-> **Software Engineer | Full-Stack Development | Python | Applied AI**  
-> *I build practical software that helps people and businesses work better.*
-
-I'm a software engineer working across web applications, mobile development, APIs, databases, and business systems. I enjoy understanding how a real process works, translating its requirements into software, and building solutions that are practical to use and maintain.
-
-My experience spans TypeScript-based web and mobile development, backend engineering, and business workflow systems. I am extending that foundation through Python and Django development, with a growing focus on applied AI, automation, and intelligent workflows.
+> **Full-Stack Web & Cross-Platform Mobile Developer**  
+> *3 Years of Experience · Web Apps, Mobile Engineering, RESTful APIs & Business Management Systems*  
+> *I build secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions.*
 
 ---
 
-## 🛠️ What I Work On
+## 👨‍💻 About Me
 
-- **Full-stack engineering**: Web applications, APIs, authentication, and database-backed systems.
-- **Mobile engineering**: Cross-platform applications with React Native and Expo.
-- **Python development**: Django applications, backend services, and operational automation.
-- **Applied AI**: Exploring practical AI-assisted workflows, OCR extraction, and reliable application integration.
-- **System design**: Data modeling, role-based workflows, and maintainable architecture.
+Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. Experienced in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions. Contributed to production platforms including **Civic Eye** for the Addis Ababa City Administration and a municipal **Code Enforcement Management System**, with a focus on clean, maintainable code, system reliability, and effective collaboration throughout the software development lifecycle.
 
----
-
-## 🚀 Featured Projects & Case Studies
-
-### 1. [Wood-Carvo Furniture Marketplace](https://github.com/metiinie)
-- **Stack**: Python · Django · Next.js · Render · Vercel
-- **Status**: *In Development / Deployment in Progress*
-- **Purpose**: A furniture discovery and inquiry platform for local businesses and customers in Addis Ababa, combining a Next.js frontend with a Python/Django backend on Render and Vercel.
-
-### 2. [Unique Equb Digital Management System](https://github.com/metiinie/Unique_Equb_Mob_App)
-- **Stack**: React Native · Expo · TypeScript · Jest
-- **Status**: *In Development*
-- **Purpose**: A mobile-first digital management system for Equb (rotating savings groups). Focuses on structured software workflows, domain invariant testing, and organized application architecture.
-
-### 3. [SyncTracker: Collaborative Workflow & Coordination](https://github.com/metiinie)
-- **Stack**: React Native · Expo · NestJS · PostgreSQL · Redis · Socket.IO
-- **Status**: *Featured Project*
-- **Purpose**: A task and workflow coordination system modeled around explicit ownership roles (*Assigned By, Owner, Contributor, Reviewer*) and active coordination states (*IN_SYNC, NEEDS_UPDATE, BLOCKED, HELP_REQUESTED*).
-
-### 4. [ICAMS / Denb: Code Enforcement & Case Management](https://github.com/metiinie/Denb-main)
-- **Stack**: Next.js · PWA · Dexie.js (Offline-First) · Laravel · Filament
-- **Status**: *Private Case Study*
-- **Purpose**: Structured enforcement workflows and field operations supporting municipal compliance with offline-first client storage and administrative tooling.
-
-### 5. [Lib le Lib: Confidentiality-First Matching Platform](https://github.com/metiinie)
-- **Stack**: React Native · Expo · NestJS · PostgreSQL (Neon)
-- **Status**: *In Development — Security Review*
-- **Purpose**: A privacy-conscious platform making access control, sensitive disclosure states, and authorization central to product design.
-
-### 6. [Business Document Intelligence](https://github.com/metiinie)
-- **Stack**: Python · FastAPI · OCR · Pydantic · PostgreSQL
-- **Status**: *Applied AI Prototype*
-- **Purpose**: Document processing service extracting structured invoice and receipt fields, enforcing schema invariants, and surfacing low-confidence items for human review.
+- 📧 **Email**: [abumahilkerim@gmail.com](mailto:abumahilkerim@gmail.com)
+- 📱 **Phone**: +251 918 982 161
+- 📍 **Location**: Addis Ababa, Ethiopia
+- 🌐 **Portfolio**: [orion-personal-portfolio.vercel.app](https://orion-personal-portfolio.vercel.app)
+- 🔗 **LinkedIn**: [linkedin.com/in/awolbuilds](https://www.linkedin.com/in/awolbuilds)
+- 🐙 **GitHub**: [github.com/metiinie](https://github.com/metiinie)
 
 ---
 
-## 📚 Current Learning & Engineering Focus
+## 🎓 Education
 
-- Python language design and object-oriented programming
-- Dataclasses, methods, composition, iterators, and generators
-- Python/Django and FastAPI backend development
-- Data handling, relational modeling, and automation
-- Machine learning foundations and model evaluation
-- Applied AI integration into existing operational software
-
----
-
-## 💡 Professional Approach
-
-> **Understand the problem. Model the workflow. Build the right solution. Test the important paths. Deploy thoughtfully. Improve from real feedback.**
+### **Dire Dawa University** | Jan 2021 – Jan 2025
+- **Degree**: B.Sc. in Software Engineering
+- Earned a B.Sc. in Software Engineering, applying software development principles to academic and practical projects.
+- Developed strong foundations in algorithms, database engineering, system design, and software architecture.
+- Applied engineering knowledge through software development projects and collaborative problem-solving.
 
 ---
 
-## 🏗️ Portfolio Architecture & Technology Stack
+## 💼 Professional Experience
 
-This portfolio website is built with:
+### 1. **Fullstack Developer (Freelance)** | Addis Ababa City Administration, Innovation & Technology Development Bureau
+*Mar 2026 – Aug 2026 | Addis Ababa, Ethiopia*
+- Designed and delivered **Civic Eye**, a community-driven public infrastructure reporting platform built on an evidence-first, trust-based model enabling citizens to report and validate local problems with photo and geolocation evidence.
+- Built a secure multi-role system for citizens, moderators, and city administrators using Laravel, Vue.js, PostgreSQL, and a RESTful API backend.
+- Collaborated directly with city officials to align the platform with real government workflows; awarded an official freelance completion letter upon delivery.
+
+### 2. **Software Engineering Intern** | Qelem Meda Technologies
+*Mar 2026 – Sep 2026 | Addis Ababa, Ethiopia*
+- Contributed production-level fullstack features across multiple client projects using React.js, Node.js, and PostgreSQL in an agile team environment.
+- Participated in sprint planning, code reviews, and technical documentation, consistently delivering maintainable code under project deadlines.
+- Completed the full structured internship programme and received a formal completion certificate and recommendation letter.
+
+### 3. **Fullstack Developer (Freelance)** | Fanos Tech P.L.C
+*Jan 2024 – Jan 2025 | Addis Ababa, Ethiopia*
+- Built the **Code Enforcement Management System** for the Addis Ababa city government, a Laravel and Filament platform digitizing urban rule-violation tracking and public awareness campaigns.
+- Implemented secure, role-based data flows and full audit trails, translating complex government operational workflows into a reliable digital solution.
+- Awarded a recommendation letter following successful project handover and client acceptance.
+
+### 4. **Software Engineering Intern** | Zemenay Tech
+*Sep 2025 – Jan 2026 | Addis Ababa, Ethiopia*
+- Developed frontend and backend features for client-facing web applications using React.js and Node.js within an agile development team.
+- Engaged in daily standups, sprint retrospectives, and peer code reviews, building strong collaborative engineering habits.
+- Completed the internship programme and received both a completion certificate and a formal recommendation letter.
+
+---
+
+## 📜 Certifications & Recognitions
+
+- **Freelance Completion Letter**: Addis Ababa City Administration, Innovation & Technology Development Bureau (Jan 2026 – Aug 2026)
+- **Internship Completion Certificate**: Qelem Meda Technologies (Mar 2026 – Sep 2026)
+- **Internship Completion Certificate**: Zemenay Tech (Sep 2025 – Jan 2026)
+- **Recommendation Letter**: Fanos Tech P.L.C (Jan 2024 – Jan 2025)
+- **Hackathon Certifications**: More than 5 hackathon awards and competitive engineering recognitions
+
+---
+
+## 🚀 Projects & Case Studies
+
+1. **Civic Eye — Infrastructure Reporting & Discovery Platform**
+   - *Stack*: Laravel · Vue.js · PostgreSQL · RESTful API · Geolocation
+   - Delivered for the Addis Ababa City Administration; evidence-first infrastructure issue verification.
+2. **Code Enforcement Management System (ICAMS / Denb)**
+   - *Stack*: Laravel · Filament · Next.js · PWA · Dexie.js (Offline-First) · MySQL/PostgreSQL
+   - Municipal rule-violation tracking, offline field synchronization, and audit logging.
+3. **Safeland Cafe — Full-Stack QR Ordering System**
+   - *Stack*: Next.js · Node.js · WebSockets · PostgreSQL
+   - Multi-role real-time ordering for customers, waiters, kitchen display (KDS), and managers.
+4. **WOOD CARVO — Furniture Workshop Showcase & Bilingual Inquiry Website**
+   - *Stack*: Django 5 · DRF · Next.js · TypeScript · Tailwind CSS · next-intl · Render & Vercel
+   - Trilingual platform (English, Amharic, Afaan Oromo) with automated Telegram broadcasting.
+5. **Ethiopian Farmers Market Platform**
+   - *Stack*: Next.js · Node.js · PostgreSQL · Prisma · B2B Trade Facilitation
+   - Direct B2B produce transaction structuring and verified fulfillment handoff.
+6. **Face Recognition-Based Attendance System**
+   - *Stack*: Python · OpenCV · Facial Recognition · Biometric AI · Deep Learning
+   - Automated employee attendance identification, monitoring dashboard, and anti-fraud logging.
+7. **Lib le Lib — Privacy-First HIV Support Platform**
+   - *Stack*: React Native · Expo · NestJS · PostgreSQL (Neon)
+   - Strict medical verification gates and server-side privacy boundaries.
+8. **Multi-Vendor Food Delivery Platform**
+   - *Stack*: React.js · Redux Toolkit · Node.js · Cloud Functions · Live Tracking
+   - Real-time tri-party order lifecycle connecting customers, couriers, and kitchens.
+9. **Unique Equb Digital Management System**
+   - *Stack*: React Native · Expo · TypeScript · Jest Domain Logic
+   - Digital rotating savings group management with verifiable invariant tests.
+
+---
+
+## 🛠️ Technical Skills
+
+- **Languages**: JavaScript, TypeScript, PHP, Python, HTML5, CSS3, SQL
+- **Frontend**: React.js, Next.js, Vue.js, React Native, Bootstrap, Redux Toolkit, Tailwind CSS
+- **Backend**: Node.js, NestJS, Laravel, Django, Flask, REST APIs
+- **Databases**: PostgreSQL (standard & Neon serverless), MySQL, MongoDB, Firestore, Redis
+- **DevOps & Cloud**: Docker, CI/CD pipelines, Firebase, IIS, Vercel, Render
+- **Tools**: Git, Postman, Visual Studio Code, Filament, OpenCV
+- **AI-Assisted Development**: Claude AI, Antigravity, Codex
+- **Human Languages**: English (Professional working proficiency), Amharic (Native)
+- **Core Strengths**: Problem solving, Clear communication, Team collaboration, Time management, Adaptability, Attention to detail, Continuous learning
+
+---
+
+## 🏗️ Architecture & Technology Stack
+
 - **Core**: React 18, TypeScript, Vite
 - **3D & Visuals**: Three.js, WebGL, GSAP, Lenis Smooth Scroll
 - **Styles**: Custom Vanilla CSS with responsive design system and glassmorphism
-- **AI Persona**: Serverless chat endpoint integration (`api/chat.js`)
-- **Chess Engine**: Custom interactive chess board backed by Stockfish / RedoxChess
-
-### Repository Structure
-
-```
-├── api/
-│   └── chat.js                 # Serverless AI conversation handler
-├── public/
-│   ├── images/                 # Showcase imagery and SVGs for projects
-│   └── models/                 # 3D assets for WebGL character model
-├── src/
-│   ├── components/
-│   │   ├── Character/          # Three.js 3D character viewport
-│   │   ├── Landing.tsx         # Hero section with role switcher & CTAs
-│   │   ├── About.tsx           # Professional identity & background
-│   │   ├── WhatIDo.tsx         # Core capabilities & service offerings
-│   │   ├── Career.tsx          # Experience timeline (2022 - Present)
-│   │   ├── Work.tsx            # Horizontal scroll project showcase
-│   │   ├── PythonAISection.tsx # Dedicated Python & Applied AI deep dive
-│   │   ├── TechStackNew.tsx    # Technology pyramid & toolset
-│   │   ├── CallToAction.tsx    # Interactive call to action
-│   │   └── Contact.tsx         # Direct contact details & social channels
-│   ├── pages/
-│   │   ├── MyWorks.tsx         # All works grid with filter tabs & badges
-│   │   └── Play.tsx            # Interactive AI chat & chess engine
-│   ├── config.ts               # Single source of truth for portfolio content
-│   └── main.tsx
-└── README.md
-```
+- **Interactive AI Persona & Chess Engine**: Integrated on `/play` with serverless API
+- **Curriculum Vitae View**: Comprehensive printable CV at `/resume.html`
 
 ---
 
 ## 🏃 Local Development
 
-### 1. Clone the repository
 ```bash
+# Clone the repository
 git clone https://github.com/metiinie/My_Personal_Portfolio.git
 cd My_Personal_Portfolio
-```
 
-### 2. Install dependencies
-```bash
+# Install dependencies
 npm install
-```
 
-### 3. Run development server
-```bash
+# Run development server
 npm run dev
-```
 
-### 4. Build production bundle
-```bash
+# Build production bundle
 npm run build
 ```
-
----
-
-## 📬 Connect
-
-- **GitHub**: [@metiinie](https://github.com/metiinie)
-- **LinkedIn**: [linkedin.com/in/awolbuilds](https://www.linkedin.com/in/awolbuilds/)
-- **Live Portfolio**: [orion-personal-portfolio.vercel.app](https://orion-personal-portfolio.vercel.app/)
-- **Email**: [awol.ayalew.dev@gmail.com](mailto:awol.ayalew.dev@gmail.com)
 
 ---
 

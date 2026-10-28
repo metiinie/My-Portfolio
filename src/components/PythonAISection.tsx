@@ -46,33 +46,34 @@ const PythonAISection = () => {
                 </div>
                 <div>
                   <h4>Python &amp; Backend Engineering</h4>
-                  <span>Language Craft &amp; Architecture</span>
+                  <span>Architecture, Django &amp; Scalable APIs</span>
                 </div>
               </div>
               <ul className="focus-list">
                 <li>
                   <LuBinary className="list-icon" />
-                  <span>Python language design &amp; object-oriented programming</span>
+                  <span>Object-oriented design &amp; modular backend architecture</span>
                 </li>
                 <li>
                   <LuLayers className="list-icon" />
-                  <span>Dataclasses, methods, composition, iterators, and generators</span>
+                  <span>Django 5, Django REST Framework, and Flask development</span>
                 </li>
                 <li>
                   <LuWorkflow className="list-icon" />
-                  <span>Python/Django &amp; FastAPI backend development</span>
+                  <span>Relational data modeling with PostgreSQL &amp; MySQL</span>
                 </li>
                 <li>
                   <LuBinary className="list-icon" />
-                  <span>Data handling, relational modeling, and business automation</span>
+                  <span>Automated workflows, Docker containerization &amp; CI/CD</span>
                 </li>
               </ul>
               <div className="card-tags">
                 <span>Python</span>
                 <span>Django</span>
-                <span>FastAPI</span>
+                <span>Flask</span>
                 <span>PostgreSQL</span>
-                <span>OOP Patterns</span>
+                <span>REST APIs</span>
+                <span>Docker</span>
               </div>
             </div>
 
@@ -82,34 +83,35 @@ const PythonAISection = () => {
                   <BsCpuFill />
                 </div>
                 <div>
-                  <h4>Applied AI &amp; Intelligent Automation</h4>
-                  <span>Pragmatic, Testable Integration</span>
+                  <h4>Computer Vision &amp; AI-Assisted Dev</h4>
+                  <span>OpenCV Biometrics &amp; Agentic Tools</span>
                 </div>
               </div>
               <ul className="focus-list">
                 <li>
                   <LuSparkles className="list-icon" />
-                  <span>Machine learning foundations &amp; model evaluation</span>
+                  <span>Biometric face recognition &amp; attendance management with OpenCV</span>
                 </li>
                 <li>
                   <LuWorkflow className="list-icon" />
-                  <span>Structured document intelligence &amp; OCR validation pipelines</span>
+                  <span>Facial landmark detection, embeddings &amp; anti-fraud logging</span>
                 </li>
                 <li>
                   <LuBinary className="list-icon" />
-                  <span>Deterministic schema validation (Pydantic) with uncertainty scoring</span>
+                  <span>AI-assisted development acceleration with Claude AI, Antigravity &amp; Codex</span>
                 </li>
                 <li>
                   <LuLayers className="list-icon" />
-                  <span>Applied AI integration into operational business products</span>
+                  <span>Administrative dashboards for employee monitoring &amp; verification</span>
                 </li>
               </ul>
               <div className="card-tags">
-                <span>Applied AI</span>
-                <span>Document OCR</span>
-                <span>Schema Validation</span>
-                <span>Model Evaluation</span>
-                <span>FastAPI</span>
+                <span>OpenCV</span>
+                <span>Biometrics</span>
+                <span>Antigravity</span>
+                <span>Claude AI</span>
+                <span>Codex</span>
+                <span>Computer Vision</span>
               </div>
             </div>
           </div>

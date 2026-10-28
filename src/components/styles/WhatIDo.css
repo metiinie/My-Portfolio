@@ -1,31 +1,38 @@
 .whatIDO {
   display: flex;
   align-items: center;
-  justify-content: center;
-  place-items: center;
+  justify-content: space-between;
   position: relative;
   opacity: 1;
-  height: 100vh;
+  min-height: 100vh;
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
   z-index: 9;
+  padding: 80px 0;
 }
 
 .what-box {
-  width: 50%;
+  width: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
   z-index: 9;
+  flex-shrink: 0;
+}
+
+.what-box:last-child {
+  width: auto;
+  justify-content: flex-end;
+  max-width: 520px;
 }
 
 .what-box h2 {
-  font-size: calc(4vw + 25px);
-  line-height: calc(4vw + 20px);
+  font-size: calc(3.5vw + 24px);
+  line-height: calc(3.5vw + 20px);
   font-weight: 600;
-  margin-right: 10%;
-  margin-bottom: 100px;
+  margin-right: 0;
 }
 
 .hat-h2 {
@@ -33,140 +40,143 @@
 }
 
 .do-h2 {
-  color: var(--accentColor);
+  color: var(--accentColor, #c2a4ff);
 }
 
 .what-box-in {
   flex-direction: column;
-  height: 500px;
-  margin-left: 200px;
+  width: 520px;
+  max-width: 100%;
   position: relative;
   display: flex;
+  gap: 12px;
 }
 
 .what-content {
-  width: 450px;
-  height: 33%;
-  min-height: 50%;
-  transition: 0.5s;
-  /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
-  padding: 50px;
+  padding: 18px 24px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
 }
 
-.what-noTouch:hover,
+.what-content:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(194, 164, 255, 0.3);
+}
+
 .what-content-active {
-  min-height: 67%;
-  padding: 40px 50px;
+  background: rgba(194, 164, 255, 0.05);
+  border-color: var(--accentColor, #c2a4ff);
+  box-shadow: 0 4px 25px rgba(194, 164, 255, 0.12);
 }
 
-.what-noTouch:hover~.what-content,
-.what-box-in:hover .what-noTouch:not(:hover),
-.what-content.what-sibling {
-  min-height: 33%;
-  padding: 10px 50px;
-}
-
-.what-content h3 {
-  font-size: 35px;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-.what-content p {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 200;
-  letter-spacing: 0.7px;
-}
-
-.what-content h4 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin: 0px;
-  font-size: 14px;
-  opacity: 0.3;
-}
-
-.what-content-in {
-  opacity: 0;
-  animation: whatFlicker 0.5s 1 forwards;
-  animation-delay: 1s;
-}
-
-@keyframes whatFlicker {
-
-  0%,
-  25%,
-  35%,
-  60% {
-    opacity: 0;
-  }
-
-  30%,
-  50%,
-  40%,
-  100% {
-    opacity: 1;
-  }
-}
-
+/* Corner bracket tech accents */
 .what-content::before,
 .what-corner::before,
 .what-content::after,
 .what-corner::after {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   position: absolute;
-  border: 4px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   opacity: 0;
-  animation: whatCorners 0.2s 1 forwards;
-  animation-delay: 0.5s;
+  transition: opacity 0.3s, border-color 0.3s;
 }
 
-@keyframes whatCorners {
-  100% {
-    opacity: 1;
-  }
+.what-content-active::before,
+.what-content-active .what-corner::before,
+.what-content-active::after,
+.what-content-active .what-corner::after {
+  opacity: 1;
+  border-color: var(--accentColor, #c2a4ff);
 }
 
 .what-content::before {
-  top: -2px;
-  left: -2px;
+  top: -1px;
+  left: -1px;
   border-right: none;
   border-bottom: none;
 }
 
 .what-corner::before {
-  top: -2px;
-  right: -2px;
+  top: -1px;
+  right: -1px;
   border-left: none;
   border-bottom: none;
 }
 
 .what-content::after {
-  bottom: -2px;
-  left: -2px;
+  bottom: -1px;
+  left: -1px;
   border-top: none;
   border-right: none;
 }
 
 .what-corner::after {
-  bottom: -2px;
-  right: -2px;
+  bottom: -1px;
+  right: -1px;
   border-left: none;
   border-top: none;
 }
 
+.what-content-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.what-num {
+  font-family: "Geist", monospace, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accentColor, #c2a4ff);
+  opacity: 0.85;
+  min-width: 22px;
+}
+
+.what-title-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.what-content h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin: 0;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.what-content-active h3 {
+  color: var(--accentColor, #c2a4ff);
+}
+
+.what-content h4 {
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .what-arrow {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 25px;
-  height: 25px;
-  border: 1px solid #fff;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.35s ease;
+  flex-shrink: 0;
 }
 
 .what-arrow::before {
@@ -174,282 +184,159 @@
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  transition: 0.5s;
-  width: 10px;
-  height: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-right: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  width: 6px;
+  height: 6px;
+  transition: all 0.35s ease;
 }
 
-.what-noTouch:hover .what-arrow::before,
+.what-content-active .what-arrow {
+  transform: rotate(180deg);
+  border-color: var(--accentColor, #c2a4ff);
+  background: rgba(194, 164, 255, 0.15);
+}
+
 .what-content-active .what-arrow::before {
-  transform: translate(-50%, -20%) rotate(-225deg);
+  border-color: var(--accentColor, #c2a4ff);
 }
 
-.what-border1 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  transition: 0.5s;
-  max-width: 0%;
+.what-content-details {
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  opacity: 0.8;
-  animation: whatBorders 1.2s 1 forwards;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0;
 }
 
-.what-border1 svg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 450px;
+.what-content-active .what-content-details {
+  max-height: 280px;
+  opacity: 1;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.what-border2 {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 100%;
-  max-height: 0%;
-  overflow: hidden;
-  transition: 0.5s;
-  opacity: 0.8;
-  animation: whatBorders 1.2s 1 forwards;
-}
-
-.what-border2 svg {
-  height: 500px;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-}
-
-.what-content-in {
-  height: 100%;
-  overflow: hidden;
-}
-
-.what-content-in h5 {
+.what-content p {
+  font-size: 13px;
+  line-height: 1.6;
   font-weight: 300;
-  opacity: 0.5;
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-family: "Geist", sans-serif;
-  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 12px 0;
 }
 
-@keyframes whatBorders {
-  80% {
-    opacity: 0.8;
-  }
-
-  100% {
-    max-height: 100%;
-    max-width: 100%;
-    opacity: 0.2;
-  }
+.what-content-details h5 {
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accentColor, #c2a4ff);
+  margin: 0 0 8px 0;
 }
 
 .what-content-flex {
   display: flex;
-  gap: 5px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .what-tags {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  padding: 2px 7px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid #ffffff50;
-  border-radius: 30px;
+  padding: 3px 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #eae5ec;
+  transition: all 0.2s ease;
 }
 
-@media only screen and (max-width: 1600px) {
-  .what-box h2 {
-    margin-right: 18%;
-  }
+.what-content-active .what-tags:hover {
+  background-color: rgba(194, 164, 255, 0.2);
+  border-color: var(--accentColor, #c2a4ff);
 }
 
 @media only screen and (max-width: 1400px) {
-  .what-box h2 {
-    margin-right: 20%;
-  }
-
   .what-box-in {
-    height: 400px;
+    width: 480px;
   }
 
   .what-content h3 {
-    font-size: 28px;
-  }
-
-  .what-content {
-    padding: 30px;
-    width: 400px;
-  }
-
-  .what-content p {
-    font-size: 13px;
-  }
-
-  .what-noTouch:hover,
-  .what-content-active {
-    padding: 20px 30px;
-  }
-
-  .what-noTouch:hover~.what-content,
-  .what-box-in:hover .what-noTouch:not(:hover),
-  .what-content.what-sibling {
-    padding: 10px 30px;
-  }
-
-  .what-tags {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .what-box-in {
-    margin-left: 50px;
-  }
-
-  .what-content {
-    width: 380px;
+    font-size: 18px;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .whatIDO {
     height: auto;
-    padding: 50px 0px;
-    padding-bottom: 50px;
+    padding: 60px 0;
+  }
+
+  .what-box:last-child {
+    max-width: 460px;
   }
 
   .what-box-in {
-    height: 500px;
-    margin-left: -50px;
-  }
-
-  .what-content {
-    padding: 50px;
-    width: 500px;
-  }
-
-  .what-content p {
-    font-size: 14px;
-  }
-
-  .what-noTouch:hover,
-  .what-content-active {
-    min-height: 67%;
-    padding: 50px;
-  }
-
-  .what-noTouch:hover~.what-content,
-  .what-box-in:hover .what-noTouch:not(:hover),
-  .what-content.what-sibling {
-    min-height: 33%;
-    padding: 10px 50px;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .whatIDO {
     flex-direction: column;
+    padding: 50px 20px;
   }
 
-  .what-box h2 {
-    margin: 50px 0;
-    font-size: 55px;
-    line-height: 53px;
-  }
-
-  .what-box:first-child {
-    justify-content: left;
+  .what-box {
+    width: 100% !important;
+    justify-content: flex-start !important;
   }
 
   .what-box:last-child {
-    height: 500px;
+    width: 100% !important;
   }
 
-  .what-box {
-    width: 500px;
-    max-width: calc(100% - 50px);
-    margin: auto;
-  }
-
-  .what-content {
-    width: 100%;
+  .what-box h2 {
+    margin: 0 0 30px 0;
+    font-size: 48px;
+    line-height: 46px;
   }
 
   .what-box-in {
-    margin-left: 0px;
-    height: 450px;
-  }
-
-  .what-content h5,
-  .what-content-flex {
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  .what-noTouch:hover h5,
-  .what-content-active h5,
-  .what-noTouch:hover .what-content-flex,
-  .what-content-active .what-content-flex {
-    opacity: 1;
+    width: 100%;
+    margin-left: 0;
+    gap: 10px;
   }
 
   .what-content {
-    padding: 30px;
-  }
-
-  .what-content p {
-    font-size: 11px;
-  }
-
-  .what-noTouch:hover,
-  .what-content-active {
-    padding: 10px 30px;
-  }
-
-  .what-tags {
-    font-size: 11px;
-  }
-
-  .what-noTouch:hover~.what-content,
-  .what-box-in:hover .what-noTouch:not(:hover),
-  .what-content.what-sibling {
-    padding: 5px 30px;
+    padding: 16px 18px;
   }
 
   .what-content h3 {
-    font-size: 25px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .whatIDO {
-    place-items: inherit;
-    align-items: start;
-    justify-content: left;
+    font-size: 17px;
   }
 
-  .what-box {
-    max-width: calc(100% - 25px);
-    margin: 0;
+  .what-content h4 {
+    font-size: 12px;
+  }
+
+  .what-content-active .what-content-details {
+    max-height: 340px;
   }
 }
 
 @media only screen and (min-width: 1950px) {
   .what-box h2 {
-    font-size: 7rem;
-    line-height: 6.8rem;
+    font-size: 6rem;
+    line-height: 5.8rem;
+  }
+
+  .what-box-in {
+    width: 680px;
+  }
+
+  .what-content h3 {
+    font-size: 22px;
   }
 }

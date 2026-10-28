@@ -269,3 +269,212 @@
     justify-content: left;
   }
 }
+
+/* Credentials: Education & Certifications */
+.career-credentials {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.credentials-subhead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.credentials-subhead h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.credentials-subhead-icon {
+  color: var(--accentColor, #c481ff);
+  font-size: 24px;
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(196, 129, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.education-card:hover {
+  border-color: rgba(196, 129, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.education-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accentColor, #c481ff), #7f40ff);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.edu-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px 0;
+}
+
+.edu-institution {
+  font-size: 16px;
+  color: var(--accentColor, #c481ff);
+  font-weight: 500;
+}
+
+.edu-period {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(196, 129, 255, 0.15);
+  border: 1px solid rgba(196, 129, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.edu-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edu-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.edu-bullet-icon {
+  color: var(--accentColor, #c481ff);
+  font-size: 14px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.cert-item-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-item-card:hover {
+  border-color: rgba(196, 129, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cert-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cert-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(196, 129, 255, 0.12);
+  border: 1px solid rgba(196, 129, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accentColor, #c481ff);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.cert-period-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accentColor, #c481ff);
+  background: rgba(196, 129, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.cert-item-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px 0;
+}
+
+.cert-item-org {
+  font-size: 13px;
+  color: #38bdf8;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.cert-item-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .career-credentials {
+    margin-top: 60px;
+    gap: 40px;
+  }
+  .credentials-subhead h3 {
+    font-size: 22px;
+  }
+  .education-card {
+    padding: 22px;
+  }
+  .edu-title {
+    font-size: 18px;
+  }
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}

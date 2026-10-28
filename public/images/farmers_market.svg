@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="farmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06140d"/>
+      <stop offset="100%" stop-color="#0f291c"/>
+    </linearGradient>
+    <linearGradient id="farmCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#143224" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0a1f16" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="farmAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#84cc16"/>
+    </linearGradient>
+    <filter id="farmGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#farmBg)"/>
+
+  <!-- Agricultural Grid lines -->
+  <g opacity="0.05" stroke="#86efac" stroke-width="1">
+    <line x1="0" y1="120" x2="1280" y2="120"/>
+    <line x1="0" y1="240" x2="1280" y2="240"/>
+    <line x1="0" y1="360" x2="1280" y2="360"/>
+    <line x1="0" y1="480" x2="1280" y2="480"/>
+    <line x1="0" y1="600" x2="1280" y2="600"/>
+    <line x1="160" y1="0" x2="160" y2="720"/>
+    <line x1="320" y1="0" x2="320" y2="720"/>
+    <line x1="480" y1="0" x2="480" y2="720"/>
+    <line x1="640" y1="0" x2="640" y2="720"/>
+    <line x1="800" y1="0" x2="800" y2="720"/>
+    <line x1="960" y1="0" x2="960" y2="720"/>
+    <line x1="1120" y1="0" x2="1120" y2="720"/>
+  </g>
+
+  <!-- Glows -->
+  <circle cx="200" cy="220" r="160" fill="#10b981" opacity="0.12" filter="url(#farmGlow)"/>
+  <circle cx="1080" cy="500" r="180" fill="#22c55e" opacity="0.1" filter="url(#farmGlow)"/>
+
+  <!-- Top App Navigation -->
+  <rect x="70" y="50" width="1140" height="68" rx="14" fill="url(#farmCard)" stroke="#1e4d35" stroke-width="1.2"/>
+  <circle cx="106" cy="84" r="7" fill="#ef4444"/>
+  <circle cx="128" cy="84" r="7" fill="#f59e0b"/>
+  <circle cx="150" cy="84" r="7" fill="#10b981"/>
+
+  <text x="185" y="90" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="20" font-weight="700">ETHIOPIAN FARMERS MARKET</text>
+  <rect x="490" y="73" width="160" height="24" rx="12" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4"/>
+  <text x="570" y="89" fill="#86efac" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">FACILITATED B2B</text>
+  <text x="670" y="90" fill="#86efac" font-family="system-ui, sans-serif" font-size="14">Direct Agricultural Trade &amp; Transaction Structuring</text>
+
+  <!-- Left Column: Marketplace Order Discovery -->
+  <g transform="translate(70, 140)">
+    <rect width="670" height="520" rx="16" fill="url(#farmCard)" stroke="#1e4d35" stroke-width="1.2"/>
+
+    <text x="24" y="44" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Facilitated Trade Flow (Farmers ⇄ Commercial Buyers)</text>
+    <text x="24" y="66" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="13">Structuring the transaction, verifying grades, and logging fulfillment status without middleman holding.</text>
+
+    <!-- Produce Listings Grid -->
+    <g transform="translate(24, 85)">
+      <!-- Item 1: Yirgacheffe Grade 1 Specialty Coffee -->
+      <g transform="translate(0, 0)">
+        <rect width="300" height="150" rx="10" fill="#0b2418" stroke="#165b38" stroke-width="1.2"/>
+        <text x="16" y="28" fill="#4ade80" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPECIALTY EXPORT</text>
+        <text x="16" y="52" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Yirgacheffe Coffee (Gr. 1)</text>
+        <text x="16" y="72" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Farmer Cooperative: Gedeo Union</text>
+        <text x="16" y="94" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Batch: 45 Quintals &bull; Moisture: 10.8%</text>
+        
+        <rect x="16" y="108" width="95" height="26" rx="6" fill="#10b981" fill-opacity="0.2"/>
+        <text x="63" y="125" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">OFFER OPEN</text>
+        <text x="284" y="126" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="800" text-anchor="end">ETB 14,200 / Q</text>
+      </g>
+
+      <!-- Item 2: Teff - Magna Grade -->
+      <g transform="translate(320, 0)">
+        <rect width="300" height="150" rx="10" fill="#0b2418" stroke="#165b38" stroke-width="1.2"/>
+        <text x="16" y="28" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="700">DOMESTIC STAPLE</text>
+        <text x="16" y="52" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="700">White Teff (Magna Grade)</text>
+        <text x="16" y="72" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Origin: East Shewa &bull; Ada'a Cluster</text>
+        <text x="16" y="94" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Batch: 120 Quintals available</text>
+
+        <rect x="16" y="108" width="115" height="26" rx="6" fill="#3b82f6" fill-opacity="0.2"/>
+        <text x="73" y="125" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">BUYER MATCHED</text>
+        <text x="284" y="126" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="800" text-anchor="end">ETB 9,800 / Q</text>
+      </g>
+    </g>
+
+    <!-- Transaction Ledger Architecture -->
+    <g transform="translate(24, 255)">
+      <text x="0" y="20" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Trade Record &amp; Milestone Validation</text>
+
+      <g transform="translate(0, 35)">
+        <rect width="620" height="60" rx="8" fill="#0b2418" stroke="#1e4d35"/>
+        <circle cx="30" cy="30" r="12" fill="#10b981"/>
+        <text x="30" y="34" fill="#06140d" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">✓</text>
+        <text x="60" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Farmer Publishes Available Yield</text>
+        <text x="60" y="44" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Specifies quantity, photo, grade, location &amp; ready date</text>
+        <text x="590" y="35" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="end">PUBLISHED</text>
+      </g>
+
+      <g transform="translate(0, 105)">
+        <rect width="620" height="60" rx="8" fill="#0b2418" stroke="#1e4d35"/>
+        <circle cx="30" cy="30" r="12" fill="#3b82f6"/>
+        <text x="30" y="34" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">2</text>
+        <text x="60" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Commercial Buyer Places Purchase Order</text>
+        <text x="60" y="44" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Restaurants, exporters &amp; food processors agree on terms</text>
+        <text x="590" y="35" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="end">ORDER LOCKED</text>
+      </g>
+
+      <g transform="translate(0, 175)">
+        <rect width="620" height="60" rx="8" fill="#0b2418" stroke="#1e4d35"/>
+        <circle cx="30" cy="30" r="12" fill="#8b5cf6"/>
+        <text x="30" y="34" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">3</text>
+        <text x="60" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Inspection, Approvals &amp; Physical Handoff</text>
+        <text x="60" y="44" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Platform records delivery handshake, quality sign-off &amp; fulfillment status</text>
+        <text x="590" y="35" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="end">FULFILLED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Column: Buyer Network & Analytics -->
+  <g transform="translate(760, 140)">
+    <rect width="450" height="520" rx="16" fill="url(#farmCard)" stroke="#1e4d35" stroke-width="1.2"/>
+
+    <text x="24" y="44" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="17" font-weight="700">Verified Business Buyer Channels</text>
+    <text x="24" y="66" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="12">Hotels &bull; Restaurants &bull; Wholesalers &bull; Exporters</text>
+
+    <!-- Metrics -->
+    <g transform="translate(24, 85)">
+      <rect x="0" y="0" width="126" height="74" rx="10" fill="#0b2418" stroke="#165b38"/>
+      <text x="14" y="24" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Active Farmers</text>
+      <text x="14" y="52" fill="#4ade80" font-family="system-ui, sans-serif" font-size="24" font-weight="800">420+</text>
+
+      <rect x="136" y="0" width="126" height="74" rx="10" fill="#0b2418" stroke="#165b38"/>
+      <text x="150" y="24" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Trade Volume</text>
+      <text x="150" y="52" fill="#34d399" font-family="system-ui, sans-serif" font-size="24" font-weight="800">18.5k Q</text>
+
+      <rect x="272" y="0" width="126" height="74" rx="10" fill="#0b2418" stroke="#165b38"/>
+      <text x="286" y="24" fill="#86efac" opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Price Spread</text>
+      <text x="286" y="52" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="24" font-weight="800">-32% Gap</text>
+    </g>
+
+    <!-- Key Principles -->
+    <g transform="translate(24, 180)">
+      <rect width="402" height="185" rx="12" fill="#0b2418" stroke="#1e4d35"/>
+      <text x="20" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Platform Philosophy</text>
+      
+      <circle cx="28" cy="62" r="4" fill="#4ade80"/>
+      <text x="42" y="66" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Demand-first verification over heavy automation</text>
+
+      <circle cx="28" cy="98" r="4" fill="#4ade80"/>
+      <text x="42" y="102" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Does not take produce ownership or burden logistics</text>
+
+      <circle cx="28" cy="134" r="4" fill="#4ade80"/>
+      <text x="42" y="138" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Structured contracts with transparent dispute resolution</text>
+
+      <circle cx="28" cy="168" r="4" fill="#4ade80"/>
+      <text x="42" y="172" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Bilingual Amharic &amp; English trading interface</text>
+    </g>
+
+    <!-- Tech Stack banner -->
+    <g transform="translate(24, 385)">
+      <rect width="402" height="110" rx="12" fill="url(#farmAccent)" fill-opacity="0.12" stroke="#22c55e" stroke-width="1.2"/>
+      <text x="20" y="30" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Agricultural FinTech &amp; B2B Architecture</text>
+      <text x="20" y="52" fill="#86efac" font-family="system-ui, sans-serif" font-size="12">Next.js &bull; Node.js &bull; PostgreSQL &bull; Prisma &bull; REST APIs</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Direct transaction agreements without produce hoarding</text>
+      <text x="20" y="95" fill="#4ade80" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Engineered by Awol Ibrahim Ayalew</text>
+    </g>
+  </g>
+</svg>

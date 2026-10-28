@@ -1,11 +1,32 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import "./styles/Landing.css";
 import { config } from "../config";
+
+const BUILD_ITEMS = config.developer.whatIBuild;
 
 const Landing = ({ children }: PropsWithChildren) => {
   const nameParts = config.developer.fullName.split(" ");
   const firstName = nameParts[0] || config.developer.name;
   const lastName = nameParts.slice(1).join(" ") || "";
+
+  const [itemIndex, setItemIndex] = useState(0);
+  const [animClass, setAnimClass] = useState<"slide-in" | "slide-out">("slide-in");
+
+  useEffect(() => {
+    const displayDuration = 2800; // Duration each item is shown
+    const transitionDuration = 450; // Exit slide duration
+
+    const interval = setInterval(() => {
+      setAnimClass("slide-out");
+
+      setTimeout(() => {
+        setItemIndex((prev) => (prev + 1) % BUILD_ITEMS.length);
+        setAnimClass("slide-in");
+      }, transitionDuration);
+    }, displayDuration + transitionDuration);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -21,15 +42,17 @@ const Landing = ({ children }: PropsWithChildren) => {
             </h1>
           </div>
           <div className="landing-info">
-            <h3>I build practical</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Software Engineer</div>
-              <div className="landing-h2-2">Applied AI Systems</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">Full-Stack &amp; Python</div>
-              <div className="landing-h2-info-1">Web &amp; Mobile Apps</div>
-            </h2>
+            <div className="landing-tagline-prefix">
+              <span className="landing-tagline-dot"></span>
+              <h3>I build Practical</h3>
+            </div>
+            <div className="landing-career-wrapper">
+              <h2 className="landing-career-h2">
+                <span className={`landing-career-text ${animClass}`}>
+                  {BUILD_ITEMS[itemIndex]}
+                </span>
+              </h2>
+            </div>
             <div className="landing-actions">
               <a href="#work" className="landing-btn landing-btn-primary" data-cursor="disable">
                 View My Work →

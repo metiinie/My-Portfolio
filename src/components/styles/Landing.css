@@ -83,44 +83,38 @@
     /* Third: Subtitles */
   }
 
+  .landing-tagline-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
   .landing-info h3 {
     text-align: center;
-    display: none;
-    /* Hide 'An' if not needed, or keep it static */
-  }
-
-  /* Force static positioning to prevent overlaps */
-  .landing-info h2,
-  h2.landing-info-h2,
-  .landing-h2-1,
-  .landing-h2-info {
-    position: static !important;
     display: block;
-    width: auto;
-    margin: 0 !important;
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-    white-space: normal;
+    font-size: 16px !important;
+    letter-spacing: 1.5px;
+    margin: 0;
+  }
+
+  .landing-career-wrapper {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 4px 0 8px 0;
+  }
+
+  .landing-career-h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
     text-align: center;
-    height: auto !important;
-    transform: none !important;
-    /* Remove any transforms */
-  }
-
-  /* Specific styling for the distinct parts */
-  .landing-h2-1 {
-    font-size: 24px !important;
-    color: var(--accentColor);
-    font-weight: 700;
-  }
-
-  .landing-h2-info {
-    font-size: 18px !important;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .landing-info-h2::after {
-    display: none;
+    justify-content: center;
+    margin: 0 !important;
+    white-space: nowrap;
   }
 
   /* Show mobile photo */
@@ -353,72 +347,114 @@
   bottom: 40px;
   top: inherit;
   z-index: 9;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-tagline-prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.landing-tagline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 10px var(--accentColor, #c2a4ff);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 .landing-info h3 {
   font-size: 22px;
   letter-spacing: 2px;
   font-weight: 300;
-  color: var(--accentColor);
+  color: var(--accentColor, #c2a4ff);
   margin: 0;
 }
 
-.landing-info h2 {
-  margin: 0;
-  margin-top: 8px;
-  margin-left: 20px;
-  font-family: "Geist", sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 40px;
+/* Single line animated career rotator */
+.landing-career-wrapper {
   position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  white-space: nowrap;
+  align-items: center;
+  height: 58px;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  width: max-content;
+  max-width: 100%;
 }
 
-.landing-h2-info {
-  white-space: nowrap;
-}
-
-.landing-h2-info-1 {
-  position: absolute;
-  top: 0;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-h2.landing-info-h2 {
-  color: #c481ff;
-  font-size: 36px;
-  width: 150%;
+.landing-career-h2 {
   margin: 0;
+  padding: 0;
   font-family: "Geist", sans-serif;
-  font-weight: 600;
-  position: relative;
-  margin-left: -5px;
-}
-
-.landing-h2-2 {
-  position: absolute;
-  top: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0;
+  display: flex;
+  align-items: center;
 }
 
-.landing-info-h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  z-index: 3;
-  background-image: linear-gradient(0deg,
-      var(--backgroundColor) 40%,
-      rgba(0, 0, 0, 0) 110%);
-  top: 0;
-  left: 0;
+.landing-career-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 40%, var(--accentColor, #c2a4ff) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(194, 164, 255, 0.35);
+  will-change: transform, opacity, filter;
+}
+
+.landing-career-text.slide-in {
+  animation: careerSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.landing-career-text.slide-out {
+  animation: careerSlideOut 0.4s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+@keyframes careerSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes careerSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px);
+    filter: blur(6px);
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -443,13 +479,12 @@ h2.landing-info-h2 {
     line-height: 30px;
   }
 
-  .landing-info h2 {
-    font-size: 35px;
-    line-height: 40px;
+  .landing-career-h2 {
+    font-size: 28px;
   }
 
-  h2.landing-info-h2 {
-    font-size: 38px;
+  .landing-career-wrapper {
+    height: 52px;
   }
 }
 
@@ -468,16 +503,15 @@ h2.landing-info-h2 {
   }
 
   .landing-info h3 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
-  .landing-info h2 {
-    font-size: 45px;
-    line-height: 42px;
+  .landing-career-h2 {
+    font-size: 36px;
   }
 
-  h2.landing-info-h2 {
-    font-size: 55px;
+  .landing-career-wrapper {
+    height: 60px;
   }
 }
 
@@ -495,39 +529,57 @@ h2.landing-info-h2 {
   }
 
   .landing-intro {
-    top: 40%;
+    top: 48%;
     left: auto;
-    right: 66%;
+    right: 64%;
     transform: translate(0%, -50%);
   }
 
   .landing-info {
     bottom: auto;
-    top: 51%;
-    z-index: inherit;
+    top: 48%;
+    z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 66%;
+    left: 65%;
+    max-width: 34vw;
+  }
+
+  .landing-career-h2 {
+    font-size: clamp(28px, 2.5vw, 42px);
+  }
+
+  .landing-career-wrapper {
+    height: 64px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .landing-intro {
-    top: 40%;
+    top: 48%;
     left: auto;
-    right: 70%;
+    right: 65%;
     transform: translate(0%, -50%);
   }
 
   .landing-info {
     bottom: auto;
-    top: 51%;
-    z-index: inherit;
+    top: 48%;
+    z-index: 10;
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 70%;
+    left: 65%;
+    max-width: 34vw;
+  }
+
+  .landing-career-h2 {
+    font-size: clamp(30px, 2.6vw, 46px);
+  }
+
+  .landing-career-wrapper {
+    height: 68px;
   }
 }
 
@@ -542,16 +594,15 @@ h2.landing-info-h2 {
   }
 
   .landing-info h3 {
-    font-size: 35px;
+    font-size: 28px;
   }
 
-  .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
+  .landing-career-h2 {
+    font-size: 52px;
   }
 
-  h2.landing-info-h2 {
-    font-size: 75px;
+  .landing-career-wrapper {
+    height: 76px;
   }
 }
 
@@ -559,8 +610,8 @@ h2.landing-info-h2 {
 .landing-actions {
   display: flex;
   gap: 16px;
-  margin-top: 28px;
-  margin-left: 20px;
+  margin-top: 24px;
+  margin-left: 0;
   flex-wrap: wrap;
 }
 

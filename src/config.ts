@@ -3,19 +3,39 @@ export const config = {
         name: "Awol",
         fullName: "Awol Ibrahim Ayalew",
         initials: "AIA",
-        title: "Software Engineer | Full-Stack, Python & Applied AI",
-        subtitle: "Full-Stack Software Engineer · Python Developer · Aspiring AI Engineer",
-        headline: "I build practical software that helps people and businesses work better.",
-        description: "I build practical web and mobile applications, backend systems, and business software. My work focuses on turning real operational requirements into maintainable products, while expanding into Python-powered automation and applied AI.",
-        tagline: "Understand the problem. Model the workflow. Build the right solution.",
-        roles: ["Software Engineer", "Full-Stack, Python & Applied AI", "Python & Django Developer"]
+        title: "Full-Stack Web & Cross-Platform Mobile Developer",
+        subtitle: "3 Years Experience · Web Apps, Mobile Engineering, RESTful APIs & Business Management Systems",
+        headline: "I build secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions.",
+        description: "Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects. Experienced in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions. Contributed to projects including Civic Eye and a Code Enforcement Management System, with a focus on clean, maintainable code, system reliability, and effective collaboration throughout the software development lifecycle.",
+        tagline: "Translate complex requirements. Build secure, role-based systems. Deliver practical reliability.",
+        phone: "+251 918 982 161",
+        roles: [
+            "Full-Stack Web Developer",
+            "Cross-Platform Mobile Developer",
+            "Backend & API Engineer",
+            "Government Systems Architect"
+        ],
+        whatIBuild: [
+            "Full-Stack Web Applications",
+            "Cross-Platform Mobile Apps",
+            "Government & Business Systems",
+            "Secure RESTful APIs & Services"
+        ],
+        careers: [
+            "FULL-STACK DEVELOPER",
+            "CROSS-PLATFORM MOBILE DEVELOPER",
+            "BACKEND & API ENGINEER",
+            "GOVERNMENT SYSTEMS ARCHITECT",
+            "AI-ASSISTED SOFTWARE DEVELOPER"
+        ]
     },
     social: {
         github: "metiinie",
         githubUrl: "https://github.com/metiinie",
-        linkedin: "https://www.linkedin.com/in/awolbuilds/",
-        portfolio: "https://orion-personal-portfolio.vercel.app/",
-        email: "awol.ayalew.dev@gmail.com",
+        linkedin: "https://www.linkedin.com/in/awolbuilds",
+        portfolio: "https://orion-personal-portfolio.vercel.app",
+        email: "abumahilkerim@gmail.com",
+        phone: "+251 918 982 161",
         location: "Addis Ababa, Ethiopia",
         twitter: "https://x.com/awolbuilds",
         facebook: "https://www.facebook.com/awolbuilds",
@@ -23,270 +43,381 @@ export const config = {
     },
     about: {
         title: "About Me",
-        subtitle: "Full-Stack Foundations · Python Engineering · Applied AI",
-        description: "I'm a software engineer based in Ethiopia, with experience contributing to web, mobile, and full-stack software projects. I work across frontend interfaces, backend APIs, data modeling, authentication, workflow design, and deployment. I have worked with different teams and project environments, learning how to turn requirements into usable features, collaborate through Git, and make practical engineering decisions. My established foundation is full-stack development, especially web and mobile applications. I am extending that foundation through Python and Django development, with a growing focus on applied AI and automation. I prefer clear architecture, maintainable code, honest technical claims, and solutions built around the needs of real users.",
-        approach: "Understand the problem. Model the workflow. Build the right solution. Test the important paths. Deploy thoughtfully. Improve from real feedback.",
+        subtitle: "Full-Stack Foundations · Cross-Platform Mobile · Government & Enterprise Systems",
+        description: "I'm a Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. I specialize in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex operational workflows into practical, reliable, and user-friendly software. Having contributed to critical platforms including Civic Eye for the Addis Ababa City Administration and a municipal Code Enforcement Management System, I bring a sharp focus on clean code, system reliability, data security, and productive agile collaboration across the entire software development lifecycle.",
+        approach: "Understand the problem. Model multi-role permissions and data integrity. Build clean, maintainable code. Test critical paths. Deploy thoughtfully and refine through real-world feedback.",
         whatIBuild: [
-            "Web applications and business management systems",
+            "Secure multi-role web applications and municipal management dashboards",
             "Cross-platform mobile applications with React Native and Expo",
-            "Backend services, APIs, and database-driven platforms",
-            "Python/Django applications and operational automation",
-            "Applied AI integrations that solve practical business problems"
+            "Resilient RESTful APIs and backend services with Laravel, Node.js, and Django",
+            "Relational database schemas with PostgreSQL (including Neon) and MySQL",
+            "AI-assisted developer workflows and computer vision biometric systems"
         ]
     },
+    education: {
+        institution: "Dire Dawa University",
+        degree: "B.Sc. in Software Engineering",
+        period: "Jan 2021 - Jan 2025",
+        location: "Dire Dawa, Ethiopia",
+        highlights: [
+            "Earned a B.Sc. in Software Engineering, applying software development principles to academic and practical projects.",
+            "Developed strong foundations in algorithms, database engineering, system design, and software architecture.",
+            "Applied engineering knowledge through software development projects and collaborative problem-solving."
+        ]
+    },
+    certifications: [
+        {
+            title: "Freelance Completion Letter",
+            organization: "Addis Ababa City Administration, Innovation & Technology Development Bureau",
+            period: "Jan 2026 - Aug 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Official government completion letter awarded upon successful delivery and handover of Civic Eye, aligning the platform with real government workflows and multi-role operations."
+        },
+        {
+            title: "Internship Completion Certificate & Recommendation",
+            organization: "Qelem Meda Technologies",
+            period: "Mar 2026 - Sep 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Completed structured software engineering internship programme. Contributed production-level fullstack features using React.js, Node.js, and PostgreSQL under strict agile deadlines."
+        },
+        {
+            title: "Internship Completion Certificate & Recommendation",
+            organization: "Zemenay Tech",
+            period: "Sep 2025 - Jan 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Developed frontend and backend features for client-facing web applications using React.js and Node.js with daily standups, code reviews, and sprint planning."
+        },
+        {
+            title: "Formal Recommendation Letter",
+            organization: "Fanos Tech P.L.C",
+            period: "Jan 2024 - Jan 2025",
+            location: "Addis Ababa, Ethiopia",
+            description: "Awarded following successful acceptance and delivery of the municipal Code Enforcement Management System for the Addis Ababa city government."
+        },
+        {
+            title: "Competitive Hackathon Certifications",
+            organization: "Hackathons & Innovation Challenges",
+            period: "2023 - 2026",
+            location: "Ethiopia",
+            description: "More than 5 hackathon certifications and awards received for rapid architectural prototyping, teamwork, and high-impact product execution."
+        }
+    ],
     services: [
         {
             id: "web",
-            title: "Web Applications & Business Systems",
-            subtitle: "Custom business applications, management dashboards, workflow systems, and database-driven platforms.",
-            description: "Translating operational workflows into maintainable web software with responsive frontends, secure APIs, and relational data architecture.",
-            tools: ["React", "Next.js", "TypeScript", "Node.js", "Express", "Laravel", "PostgreSQL", "TailwindCSS"]
+            title: "Full-Stack Web & Business Systems",
+            subtitle: "Government portals, management dashboards, workflow automation, and relational database systems.",
+            description: "Translating operational workflows into maintainable web software with responsive frontends, secure APIs, role-based access control, and robust relational data architectures.",
+            tools: ["Laravel", "React.js", "Next.js", "Vue.js", "Node.js", "TypeScript", "PostgreSQL", "MySQL"]
         },
         {
             id: "mobile",
-            title: "Mobile Application Development",
-            subtitle: "Cross-platform applications with React Native and Expo, backed by APIs and suitable data models.",
-            description: "Mobile-first user experiences, offline state handling, domain logic validation with Jest, and end-to-end API integration.",
-            tools: ["React Native", "Expo", "TypeScript", "Jest", "Mobile UI/UX", "Offline Storage", "EAS"]
+            title: "Cross-Platform Mobile Development",
+            subtitle: "Production mobile apps built with React Native and Expo backed by secure APIs and cloud backends.",
+            description: "Engineering mobile-first user journeys, offline persistence with local caching, state management with Redux Toolkit, and domain invariant testing.",
+            tools: ["React Native", "Expo", "TypeScript", "Redux Toolkit", "Offline Caching", "EAS", "Mobile UI/UX"]
         },
         {
             id: "backend",
-            title: "Python & Backend Development",
-            subtitle: "Python/Django applications, backend services, integrations, and automation.",
-            description: "Engineering clean backend services, RESTful endpoints, robust database schemas, and scripting to eliminate manual operations.",
-            tools: ["Python", "Django", "FastAPI", "PostgreSQL", "REST APIs", "Docker", "Object-Oriented Design"]
+            title: "RESTful APIs & Backend Architecture",
+            subtitle: "Secure, scalable endpoints with Laravel, Node.js, NestJS, Django, and Flask.",
+            description: "Designing bulletproof relational schemas, multi-role authentication boundaries, audit trails, and automated background jobs.",
+            tools: ["Laravel", "Node.js", "NestJS", "Django", "Flask", "PostgreSQL", "Docker", "REST APIs"]
         },
         {
             id: "ai",
-            title: "Applied AI & Automation",
-            subtitle: "Practical AI-assisted workflows, structured data extraction, and integrating AI capabilities into useful software.",
-            description: "A developing specialization focused on practical AI-assisted workflows, structured data extraction, and integrating AI capabilities into useful software.",
-            tools: ["Python Automation", "OCR", "Pydantic", "Document Intelligence", "Model Evaluation", "Structured Extraction"]
+            title: "Applied AI & Computer Vision",
+            subtitle: "Biometric face recognition, OCR extraction, and AI-accelerated engineering.",
+            description: "Integrating intelligent computer vision with OpenCV, face identification pipelines, and leveraging modern AI-assisted tools for rapid, high-integrity development.",
+            tools: ["Python", "OpenCV", "Face Recognition", "Claude AI", "Antigravity", "Codex", "FastAPI"]
         }
     ],
     pythonAndAi: {
         title: "Python Engineering & Applied AI",
-        subtitle: "Extending full-stack foundations into backend systems, automation, and practical AI applications",
-        description: "I'm extending my software engineering foundation through Python development, with a focus on backend systems, automation, and practical AI applications. My Python work connects to real product needs, including Django-backed web applications and opportunities to automate repetitive business workflows. Alongside this, I'm building a stronger understanding of Python's object model, reusable software design, data handling, and the fundamentals needed for machine learning and applied AI. My goal is to build AI-assisted software that is not only functional, but also testable, understandable, and reliable enough to integrate into a complete product.",
+        subtitle: "Computer vision, biometric attendance, backend services, and AI-assisted development",
+        description: "Extending my full-stack engineering foundation through Python and applied AI development. Built a biometric facial recognition attendance system with OpenCV and deep learning embeddings, alongside Django and FastAPI backends. Leveraging modern AI-assisted engineering with Claude AI, Antigravity, and Codex to build testable, reliable, and high-performance software systems.",
         focusAreas: [
-            "Python language design and object-oriented programming",
-            "Dataclasses, methods, composition, iterators, and generators",
-            "Python/Django backend development",
-            "Data handling and automation",
-            "Machine learning foundations and model evaluation",
-            "Applied AI integration into existing applications"
+            "Computer vision & facial recognition biometric authentication with OpenCV",
+            "Python language craft, OOP architecture, and data pipelines",
+            "Django, Django REST Framework, and Flask backend engineering",
+            "Deterministic schema validation, OCR, and document intelligence",
+            "AI-assisted development with Claude AI, Antigravity, and Codex",
+            "Audit trails, anti-spoofing heuristics, and administrative reporting dashboards"
         ],
         approach: "Start with a real problem, choose the appropriate technique, evaluate the result, and integrate it into a maintainable system."
     },
     experiences: [
         {
-            position: "Full-Stack & Python Software Engineer",
-            company: "Freelance & Projects",
-            period: "2025 - Present",
-            location: "Ethiopia",
-            description: "Developing business systems, Python/Django backends, and Next.js platforms. Building the Wood-Carvo marketplace, exploring document intelligence pipelines, and applied AI automation.",
+            position: "Fullstack Developer (Freelance)",
+            company: "Addis Ababa City Administration, Innovation & Technology Development Bureau",
+            period: "Mar 2026 - Aug 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Designed and delivered Civic Eye, a community-driven public infrastructure reporting platform built on an evidence-first, trust-based model enabling citizens to report and validate local problems with photo and geolocation evidence. Built a secure multi-role system for citizens, moderators, and city administrators using Laravel, Vue.js, PostgreSQL, and a RESTful API backend. Collaborated directly with city officials; awarded an official freelance completion letter upon delivery.",
             responsibilities: [
-                "Architecting Python/Django backends and Next.js frontends with separated deployment on Render and Vercel",
-                "Building business-critical workflow systems and managing cross-origin communication between applications",
-                "Developing applied AI and document processing prototypes with deterministic validation and OCR",
-                "Writing maintainable, testable code adhering to clear object-oriented principles"
+                "Designed and delivered the Civic Eye public infrastructure reporting platform",
+                "Built an evidence-first verification model utilizing photo evidence and GPS geolocation coordinates",
+                "Architected a secure multi-role system for citizens, bureau moderators, and city administrative officials",
+                "Developed with Laravel, Vue.js, PostgreSQL, and robust RESTful API endpoints",
+                "Awarded an official freelance completion letter from the Innovation & Technology Development Bureau"
             ],
-            technologies: ["Python", "Django", "Next.js", "TypeScript", "PostgreSQL", "Render", "FastAPI", "Vercel"]
+            technologies: ["Laravel", "Vue.js", "PostgreSQL", "RESTful API", "Geolocation", "RBAC", "Git"]
         },
         {
-            position: "Full-Stack Software Developer",
-            company: "Contract & Operational Systems",
-            period: "2024 - 2025",
-            location: "Ethiopia",
-            description: "Engineered operational case management workflows (ICAMS/Denb) and real-time collaborative coordination tools (SyncTracker). Implemented offline-first PWA architectures with Dexie and Laravel administration.",
+            position: "Software Engineering Intern",
+            company: "Qelem Meda Technologies",
+            period: "Mar 2026 - Sep 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Contributed production-level fullstack features across multiple client projects using React.js, Node.js, and PostgreSQL in an agile team environment. Participated in sprint planning, code reviews, and technical documentation, consistently delivering maintainable code under project deadlines. Completed the structured internship programme and received a formal completion certificate and recommendation letter.",
             responsibilities: [
-                "Engineered case-management lifecycles for municipal code enforcement and field reporting",
-                "Implemented offline-first synchronization using Dexie local storage and Laravel Filament administrative tools",
-                "Modeled multi-role collaboration states and permission boundaries for team task coordination",
-                "Built responsive web interfaces and secure, role-protected API endpoints"
+                "Delivered production fullstack features using React.js, Node.js, and PostgreSQL",
+                "Collaborated actively in sprint planning, peer code reviews, and system documentation",
+                "Engineered performant, maintainable code meeting client requirements and delivery deadlines",
+                "Completed the structured internship and received a formal completion certificate and recommendation letter"
             ],
-            technologies: ["Next.js", "PWA", "Dexie.js", "Laravel", "Filament", "NestJS", "PostgreSQL", "MySQL"]
+            technologies: ["React.js", "Node.js", "PostgreSQL", "Agile", "REST APIs", "Git", "TypeScript"]
         },
         {
-            position: "Mobile & Web Application Developer",
-            company: "Fintech & Product Development",
-            period: "2023 - 2024",
-            location: "Ethiopia",
-            description: "Designed and built mobile-first applications with React Native and Expo, notably the Unique Equb digital management system for rotating savings groups.",
+            position: "Fullstack Developer (Freelance)",
+            company: "Fanos Tech P.L.C",
+            period: "Jan 2024 - Jan 2025",
+            location: "Addis Ababa, Ethiopia",
+            description: "Built the Code Enforcement Management System for the Addis Ababa city government, a Laravel and Filament platform digitizing urban rule-violation tracking and public awareness campaigns. Implemented secure, role-based data flows and full audit trails, translating complex government operational workflows into a reliable digital solution. Awarded a recommendation letter following successful project handover and client acceptance.",
             responsibilities: [
-                "Developed cross-platform mobile application architecture with React Native and Expo",
-                "Modeled traditional Equb financial workflows, contribution cycles, and invariant rules",
-                "Configured Jest test suites to verify domain logic and record consistency",
-                "Collaborated through Git, managing branches, code reviews, and structured project setups"
+                "Engineered the Code Enforcement Management System digitizing urban violation tracking",
+                "Implemented secure role-based data flows, permission barriers, and full audit logging",
+                "Built an administrative portal with Laravel Filament and integrated offline-first field synchronization",
+                "Translated complex government operational workflows into an intuitive digital experience",
+                "Awarded a formal recommendation letter following municipal acceptance and project handover"
             ],
-            technologies: ["React Native", "Expo", "TypeScript", "Jest", "Mobile UI", "Git"]
+            technologies: ["Laravel", "Filament", "PostgreSQL", "MySQL", "Next.js", "Dexie.js", "Audit Trails"]
         },
         {
-            position: "Software Engineering Foundations",
-            company: "Independent & Open Source",
-            period: "2022 - 2023",
-            location: "Ethiopia",
-            description: "Established core engineering principles in web development, relational database modeling (PostgreSQL, MySQL), and backend APIs. Built prototypes and collaborative software tools.",
+            position: "Software Engineering Intern",
+            company: "Zemenay Tech",
+            period: "Sep 2025 - Jan 2026",
+            location: "Addis Ababa, Ethiopia",
+            description: "Developed frontend and backend features for client-facing web applications using React.js and Node.js within an agile development team. Engaged in daily standups, sprint retrospectives, and peer code reviews, building strong collaborative engineering habits. Completed the internship programme and received both a completion certificate and a formal recommendation letter.",
             responsibilities: [
-                "Mastered JavaScript, TypeScript, and modern frontend frameworks",
-                "Designed relational database schemas, migrations, and RESTful APIs",
-                "Explored system design, role-based access control, and asynchronous workflows",
-                "Contributed to public and team repositories on GitHub"
+                "Engineered responsive UI components and backend REST endpoints with React.js and Node.js",
+                "Engaged in daily standups, sprint retrospectives, and peer code reviews",
+                "Strengthened testable coding practices and collaborative Git version control",
+                "Received formal completion certificate and recommendation letter upon graduation"
             ],
-            technologies: ["JavaScript", "TypeScript", "React", "Node.js", "PostgreSQL", "MySQL", "REST APIs"]
+            technologies: ["React.js", "Node.js", "Express", "JavaScript", "Agile", "Team Collaboration"]
         }
     ],
     projects: [
         {
             id: 1,
-            title: "Wood-Carvo Furniture Marketplace",
-            category: "Python · Django · Next.js · Render · Vercel",
+            title: "Civic Eye — Infrastructure Reporting & Discovery Platform",
+            category: "Laravel · Vue.js · PostgreSQL · Geolocation · REST API",
             type: "featured",
-            status: "In Development",
-            statusBadge: "Deployment in Progress",
-            technologies: "Python, Django, Next.js, PostgreSQL, Render, Vercel",
-            image: "/images/woodcarvo.jpg",
-            description: "A furniture discovery and inquiry platform for local businesses and customers in Addis Ababa. Combines a Next.js frontend with a Python/Django backend to explore practical e-commerce workflows, API integration, and separated deployments.",
-            problem: "Furniture businesses need an accessible way to present their latest products online. Customers need to browse options and ask questions without being forced through a complicated purchasing process.",
-            solution: "Catalog-first furniture marketplace combining a Next.js frontend with a Python/Django backend. The approach prioritizes product discovery and direct WhatsApp or Telegram inquiries.",
-            engineeringStory: "Organizing a monorepo, configuring frontend and backend deployments separately (Render & Vercel), cross-origin communication between deployed applications, and mobile-friendly catalog browsing.",
+            status: "Delivered & Certified",
+            statusBadge: "Government Platform",
+            technologies: "Laravel, Vue.js, PostgreSQL, RESTful API Backend, Geolocation, Multi-Role Access Control",
+            image: "/images/civic_eye.svg",
+            description: "A community-driven public infrastructure reporting platform built for the Addis Ababa City Administration, Innovation & Technology Development Bureau. Built on an evidence-first, trust-based model enabling citizens to report and validate local problems (roads, utilities, public spaces) with photo and geolocation evidence.",
+            problem: "Municipal authorities face delays identifying broken infrastructure, while citizens lack a transparent, accountable channel to submit verifiable evidence without tedious paper bureaucracy.",
+            solution: "Built a secure multi-role system for citizens, moderators, and city administrators featuring GPS coordinates, photo evidence validation, and an escalation pipeline connecting directly to municipal bureaus.",
+            engineeringStory: "Collaborated directly with city officials to align the platform with real government workflows. Awarded an official freelance completion letter upon delivery.",
             link: "https://github.com/metiinie"
         },
         {
             id: 2,
-            title: "Unique Equb Digital Management System",
-            category: "React Native · Expo · Mobile Architecture",
-            type: "featured",
-            status: "In Development",
-            statusBadge: "In Development",
-            technologies: "React Native, Expo, TypeScript, Jest, Domain Logic",
-            image: "/images/unique_equb.jpg",
-            description: "A mobile-first digital management system for Equb, the rotating savings-group model. Brings structured software workflows to a familiar financial practice, emphasizing maintainable business logic and organized architecture.",
-            problem: "Traditional contribution groups need clear information about membership, contribution cycles, records, and payout arrangements. Poorly maintained records can lead to confusion or disagreements.",
-            solution: "Mobile-first application with Expo, separating frontend and backend responsibilities with documented business invariants and Jest domain tests.",
-            engineeringStory: "Mobile-first application structure with Expo, strict domain rules, contribution consistency, and automated test setup.",
-            link: "https://github.com/metiinie/Unique_Equb_Mob_App"
+            title: "Code Enforcement Management System (ICAMS / Denb)",
+            category: "Laravel · Filament · Next.js · PWA · Dexie (Offline-First)",
+            type: "case-study",
+            status: "Production Handover",
+            statusBadge: "Government Handover",
+            technologies: "Laravel, Filament, Next.js, PWA, Dexie.js (Offline-First), PostgreSQL/MySQL, Full Audit Trails",
+            image: "/images/icams_denb.svg",
+            description: "A comprehensive municipal governance platform built for the Addis Ababa city government, digitizing urban code enforcement, illegal construction violation tracking, and public awareness campaigns.",
+            problem: "Field enforcement officers encounter spotty mobile connectivity and manual paper records, causing delays, lost citations, inconsistent audit trails, and compliance disputes.",
+            solution: "Implemented offline-first synchronization with Dexie local storage, role-based access control, secure multi-actor workflows, and an administrative panel via Laravel Filament.",
+            engineeringStory: "Awarded a formal recommendation letter from Fanos Tech P.L.C following successful handover and acceptance by Addis Ababa city authorities.",
+            link: "https://github.com/metiinie/Denb-main"
         },
         {
             id: 3,
-            title: "SyncTracker: Collaborative Workflow & Coordination",
-            category: "React Native · NestJS · PostgreSQL · Real-Time",
+            title: "Safeland Cafe — Full-Stack QR Ordering System",
+            category: "Next.js · Node.js · WebSockets / Real-Time · PostgreSQL",
             type: "featured",
-            status: "Featured Project",
-            statusBadge: "Featured Project",
-            technologies: "Expo, React Native, NestJS, PostgreSQL, Drizzle, Redis, Socket.IO",
-            image: "/images/synctracker.jpg",
-            description: "A task and workflow coordination system for teams designed around explicit responsibilities and meaningful work states (IN_SYNC, NEEDS_UPDATE, BLOCKED, HELP_REQUESTED) rather than simple to-do checklists.",
-            problem: "Collaborative tasks can become difficult to manage when responsibility, review, and help requests are not clear. Simple task status does not represent coordination bottlenecks.",
-            solution: "Explicit participant roles (Assigned By, Primary Owner, Contributors, Helpers, Reviewers, Observers) and active workflow states that trigger real-time updates.",
-            engineeringStory: "Role-based state transitions, real-time collaboration with Socket.IO and Redis, and permission boundaries protecting task actions.",
+            status: "Production-Grade Build",
+            statusBadge: "Hospitality System",
+            technologies: "Next.js, Node.js, WebSockets, PostgreSQL, QR Code Routing, Role-Based Dashboards",
+            image: "/images/safeland_cafe.svg",
+            description: "A complete, role-based QR code restaurant ordering platform for Safeland Cafe, Hawassa, Ethiopia. Customers scan a table QR code, browse menus, and order without app downloads. Kitchen, waiters, and managers each have real-time synchronized dashboards.",
+            problem: "Dining bottlenecks during peak cafe hours lead to order errors, delayed table service, and lack of real-time visibility between floor waiters and kitchen staff.",
+            solution: "Zero-download QR ordering for patrons synchronized via real-time WebSockets with live kitchen Kanban stations and manager reporting dashboards.",
+            engineeringStory: "Structured multi-station state management with low latency, resilient reconnects, and role-separated operational views.",
             link: "https://github.com/metiinie"
         },
         {
             id: 4,
-            title: "ICAMS / Denb: Code Enforcement & Case Management",
-            category: "Next.js · PWA · Dexie (Offline-First) · Laravel · Filament",
-            type: "case-study",
-            status: "Private Case Study",
-            statusBadge: "Private Case Study",
-            technologies: "Next.js, PWA, Dexie.js (Offline-First), Laravel, Filament, MySQL",
-            image: "/images/icams_denb.svg",
-            description: "A case-management project focused on structured compliance workflows and field operations. Combines a progressive web application with local Dexie storage and a Laravel administrative backend.",
-            problem: "Compliance operations involve many actors, case updates, field reports, and administrative decisions where field connectivity is often unreliable.",
-            solution: "Progressive web app with Dexie for local storage, offline-first sync boundaries, and a Laravel API with Filament for administrative review.",
-            engineeringStory: "Case lifecycle and role-based workflows, offline synchronization boundaries, and sensitive data separation.",
-            link: "https://github.com/metiinie/Denb-main"
+            title: "WOOD CARVO — Furniture Workshop Showcase & Inquiry Website",
+            category: "Django 5 · Next.js · TypeScript · Tailwind · next-intl · Render & Vercel",
+            type: "featured",
+            status: "Bespoke Platform",
+            statusBadge: "E-Commerce & Showcase",
+            technologies: "Django 5, DRF, django-unfold, Next.js (App Router), TypeScript, Tailwind CSS, next-intl, Cloudinary, PostgreSQL (Neon)",
+            image: "/images/woodcarvo.jpg",
+            description: "A fast, lightweight showcase and inquiry website for WOOD CARVO, a bespoke furniture workshop in Addis Ababa ('Your Vision, Our Craft'). Designed for Ethiopian mobile networks with trilingual internationalization (English, Amharic, Afaan Oromo), automated Telegram broadcasting, and direct WhatsApp inquiry flows.",
+            problem: "Local custom manufacturers need rapid, image-rich catalogs that perform smoothly on mobile data networks, paired with direct conversational commerce via Telegram and WhatsApp.",
+            solution: "Edge ISR Next.js frontend with trilingual routing (/en, /am, /om), backed by a modular Django REST Framework backend with separated Render/Vercel deployment and Cloudinary media optimization.",
+            engineeringStory: "Monorepo architecture, edge ISR caching, Ethiopic script conditional font loading, and automated social inquiry webhooks.",
+            link: "https://github.com/metiinie"
         },
         {
             id: 5,
-            title: "Lib le Lib: Confidentiality-First Matching Platform",
-            category: "React Native · Expo · NestJS · PostgreSQL · Admin Web",
+            title: "Ethiopian Farmers Market Platform",
+            category: "Next.js · Node.js · PostgreSQL · B2B Agricultural Marketplace",
             type: "case-study",
-            status: "In Development — Security Review",
-            statusBadge: "Security Review",
-            technologies: "React Native, Expo, NestJS, PostgreSQL (Neon), Prisma/Drizzle",
-            image: "/images/liblelib.svg",
-            description: "A privacy-conscious matching platform developed around mobile access, backend services, and administrative workflows. Focuses on user-controlled disclosure and server-side authorization boundaries.",
-            problem: "Platforms handling sensitive personal information require strict control over who can access each field, when data is revealed, and how privacy preferences are respected.",
-            solution: "Backend-enforced access controls, explicit disclosure states, anonymized discovery views, and an audited administrative interface.",
-            engineeringStory: "Server-side privacy enforcement rather than frontend hiding, profile disclosure controls, and photo identifier hashing.",
+            status: "B2B Trade Facilitation",
+            statusBadge: "AgriTech B2B",
+            technologies: "Next.js, Node.js, Express, PostgreSQL, Prisma, Role-Based Commerce",
+            image: "/images/farmers_market.svg",
+            description: "A facilitated B2B agricultural marketplace connecting Ethiopian farmers directly with business buyers (restaurants, hotels, wholesalers, exporters, processors, and retailers) to make agricultural trade transparent, trustworthy, and efficient.",
+            problem: "High intermediary markups and opaque pricing disadvantage both farmers and commercial buyers. Traditional marketplace clones fail by trying to replace the physical logistics too early.",
+            solution: "Structures transactions and proves demand: farmers list available produce, business buyers discover and place batch orders, and the platform transparently records trade approvals, inspection, and fulfillment status.",
+            engineeringStory: "Designed around structured negotiation and transparent fulfillment milestones rather than complex disintermediation.",
             link: "https://github.com/metiinie"
         },
         {
             id: 6,
-            title: "Business Document Intelligence",
-            category: "Python · FastAPI · OCR · PostgreSQL · Extraction",
+            title: "Face Recognition-Based Attendance System",
+            category: "Python · OpenCV · Facial Recognition · Biometric Dashboard",
             type: "exploration",
-            status: "Applied AI Prototype",
-            statusBadge: "Applied AI Prototype",
-            technologies: "Python, FastAPI, PostgreSQL, Tesseract OCR, Pydantic, Schema Validation",
-            image: "/images/doc_intel.svg",
-            description: "A document-processing service that extracts structured fields from invoices or receipts, validates extracted data against schema invariants, and flags low-confidence predictions for human verification.",
-            problem: "Documents contain inconsistent formatting, low-quality photos, missing fields, and ambiguous numbers. An AI demo is useless if business data is inaccurate.",
-            solution: "Combines deterministic parsing, OCR, and rigid Pydantic schema validation. Surfaces uncertainty scores to allow seamless human-in-the-loop verification.",
-            engineeringStory: "Bridging Python backend engineering with applied AI: reproducible evaluation dataset, measured field accuracy, and audit logging.",
+            status: "Biometric AI System",
+            statusBadge: "Computer Vision & AI",
+            technologies: "Python, OpenCV, Face Recognition, Deep Learning, Facial Embeddings, SQLite/PostgreSQL",
+            image: "/images/face_attendance.svg",
+            description: "A biometric attendance management system that automates employee and student attendance logging using facial recognition, eliminating manual sign-in errors and preventing proxy attendance fraud.",
+            problem: "Manual paper sign-in sheets and punch cards suffer from buddy-punching, forgery, and time-consuming administrative data entry.",
+            solution: "Automated real-time camera face identification against enrolled employee embeddings, auto-logging timestamps into an administrative management dashboard with exportable reporting.",
+            engineeringStory: "Optimized frame-rate recognition pipelines, lighting variation normalization, and anti-spoofing heuristics.",
             link: "https://github.com/metiinie"
         },
         {
             id: 7,
-            title: "DU Verifay: Receipt Data Extraction",
-            category: "Python · OCR · Anomaly Detection · Verification",
-            type: "exploration",
-            status: "Product Exploration / Prototype",
-            statusBadge: "Product Exploration",
-            technologies: "Python, OCR, Anomaly Detection, Mobile Verification, REST APIs",
-            image: "/images/du_verifay.svg",
-            description: "An exploratory receipt-data extraction and verification system, designed to parse transaction references, amounts, and dates from payment confirmations with audit-trail validation.",
-            problem: "Extracting transaction references from payment screenshots requires precise OCR, while preventing spoofing requires authoritative provider confirmation.",
-            solution: "Two-stage verification architecture: AI-driven extraction and anomaly detection, coupled with verifiable ledger reconciliation rules.",
-            engineeringStory: "Distinguishing AI-assisted extraction from authoritative payment verification—an essential engineering decision.",
+            title: "Lib le Lib — Privacy-First HIV Support Platform",
+            category: "React Native · Expo · NestJS · PostgreSQL (Neon)",
+            type: "case-study",
+            status: "Confidentiality Architecture",
+            statusBadge: "Healthcare & Privacy",
+            technologies: "React Native, Expo, NestJS, PostgreSQL (Neon), Role-Based Access Control, Data Encryption",
+            image: "/images/liblelib.svg",
+            description: "A privacy-first mobile support and connection platform for people living with HIV, featuring confidential medical verification before entry. Delivered iOS and Android applications plus an audited administrative dashboard with strict data security controls.",
+            problem: "Stigmatized medical conditions demand extreme guarantees of privacy, anonymity, and strict access controls before sensitive user profiles can interact.",
+            solution: "Confidential verification gates, zero-leak profile rendering, server-side disclosure rules, and end-to-end data protection boundaries.",
+            engineeringStory: "Implemented cryptographic user identifiers and strict administrative separation of verified health records.",
             link: "https://github.com/metiinie"
         },
         {
             id: 8,
-            title: "ArifSmart Menu & Safeland Cafe",
-            category: "Next.js · PWA · QR Ordering · Real-time Workflows",
+            title: "Multi-Vendor Food Delivery Platform",
+            category: "React · Redux Toolkit · Node.js · Cloud Functions · Real-Time",
             type: "exploration",
-            status: "Product Exploration / Concept",
-            statusBadge: "Product Exploration",
-            technologies: "Next.js, PWA, Node.js, WebSockets, PostgreSQL",
-            image: "/images/arifsmart_menu.svg",
-            description: "A restaurant-ordering product direction focused on making menus and ordering workflows accessible through QR codes, with multi-branch management and live kitchen Kanban coordination.",
-            problem: "Taking orders and keeping dining staff and kitchen stations synchronized across multi-branch restaurant locations.",
-            solution: "QR-code menu sessions connected to real-time order tracking and kitchen fulfillment queues.",
-            engineeringStory: "Modeling the multi-restaurant hierarchy (Restaurant -> Branch -> Table -> Order) and maintaining order ownership consistency.",
+            status: "Multi-Role Logistics",
+            statusBadge: "Logistics & Delivery",
+            technologies: "React.js, Redux Toolkit, Node.js, Express, Cloud Functions, Push Notifications, Live Dispatch",
+            image: "/images/food_delivery.svg",
+            description: "A multi-role platform connecting customers, delivery couriers, and restaurant kitchen managers with real-time order tracking, live status changes, and in-app communications.",
+            problem: "Tri-party synchronization between customer orders, kitchen prep times, and driver pickup routes requires seamless real-time state orchestration.",
+            solution: "Centralized Redux Toolkit state machine, push notifications via Node.js cloud functions, and real-time order lifecycle tracking.",
+            engineeringStory: "Handled asynchronous dispatch transitions and dynamic status notification flows across mobile and desktop clients.",
             link: "https://github.com/metiinie"
+        },
+        {
+            id: 9,
+            title: "Unique Equb Digital Management System",
+            category: "React Native · Expo · TypeScript · Jest Domain Logic",
+            type: "featured",
+            status: "FinTech Architecture",
+            statusBadge: "Community Finance",
+            technologies: "React Native, Expo, TypeScript, Jest, Domain-Driven Design, Mobile UI",
+            image: "/images/unique_equb.jpg",
+            description: "A mobile-first digital management platform for traditional Ethiopian rotating savings groups (Equb). Brings structured accounting, transparent payout lotteries, and automated record-keeping to community finance.",
+            problem: "Informal savings groups suffer from disputed contributions, lost paper records, and lack of auditable draw schedules.",
+            solution: "Expo-powered mobile app with verifiable contribution cycles, immutable payout lottery records, and comprehensive Jest domain logic tests.",
+            engineeringStory: "Rigorous domain modeling ensuring round invariance, lottery fairness, and automated offline-ready calculation.",
+            link: "https://github.com/metiinie/Unique_Equb_Mob_App"
         }
     ],
     contact: {
-        email: "awol.ayalew.dev@gmail.com",
+        email: "abumahilkerim@gmail.com",
+        phone: "+251 918 982 161",
+        location: "Addis Ababa, Ethiopia",
         github: "https://github.com/metiinie",
-        linkedin: "https://www.linkedin.com/in/awolbuilds/",
-        portfolio: "https://orion-personal-portfolio.vercel.app/",
+        linkedin: "https://www.linkedin.com/in/awolbuilds",
+        portfolio: "https://orion-personal-portfolio.vercel.app",
         twitter: "https://x.com/awolbuilds",
         facebook: "https://www.facebook.com/awolbuilds",
         instagram: "https://www.instagram.com/awolbuilds"
     },
+    whatIDo: [
+        {
+            id: "full-stack",
+            num: "01",
+            title: "FULL-STACK DEVELOPER",
+            description: "End-to-end web applications, state management & RESTful APIs",
+            details: "Engineering production web applications using React.js, Next.js, and Vue.js on the frontend, backed by Node.js, Express, and Laravel. Implementing secure role-based access control, relational database modeling, and performant state flows.",
+            tools: ["React.js", "Next.js", "Vue.js", "Node.js", "Laravel", "PostgreSQL", "TypeScript", "REST APIs"]
+        },
+        {
+            id: "mobile",
+            num: "02",
+            title: "CROSS-PLATFORM MOBILE DEVELOPER",
+            description: "Mobile applications with React Native, Expo & Redux Toolkit",
+            details: "Building high-performance iOS and Android applications. Developing offline-first data caching, push notifications, real-time messaging, and domain invariant logic verified with automated test suites.",
+            tools: ["React Native", "Expo", "Redux Toolkit", "TypeScript", "Jest", "Mobile UI/UX", "Offline Caching"]
+        },
+        {
+            id: "backend-api",
+            num: "03",
+            title: "BACKEND & API ENGINEER",
+            description: "Scalable RESTful services, database engineering & audit trails",
+            details: "Architecting resilient backends with Laravel, NestJS, Node.js, and Django. Designing relational database schemas in PostgreSQL (standard & Neon serverless) and MySQL, with full audit trails and role-based permissions.",
+            tools: ["Laravel", "NestJS", "Node.js", "Django", "Flask", "PostgreSQL", "MySQL", "Docker"]
+        },
+        {
+            id: "business-systems",
+            num: "04",
+            title: "GOVERNMENT & BUSINESS SYSTEMS",
+            description: "Mission-critical municipal platforms & multi-actor workflows",
+            details: "Translating complex operational and regulatory workflows into reliable digital solutions. Experienced in government deployments like Civic Eye and the Code Enforcement Management System for the Addis Ababa city administration.",
+            tools: ["Filament", "PWA", "Dexie.js", "Multi-Role RBAC", "System Design", "Audit Logging", "Compliance"]
+        },
+        {
+            id: "applied-ai",
+            num: "05",
+            title: "AI & COMPUTER VISION SYSTEMS",
+            description: "Biometric facial recognition, OpenCV & AI-assisted development",
+            details: "Developing computer vision solutions with Python and OpenCV for automated facial attendance tracking. Accelerating production workflows using cutting-edge AI-assisted tools including Claude AI, Antigravity, and Codex.",
+            tools: ["Python", "OpenCV", "Face Recognition", "Claude AI", "Antigravity", "Codex", "FastAPI"]
+        }
+    ],
     skills: {
         develop: {
-            title: "PYTHON & APPLIED AI",
-            description: "Backend systems, automation & intelligent workflows",
-            details: "Extending my full-stack foundation through Python and Django, with a growing focus on applied AI, automation, and reliable data extraction. Focusing on testable, maintainable systems that solve practical business needs.",
-            tools: ["Python", "Django", "FastAPI", "PostgreSQL", "REST APIs", "Automation", "OCR", "Pydantic", "Model Evaluation"]
+            title: "FULL-STACK & MOBILE ENGINEERING",
+            description: "Web apps, mobile engineering, APIs & municipal systems",
+            details: "3 years of experience developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Building secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions.",
+            tools: ["JavaScript", "TypeScript", "PHP", "Python", "React.js", "Next.js", "Vue.js", "React Native", "Laravel", "Node.js", "NestJS", "Django", "PostgreSQL", "MySQL", "Docker"]
         },
         design: {
-            title: "FULL-STACK & MOBILE",
-            description: "Web applications, mobile engineering & business systems",
-            details: "Building custom business applications, management dashboards, workflow systems, and cross-platform mobile apps using React, Next.js, React Native, and Expo. Designing clear data models and reliable user journeys.",
-            tools: ["React", "Next.js", "TypeScript", "React Native", "Expo", "Laravel", "NestJS", "TailwindCSS", "Docker", "Git"]
+            title: "GOVERNMENT PLATFORMS & APPLIED AI",
+            description: "Municipal workflows, evidence-based systems & computer vision",
+            details: "Proven track record delivering Civic Eye for the Addis Ababa City Administration (Innovation & Technology Development Bureau) and the Code Enforcement Management System with Fanos Tech P.L.C, alongside biometric AI with OpenCV.",
+            tools: ["Filament", "OpenCV", "Biometrics", "Geolocation", "Audit Trails", "Dexie.js", "CI/CD", "Git", "Postman", "Claude AI", "Antigravity"]
         },
         categories: {
-            web: ["JavaScript", "TypeScript", "React", "Next.js", "Vue", "HTML5", "CSS3", "TailwindCSS"],
-            mobile: ["React Native", "Expo", "Mobile Architecture", "Offline Caching"],
-            backend: ["Python", "Django", "FastAPI", "Laravel", "NestJS", "Express", "Node.js"],
-            data: ["PostgreSQL", "MySQL", "SQL", "Drizzle ORM", "Prisma", "Redis"],
-            delivery: ["Git", "GitHub", "Docker", "Vercel", "Render", "EAS", "Linux"],
-            appliedAi: ["Python Automation", "Document Intelligence", "OCR", "Schema Validation", "Model Evaluation"]
+            languages: ["JavaScript", "TypeScript", "PHP", "Python", "HTML5", "CSS3", "SQL"],
+            frontend: ["React.js", "Next.js", "Vue.js", "React Native", "Bootstrap", "Redux Toolkit", "TailwindCSS"],
+            backend: ["Node.js", "NestJS", "Laravel", "Django", "Flask", "Express", "REST APIs"],
+            databases: ["PostgreSQL (standard & Neon)", "MySQL", "MongoDB", "Firestore", "Redis"],
+            devops: ["Docker", "CI/CD pipelines", "Firebase", "IIS", "Vercel", "Render", "Git", "GitHub"],
+            toolsAndAi: ["OpenCV", "Filament", "Postman", "VS Code", "Claude AI", "Antigravity", "Codex"],
+            humanLanguages: ["English (Professional working proficiency)", "Amharic (Native)"],
+            strengths: ["Problem solving", "Clear communication", "Team collaboration", "Time management", "Adaptability", "Attention to detail", "Continuous learning"]
         }
     }
 };

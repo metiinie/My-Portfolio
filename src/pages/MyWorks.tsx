@@ -24,7 +24,7 @@ const MyWorks = () => {
           Engineered <span>Works</span>
         </h1>
         <p className="myworks-subtitle">
-          Practical systems, mobile apps, operational case studies, and applied AI explorations by Awol Ibrahim Ayalew.
+          Government platforms, cross-platform mobile apps, operational case studies, and applied AI systems by Awol Ibrahim Ayalew.
         </p>
 
         {/* Filter Navigation */}
@@ -41,21 +41,21 @@ const MyWorks = () => {
             onClick={() => setActiveFilter("featured")}
             data-cursor="disable"
           >
-            Featured Apps (3)
+            Featured Systems ({config.projects.filter((p) => p.type === "featured").length})
           </button>
           <button
             className={`filter-btn ${activeFilter === "case-study" ? "active" : ""}`}
             onClick={() => setActiveFilter("case-study")}
             data-cursor="disable"
           >
-            Case Studies (2)
+            Case Studies ({config.projects.filter((p) => p.type === "case-study").length})
           </button>
           <button
             className={`filter-btn ${activeFilter === "exploration" ? "active" : ""}`}
             onClick={() => setActiveFilter("exploration")}
             data-cursor="disable"
           >
-            Explorations &amp; AI (3)
+            Explorations &amp; Vision ({config.projects.filter((p) => p.type === "exploration").length})
           </button>
         </div>
       </div>

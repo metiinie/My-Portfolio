@@ -1,30 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { config } from "../config";
 
+interface WhatIDoItem {
+  num: string;
+  title: string;
+  description: string;
+  details: string;
+  tools: string[];
+}
+
 const WhatIDo = () => {
-  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
-    containerRef.current[index] = el;
-  };
-  useEffect(() => {
-    if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
-      });
-    }
-    return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
-      });
-    };
-  }, []);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const items: WhatIDoItem[] = config.whatIDo;
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -37,104 +26,40 @@ const WhatIDo = () => {
       </div>
       <div className="what-box">
         <div className="what-box-in">
-          <div className="what-border2">
-            <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-            </svg>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
+          {items.map((item, index) => {
+            const isActive = activeIdx === index;
+            return (
+              <div
+                key={index}
+                className={`what-content ${isActive ? "what-content-active" : ""}`}
+                onMouseEnter={() => setActiveIdx(index)}
+                onClick={() => setActiveIdx(activeIdx === index ? -1 : index)}
+              >
+                <div className="what-corner"></div>
 
-            <div className="what-content-in">
-              <h3>{config.skills.develop.title}</h3>
-              <h4>{config.skills.develop.description}</h4>
-              <p>
-                {config.skills.develop.details}
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                {config.skills.develop.tools.map((tool, index) => (
-                  <div key={index} className="what-tags">{tool}</div>
-                ))}
+                <div className="what-content-header">
+                  <span className="what-num">{item.num}</span>
+                  <div className="what-title-wrap">
+                    <h3>{item.title}</h3>
+                    <h4>{item.description}</h4>
+                  </div>
+                  <div className="what-arrow"></div>
+                </div>
+
+                <div className="what-content-details">
+                  <p>{item.details}</p>
+                  <h5>Skillset &amp; tools</h5>
+                  <div className="what-content-flex">
+                    {item.tools.map((tool, tIdx) => (
+                      <div key={tIdx} className="what-tags">
+                        {tool}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>{config.skills.design.title}</h3>
-              <h4>{config.skills.design.description}</h4>
-              <p>
-                {config.skills.design.details}
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                {config.skills.design.tools.map((tool, index) => (
-                  <div key={index} className="what-tags">{tool}</div>
-                ))}
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -142,18 +67,3 @@ const WhatIDo = () => {
 };
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}
