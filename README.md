@@ -127,6 +127,16 @@ Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience ac
 
 ---
 
+## 📂 Project Structure
+
+```text
+├── frontend/          # React 18 + TypeScript + Vite + Three.js client application
+├── backend/           # Node.js / Serverless API service (AI chat persona endpoint)
+└── README.md          # Project documentation
+```
+
+---
+
 ## 🏃 Local Development
 
 ```bash
@@ -134,13 +144,17 @@ Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience ac
 git clone https://github.com/metiinie/My_Personal_Portfolio.git
 cd My_Personal_Portfolio
 
-# Install dependencies
-npm install
-
-# Run development server
+# 1. Start Backend Server
+cd backend
+cp .env.example .env   # Add your GROQ_API_KEY
 npm run dev
 
-# Build production bundle
+# 2. Start Frontend Application (in a new terminal)
+cd frontend
+npm install
+npm run dev
+
+# Build production frontend bundle
 npm run build
 ```
 

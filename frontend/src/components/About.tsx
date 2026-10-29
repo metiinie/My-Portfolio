@@ -9,6 +9,13 @@ const About = () => {
         <p className="para">
           {config.about.description}
         </p>
+        <div className="about-roles">
+          {config.developer.roles.map((role) => (
+            <span key={role} className="about-role-pill">
+              {role}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

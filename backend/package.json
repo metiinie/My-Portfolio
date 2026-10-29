@@ -1,0 +1,16 @@
+{
+  "name": "moncy-portfolio-backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend API service for Awol Ibrahim Ayalew Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

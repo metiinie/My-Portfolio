@@ -16,12 +16,14 @@ const WhatIDo = () => {
 
   return (
     <div className="whatIDO">
-      <div className="what-box">
-        <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            &nbsp;I<span className="do-h2"> DO</span>
-          </div>
+      <div className="what-box what-title-box">
+        <h2 className="what-title">
+          <span className="what-title-line">
+            W<span className="hat-h2">HAT</span>
+          </span>
+          <span className="what-title-line">
+            I<span className="do-h2"> DO</span>
+          </span>
         </h2>
       </div>
       <div className="what-box">

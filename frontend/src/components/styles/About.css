@@ -99,3 +99,45 @@
     line-height: 2.7rem;
   }
 }
+
+
+/* 5 Key Role Badges */
+.about-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.about-role-pill {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--accentColor, #c2a4ff);
+  background: rgba(194, 164, 255, 0.08);
+  border: 1px solid rgba(194, 164, 255, 0.22);
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.about-role-pill:hover {
+  background: rgba(194, 164, 255, 0.18);
+  border-color: rgba(194, 164, 255, 0.5);
+  box-shadow: 0 0 16px rgba(194, 164, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+@media only screen and (min-width: 1025px) {
+  .about-roles {
+    margin-top: 22px;
+    gap: 12px;
+  }
+  .about-role-pill {
+    font-size: 0.9vw;
+    padding: 7px 16px;
+  }
+}

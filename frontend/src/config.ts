@@ -1,8 +1,8 @@
 export const config = {
     developer: {
         name: "Awol",
-        fullName: "Awol Ibrahim Ayalew",
-        initials: "AIA",
+        fullName: "Awol Ibrahim",
+        initials: "AI",
         title: "Full-Stack Web & Cross-Platform Mobile Developer",
         subtitle: "3 Years Experience · Web Apps, Mobile Engineering, RESTful APIs & Business Management Systems",
         headline: "I build secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions.",
@@ -12,22 +12,23 @@ export const config = {
         roles: [
             "Full-Stack Web Developer",
             "Cross-Platform Mobile Developer",
-            "Backend & API Engineer",
-            "Government Systems Architect"
+            "Scalable ERP Systems Engineer",
+            "Government Systems Architect",
+            "AI & Intelligent Solutions Engineer"
         ],
         whatIBuild: [
             "Full-Stack Web Applications",
             "Cross-Platform Mobile Apps",
             "Scalable ERP Systems",
             "Government & Business Systems",
-            "Secure RESTful APIs & Services"
+            "AI-Powered Intelligent Solutions"
         ],
         careers: [
             "FULL-STACK DEVELOPER",
             "CROSS-PLATFORM MOBILE DEVELOPER",
-            "BACKEND & API ENGINEER",
+            "SCALABLE ERP SYSTEMS ENGINEER",
             "GOVERNMENT SYSTEMS ARCHITECT",
-            "AI-ASSISTED SOFTWARE DEVELOPER"
+            "AI & INTELLIGENT SOLUTIONS DEVELOPER"
         ]
     },
     social: {
@@ -44,15 +45,15 @@ export const config = {
     },
     about: {
         title: "About Me",
-        subtitle: "Full-Stack Foundations · Cross-Platform Mobile · Government & Enterprise Systems",
-        description: "I'm a Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. I specialize in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex operational workflows into practical, reliable, and user-friendly software. Having contributed to critical platforms including Civic Eye for the Addis Ababa City Administration and a municipal Code Enforcement Management System, I bring a sharp focus on clean code, system reliability, data security, and productive agile collaboration across the entire software development lifecycle.",
+        subtitle: "Full-Stack Web · Cross-Platform Mobile · Scalable ERP · Government Systems · Applied AI",
+        description: "I'm a Full-Stack Web, Cross-Platform Mobile, and Applied AI Developer with 3 years of experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. I specialize in developing full-stack web applications, cross-platform mobile apps, scalable ERP architectures, mission-critical government and business systems, and AI-powered intelligent solutions. Skilled in building secure, role-based platforms that translate complex operational workflows into practical, reliable, and user-friendly software. Having contributed to critical platforms including Civic Eye for the Addis Ababa City Administration and a municipal Code Enforcement Management System alongside computer vision biometric systems, I bring a sharp focus on clean code, system reliability, data security, and productive agile collaboration across the entire software development lifecycle.",
         approach: "Understand the problem. Model multi-role permissions and data integrity. Build clean, maintainable code. Test critical paths. Deploy thoughtfully and refine through real-world feedback.",
         whatIBuild: [
             "Secure multi-role web applications and municipal management dashboards",
             "Cross-platform mobile applications with React Native and Expo",
+            "Scalable ERP architectures and enterprise business management systems",
             "Resilient RESTful APIs and backend services with Laravel, Node.js, and Django",
-            "Relational database schemas with PostgreSQL (including Neon) and MySQL",
-            "AI-assisted developer workflows and computer vision biometric systems"
+            "AI-powered intelligent solutions and biometric computer vision systems"
         ]
     },
     education: {
@@ -359,7 +360,7 @@ export const config = {
         {
             id: "full-stack",
             num: "01",
-            title: "FULL-STACK DEVELOPER",
+            title: "FULL-STACK WEB DEVELOPER",
             description: "End-to-end web applications, state management & RESTful APIs",
             details: "Engineering production web applications using React.js, Next.js, and Vue.js on the frontend, backed by Node.js, Express, and Laravel. Implementing secure role-based access control, relational database modeling, and performant state flows.",
             tools: ["React.js", "Next.js", "Vue.js", "Node.js", "Laravel", "PostgreSQL", "TypeScript", "REST APIs"]
@@ -373,12 +374,12 @@ export const config = {
             tools: ["React Native", "Expo", "Redux Toolkit", "TypeScript", "Jest", "Mobile UI/UX", "Offline Caching"]
         },
         {
-            id: "backend-api",
+            id: "erp-systems",
             num: "03",
-            title: "BACKEND & API ENGINEER",
-            description: "Scalable RESTful services, database engineering & audit trails",
-            details: "Architecting resilient backends with Laravel, NestJS, Node.js, and Django. Designing relational database schemas in PostgreSQL (standard & Neon serverless) and MySQL, with full audit trails and role-based permissions.",
-            tools: ["Laravel", "NestJS", "Node.js", "Django", "Flask", "PostgreSQL", "MySQL", "Docker"]
+            title: "SCALABLE ERP SYSTEMS ENGINEER",
+            description: "Modular enterprise resource planning, workflow automation & data pipelines",
+            details: "Designing modular, role-separated ERP platforms that streamline inventory, procurement, finance, and operational workflows. Integrating automated audit trails, background jobs, database optimization, and scalable multi-tenant architectures.",
+            tools: ["Laravel", "NestJS", "Node.js", "PostgreSQL", "MySQL", "Docker", "Redis", "Workflow Automation"]
         },
         {
             id: "business-systems",
@@ -389,12 +390,12 @@ export const config = {
             tools: ["Filament", "PWA", "Dexie.js", "Multi-Role RBAC", "System Design", "Audit Logging", "Compliance"]
         },
         {
-            id: "applied-ai",
+            id: "ai-solutions",
             num: "05",
-            title: "AI & COMPUTER VISION SYSTEMS",
-            description: "Biometric facial recognition, OpenCV & AI-assisted development",
-            details: "Developing computer vision solutions with Python and OpenCV for automated facial attendance tracking. Accelerating production workflows using cutting-edge AI-assisted tools including Claude AI, Antigravity, and Codex.",
-            tools: ["Python", "OpenCV", "Face Recognition", "Claude AI", "Antigravity", "Codex", "FastAPI"]
+            title: "AI & INTELLIGENT SOLUTIONS ENGINEER",
+            description: "Computer vision, biometric verification & AI-powered intelligent features",
+            details: "Developing computer vision solutions with Python and OpenCV for automated facial attendance tracking. Architecting AI-powered features, document intelligence, and leveraging cutting-edge AI-assisted tools including Claude AI, Antigravity, and Codex.",
+            tools: ["Python", "OpenCV", "Face Recognition", "FastAPI", "Claude AI", "Antigravity", "Codex", "AI Workflows"]
         }
     ],
     skills: {

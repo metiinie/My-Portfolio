@@ -1,6 +1,7 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import "./styles/Landing.css";
 import { config } from "../config";
+import { lenis } from "./Navbar";
 
 const BUILD_ITEMS = config.developer.whatIBuild;
 
@@ -28,6 +29,17 @@ const Landing = ({ children }: PropsWithChildren) => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSectionScroll = (e: React.MouseEvent<HTMLAnchorElement>, selector: string) => {
+    e.preventDefault();
+    const target = document.querySelector(selector) as HTMLElement | null;
+    if (!target) return;
+    if (window.innerWidth > 768 && lenis) {
+      lenis.scrollTo(target, { offset: 0, duration: 1.5 });
+    } else {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <div className="landing-section" id="landingDiv">
@@ -36,7 +48,7 @@ const Landing = ({ children }: PropsWithChildren) => {
             <h2>Hello! I'm</h2>
             <h1>
               {firstName.toUpperCase()}
-              {' '}
+              {" "}
               <br />
               {lastName && <span>{lastName.toUpperCase()}</span>}
             </h1>
@@ -54,10 +66,20 @@ const Landing = ({ children }: PropsWithChildren) => {
               </h2>
             </div>
             <div className="landing-actions">
-              <a href="#work" className="landing-btn landing-btn-primary" data-cursor="disable">
+              <a
+                href="#work"
+                onClick={(e) => handleSectionScroll(e, "#work")}
+                className="landing-btn landing-btn-primary"
+                data-cursor="disable"
+              >
                 View My Work →
               </a>
-              <a href="#contact" className="landing-btn landing-btn-secondary" data-cursor="disable">
+              <a
+                href="#contact"
+                onClick={(e) => handleSectionScroll(e, "#contact")}
+                className="landing-btn landing-btn-secondary"
+                data-cursor="disable"
+              >
                 Connect
               </a>
             </div>
