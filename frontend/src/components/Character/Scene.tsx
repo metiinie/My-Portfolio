@@ -48,6 +48,8 @@ const Scene = () => {
       let mixer: THREE.AnimationMixer;
       let loadedCharacter: THREE.Object3D | null = null;
       let rafId: number;
+      let hasFinishedLoading = false;
+      let introTimer: ReturnType<typeof setTimeout> | undefined;
 
       const clock = new THREE.Clock();
 
@@ -61,24 +63,51 @@ const Scene = () => {
         }
       };
 
-      loadCharacter().then((gltf) => {
-        if (gltf) {
-          const animations = setAnimations(gltf);
-          hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
-          mixer = animations.mixer;
-          loadedCharacter = gltf.scene;
-          scene.add(loadedCharacter);
-          headBone = loadedCharacter.getObjectByName("spine006") || null;
-          screenLight = loadedCharacter.getObjectByName("screenlight") || null;
-          progress.loaded().then(() => {
-            setTimeout(() => {
-              light.turnOnLights();
-              animations.startIntro();
-            }, 2500);
-          });
-          window.addEventListener("resize", onResize);
+      // Safety fallback: ensure clients never wait more than ~2.2s if network/GPU is slow
+      const maxWaitTimer = setTimeout(() => {
+        if (!hasFinishedLoading) {
+          hasFinishedLoading = true;
+          progress.loaded();
         }
-      });
+      }, 2200);
+
+      loadCharacter()
+        .then((gltf) => {
+          clearTimeout(maxWaitTimer);
+          if (gltf) {
+            const animations = setAnimations(gltf);
+            hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
+            mixer = animations.mixer;
+            loadedCharacter = gltf.scene;
+            scene.add(loadedCharacter);
+            headBone = loadedCharacter.getObjectByName("spine006") || null;
+            screenLight = loadedCharacter.getObjectByName("screenlight") || null;
+
+            if (!hasFinishedLoading) {
+              hasFinishedLoading = true;
+              progress.loaded().then(() => {
+                introTimer = setTimeout(() => {
+                  light.turnOnLights();
+                  animations.startIntro();
+                }, 1450);
+              });
+            } else {
+              // Loader already completed via maxWaitTimer; reveal character immediately
+              introTimer = setTimeout(() => {
+                light.turnOnLights();
+                animations.startIntro();
+              }, 300);
+            }
+            window.addEventListener("resize", onResize);
+          }
+        })
+        .catch(() => {
+          clearTimeout(maxWaitTimer);
+          if (!hasFinishedLoading) {
+            hasFinishedLoading = true;
+            progress.loaded();
+          }
+        });
 
       let mouse = { x: 0, y: 0 },
         interpolation = { x: 0.1, y: 0.2 };
@@ -132,6 +161,8 @@ const Scene = () => {
       return () => {
         cancelAnimationFrame(rafId);
         clearTimeout(debounce);
+        clearTimeout(maxWaitTimer);
+        clearTimeout(introTimer);
         scene.clear();
         renderer.dispose();
         window.removeEventListener("resize", onResize);

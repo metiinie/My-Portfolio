@@ -26,6 +26,7 @@ const setCharacter = (
         loader.load(
           blobUrl,
           async (gltf) => {
+            URL.revokeObjectURL(blobUrl);
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);
             character.traverse((child: any) => {
@@ -35,7 +36,7 @@ const setCharacter = (
                 child.receiveShadow = false;
                 mesh.frustumCulled = true;
                 if (mesh.material && !Array.isArray(mesh.material)) {
-                  (mesh.material as THREE.ShaderMaterial).precision = 'mediump';
+                  (mesh.material as THREE.ShaderMaterial).precision = "mediump";
                 }
               }
             });
@@ -48,6 +49,7 @@ const setCharacter = (
           },
           undefined,
           (error) => {
+            URL.revokeObjectURL(blobUrl);
             console.error("Error loading GLTF model:", error);
             reject(error);
           }

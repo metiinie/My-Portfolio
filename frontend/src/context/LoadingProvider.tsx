@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import Loading from "../components/Loading";
+import { decryptFile } from "../components/Character/utils/decrypt";
 
 interface LoadingType {
   isLoading: boolean;
@@ -28,6 +29,7 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
     setIsLoading,
     setLoading,
   };
+
   useEffect(() => {
     // Auto-start animations on mobile/tablet since there's no 3D model
     if (window.innerWidth <= 1024) {
@@ -38,10 +40,12 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
           }, 100);
         }
       });
+    } else {
+      // Pre-fetch and decrypt the 3D character and preload the 3D scene chunk in parallel
+      decryptFile("/models/character.enc", "Character3D#@").catch(() => {});
+      import("../components/Character").catch(() => {});
     }
   }, []);
-
-  useEffect(() => { }, [loading]);
 
   return (
     <LoadingContext.Provider value={value as LoadingType}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
 
@@ -10,6 +10,16 @@ const Loading = ({ percent }: { percent: number }) => {
   const [loaded, setLoaded] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const initialFXRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    // Preload initialFX module immediately so there is no delay when loading completes
+    import("./utils/initialFX").then((module) => {
+      if (module.initialFX) {
+        initialFXRef.current = module.initialFX;
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (percent < 100) return;
@@ -18,8 +28,8 @@ const Loading = ({ percent }: { percent: number }) => {
       setLoaded(true);
       innerTimer = setTimeout(() => {
         setIsLoaded(true);
-      }, 1000);
-    }, 600);
+      }, 600);
+    }, 250);
 
     return () => {
       clearTimeout(outerTimer);
@@ -28,17 +38,20 @@ const Loading = ({ percent }: { percent: number }) => {
   }, [percent]);
 
   useEffect(() => {
-    import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
+    if (!isLoaded) return;
+    setClicked(true);
+    const timer = setTimeout(() => {
+      if (initialFXRef.current) {
+        initialFXRef.current();
+      } else {
+        import("./utils/initialFX").then((module) => {
+          module.initialFX?.();
+        });
       }
-    });
+      setIsLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
   }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
@@ -104,21 +117,22 @@ export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
 
   let interval = setInterval(() => {
-    if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
-      percent = percent + rand;
+    if (percent < 75) {
+      const step = Math.floor(Math.random() * 3) + 2; // 2..4% per tick
+      percent = Math.min(percent + step, 75);
       setLoading(percent);
     } else {
       clearInterval(interval);
       interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
-        setLoading(percent);
-        if (percent > 91) {
+        if (percent < 92) {
+          percent = percent + 1;
+          setLoading(percent);
+        } else {
           clearInterval(interval);
         }
-      }, 2000);
+      }, 85);
     }
-  }, 100);
+  }, 45);
 
   function clear() {
     clearInterval(interval);
@@ -130,13 +144,13 @@ export const setProgress = (setLoading: (value: number) => void) => {
       clearInterval(interval);
       interval = setInterval(() => {
         if (percent < 100) {
-          percent++;
+          percent = Math.min(percent + 2, 100);
           setLoading(percent);
         } else {
           resolve(percent);
           clearInterval(interval);
         }
-      }, 2);
+      }, 14);
     });
   }
   return { loaded, percent, clear };
