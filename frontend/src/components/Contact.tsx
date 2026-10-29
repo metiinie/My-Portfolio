@@ -65,7 +65,7 @@ const Contact = () => {
         {/* Section Title */}
         <div className="contact-top-header">
           <h2 className="contact-main-title">
-            Let&apos;s Build <span>Something...</span>
+            Let Me <span>Hear You</span>
           </h2>
         </div>
 
