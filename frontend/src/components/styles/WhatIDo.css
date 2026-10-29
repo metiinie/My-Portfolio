@@ -23,6 +23,8 @@
 }
 
 .what-box:first-child {
+  align-self: flex-start;
+  margin-top: 100px;
   margin-left: -12px;
 }
 
@@ -296,7 +298,9 @@
   .what-box,
   .what-box:first-child {
     width: 100% !important;
+    margin-top: 0;
     margin-left: 0;
+    align-self: auto;
     justify-content: flex-start !important;
   }
 
