@@ -1,3 +1,8 @@
+/* Override body overflow for myworks page */
+body:has(.myworks-page) {
+  overflow: auto !important;
+}
+
 .myworks-page {
   min-height: 100vh;
   background-color: var(--backgroundColor, #0b080c);
@@ -180,8 +185,41 @@
   transition: transform 0.4s ease;
 }
 
-.myworks-card:hover .myworks-card-image img {
+.myworks-card:hover .myworks-card-image:not(.myworks-has-carousel) img {
   transform: scale(1.04);
+}
+
+.myworks-has-carousel .work-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.myworks-has-carousel .work-carousel-slide {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  overflow: hidden;
+}
+
+.myworks-has-carousel .work-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+}
+
+.myworks-has-carousel .work-carousel-slide:not(.active) img {
+  transform: scale(0.95);
+  filter: brightness(0.75);
+}
+
+.myworks-has-carousel .work-carousel-slide.active img {
+  transform: scale(1);
+  filter: brightness(1);
 }
 
 .myworks-card-info {
@@ -282,4 +320,20 @@
     padding: 6px 14px;
     font-size: 12px;
   }
+}
+
+
+.myworks-card-links-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.myworks-live-link {
+  color: #38bdf8 !important;
+}
+
+.myworks-live-link:hover {
+  color: #7dd3fc !important;
 }

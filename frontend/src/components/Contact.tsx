@@ -3,6 +3,8 @@ import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 import { config } from "../config";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqezqygk";
+
 const INQUIRY_TOPICS = [
   "Full-Stack Web",
   "Mobile App",
@@ -18,7 +20,8 @@ const Contact = () => {
   const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [formStatus, setFormStatus] = useState<"idle" | "sent">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleCopyEmail = async () => {
     try {
@@ -37,26 +40,50 @@ const Contact = () => {
     }
   };
 
-  const handleSendEmail = (e: FormEvent) => {
+  const handleSendEmail = async (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `[Portfolio Inquiry · ${selectedTopic}]${senderName.trim() ? ` — ${senderName.trim()}` : ""}`
-    );
-    const lines = [
-      `Hi ${config.developer.name},`,
-      "",
-      message.trim() || `I'd love to discuss a ${selectedTopic} opportunity with you.`,
-      "",
-      "---",
-      `Topic: ${selectedTopic}`,
-      senderName.trim() ? `From: ${senderName.trim()}` : "",
-      senderEmail.trim() ? `Reply-To: ${senderEmail.trim()}` : "",
-    ].filter(Boolean);
+    if (formStatus === "sending") return;
 
-    const body = encodeURIComponent(lines.join("\n"));
-    window.location.href = `mailto:${config.contact.email}?subject=${subject}&body=${body}`;
-    setFormStatus("sent");
-    setTimeout(() => setFormStatus("idle"), 4000);
+    setFormStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: senderName.trim() || "Portfolio Visitor",
+          email: senderEmail.trim(),
+          _replyto: senderEmail.trim(),
+          topic: selectedTopic,
+          _subject: `[Portfolio Inquiry · ${selectedTopic}]${senderName.trim() ? ` — ${senderName.trim()}` : ""}`,
+          message:
+            message.trim() ||
+            `I'd love to discuss a ${selectedTopic} opportunity with you.`,
+        }),
+      });
+
+      if (response.ok) {
+        setFormStatus("sent");
+        setSenderName("");
+        setSenderEmail("");
+        setMessage("");
+        setTimeout(() => setFormStatus("idle"), 5000);
+      } else {
+        const data = await response.json().catch(() => null);
+        const errText =
+          data?.errors?.map((err: { message?: string }) => err.message).filter(Boolean).join(", ") ||
+          "Could not send message. Please try again or email directly.";
+        setErrorMessage(errText);
+        setFormStatus("error");
+      }
+    } catch {
+      setErrorMessage("Network error while sending. Please try again or email directly.");
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -164,11 +191,13 @@ const Contact = () => {
               </label>
               <input
                 id="contact-from-name"
+                name="name"
                 type="text"
                 className="minimal-input"
                 placeholder="Your name"
                 value={senderName}
                 onChange={(e) => setSenderName(e.target.value)}
+                required
               />
             </div>
 
@@ -178,11 +207,13 @@ const Contact = () => {
               </label>
               <input
                 id="contact-reply-to"
+                name="email"
                 type="email"
                 className="minimal-input"
                 placeholder="you@company.com"
                 value={senderEmail}
                 onChange={(e) => setSenderEmail(e.target.value)}
+                required
               />
             </div>
 
@@ -192,22 +223,39 @@ const Contact = () => {
               </label>
               <textarea
                 id="contact-prompt"
+                name="message"
                 className="minimal-textarea"
                 rows={5}
                 placeholder="Tell me about the role, the problem, or the idea..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                required
               />
             </div>
 
             <div className="minimal-submit-wrap">
               <button
                 type="submit"
-                className="minimal-send-btn"
+                className={`minimal-send-btn ${formStatus === "sent" ? "sent" : ""}`}
+                disabled={formStatus === "sending"}
                 data-cursor="disable"
               >
-                {formStatus === "sent" ? "Opening mail client →" : "Send message →"}
+                {formStatus === "sending"
+                  ? "Sending..."
+                  : formStatus === "sent"
+                  ? "Message sent ✓"
+                  : "Send message →"}
               </button>
+              {formStatus === "sent" && (
+                <p className="minimal-form-feedback success" role="status">
+                  Thanks for reaching out! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {formStatus === "error" && (
+                <p className="minimal-form-feedback error" role="alert">
+                  {errorMessage}
+                </p>
+              )}
             </div>
           </form>
         </div>

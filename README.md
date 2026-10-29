@@ -88,18 +88,21 @@ Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience ac
 5. **Ethiopian Farmers Market Platform**
    - *Stack*: Next.js · Node.js · PostgreSQL · Prisma · B2B Trade Facilitation
    - Direct B2B produce transaction structuring and verified fulfillment handoff.
-6. **Face Recognition-Based Attendance System**
+6. **Edmealem Ejigu Business Group — Corporate Website**
+   - *Stack*: HTML5 · CSS3 · JavaScript · Responsive B2B Corporate Portal
+   - High-performance corporate web portal for an Ethiopian trading and investment conglomerate across industrial imports, agricultural exports, logistics, and hospitality.
+7. **Face Recognition-Based Attendance System**
    - *Stack*: Python · OpenCV · Facial Recognition · Biometric AI · Deep Learning
    - Automated employee attendance identification, monitoring dashboard, and anti-fraud logging.
-7. **Lib le Lib — Privacy-First HIV Support Platform**
+8. **Lib le Lib — Privacy-First HIV Support Platform**
    - *Stack*: React Native · Expo · NestJS · PostgreSQL (Neon)
    - Strict medical verification gates and server-side privacy boundaries.
-8. **Multi-Vendor Food Delivery Platform**
+9. **Multi-Vendor Food Delivery Platform**
    - *Stack*: React.js · Redux Toolkit · Node.js · Cloud Functions · Live Tracking
    - Real-time tri-party order lifecycle connecting customers, couriers, and kitchens.
-9. **Unique Equb Digital Management System**
-   - *Stack*: React Native · Expo · TypeScript · Jest Domain Logic
-   - Digital rotating savings group management with verifiable invariant tests.
+10. **Unique Equb Digital Management System**
+    - *Stack*: React Native · Expo · TypeScript · Jest Domain Logic
+    - Digital rotating savings group management with verifiable invariant tests.
 
 ---
 

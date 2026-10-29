@@ -65,11 +65,11 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {config.projects.slice(0, 5).map((project, index) => (
+          {config.projects.slice(0, 6).map((project, index) => (
             <div className="work-box" key={project.id}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{String(index + 1).padStart(2, "0")}</h3>
 
                   <div>
                     <h4>{project.title}</h4>
@@ -81,8 +81,37 @@ const Work = () => {
                 </div>
                 <h4>Tools and features</h4>
                 <p>{project.technologies}</p>
+                <div className="work-action-row">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-action-tag"
+                      data-cursor="disable"
+                    >
+                      GitHub Repo ↗
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-action-tag work-action-tag-live"
+                      data-cursor="disable"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
-              <WorkImage image={project.image} alt={project.title} link={project.link} />
+              <WorkImage
+                image={project.image}
+                images={(project as { images?: string[] }).images}
+                alt={project.title}
+                link={project.link}
+              />
             </div>
           ))}
           {/* See All Works Button */}

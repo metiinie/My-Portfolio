@@ -365,3 +365,204 @@
     font-size: 14px;
   }
 }
+
+.work-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.work-action-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: var(--accentColor, #c481ff);
+  background: rgba(196, 129, 255, 0.08);
+  border: 1px solid rgba(196, 129, 255, 0.25);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.work-action-tag:hover {
+  background: rgba(196, 129, 255, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.work-action-tag-live {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.work-action-tag-live:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #fff;
+}
+
+/* Multi-Image Animated Swipe Carousel */
+.work-image-in.has-carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  display: block;
+}
+
+.work-image-in.has-carousel .work-link {
+  z-index: 7;
+}
+
+.work-carousel-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #120e1a;
+  border: 1px solid rgba(194, 164, 255, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.work-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.work-carousel-slide {
+  min-width: 100%;
+  width: 100%;
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.work-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+}
+
+.work-carousel-slide:not(.active) img {
+  transform: scale(0.95);
+  filter: brightness(0.75);
+}
+
+.work-carousel-slide.active img {
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+.work-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(11, 8, 12, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(194, 164, 255, 0.35);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  opacity: 0;
+  transition: all 0.25s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.work-carousel-prev {
+  left: 10px;
+}
+
+.work-carousel-next {
+  right: 10px;
+}
+
+.work-image-in:hover .work-carousel-arrow,
+.myworks-has-carousel:hover .work-carousel-arrow {
+  opacity: 1;
+}
+
+.work-carousel-arrow:hover {
+  background: var(--accentColor, #c2a4ff);
+  color: #0b080c;
+  border-color: var(--accentColor, #c2a4ff);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.work-carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(11, 8, 12, 0.68);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  z-index: 6;
+}
+
+.work-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-carousel-dot.active {
+  width: 22px;
+  background: var(--accentColor, #c2a4ff);
+  box-shadow: 0 0 8px rgba(194, 164, 255, 0.75);
+}
+
+.work-carousel-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: rgba(11, 8, 12, 0.72);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(194, 164, 255, 0.3);
+  color: #eae5ec;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .work-carousel-arrow {
+    opacity: 0.85;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+}

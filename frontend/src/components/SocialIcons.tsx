@@ -12,17 +12,23 @@ import { config } from "../config";
 
 const SocialIcons = () => {
   useEffect(() => {
-    const social = document.getElementById("social") as HTMLElement;
+    const social = document.getElementById("social");
+    if (!social) return;
+
+    const rafIds: number[] = [];
+    const mouseHandlers: Array<(e: MouseEvent) => void> = [];
 
     social.querySelectorAll("span").forEach((item) => {
       const elem = item as HTMLElement;
-      const link = elem.querySelector("a") as HTMLElement;
+      const link = elem.querySelector("a") as HTMLElement | null;
+      if (!link) return;
 
       const rect = elem.getBoundingClientRect();
       let mouseX = rect.width / 2;
       let mouseY = rect.height / 2;
       let currentX = 0;
       let currentY = 0;
+      let rafId = 0;
 
       const updatePosition = () => {
         currentX += (mouseX - currentX) * 0.1;
@@ -31,30 +37,48 @@ const SocialIcons = () => {
         link.style.setProperty("--siLeft", `${currentX}px`);
         link.style.setProperty("--siTop", `${currentY}px`);
 
-        requestAnimationFrame(updatePosition);
+        rafId = requestAnimationFrame(updatePosition);
       };
 
       const onMouseMove = (e: MouseEvent) => {
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const liveRect = elem.getBoundingClientRect();
+        const x = e.clientX - liveRect.left;
+        const y = e.clientY - liveRect.top;
 
         if (x < 40 && x > 10 && y < 40 && y > 5) {
           mouseX = x;
           mouseY = y;
         } else {
-          mouseX = rect.width / 2;
-          mouseY = rect.height / 2;
+          mouseX = liveRect.width / 2;
+          mouseY = liveRect.height / 2;
         }
       };
 
       document.addEventListener("mousemove", onMouseMove);
+      mouseHandlers.push(onMouseMove);
 
-      updatePosition();
+      rafId = requestAnimationFrame(updatePosition);
+      rafIds.push(rafId);
 
-      return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
+      // Ensure latest rafId is cancelled on unmount
+      elem.dataset.rafIdx = String(rafIds.length - 1);
+      const trackedUpdate = () => {
+        currentX += (mouseX - currentX) * 0.1;
+        currentY += (mouseY - currentY) * 0.1;
+
+        link.style.setProperty("--siLeft", `${currentX}px`);
+        link.style.setProperty("--siTop", `${currentY}px`);
+
+        rafIds[Number(elem.dataset.rafIdx)] = requestAnimationFrame(trackedUpdate);
       };
+      cancelAnimationFrame(rafId);
+      rafIds[Number(elem.dataset.rafIdx)] = requestAnimationFrame(trackedUpdate);
     });
+
+    return () => {
+      rafIds.forEach((id) => cancelAnimationFrame(id));
+      mouseHandlers.forEach((fn) => document.removeEventListener("mousemove", fn));
+    };
   }, []);
 
   return (

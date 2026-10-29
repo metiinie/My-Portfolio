@@ -217,12 +217,18 @@ export const config = {
             status: "Delivered & Certified",
             statusBadge: "Government Platform",
             technologies: "Laravel, Vue.js, PostgreSQL, RESTful API Backend, Geolocation, Multi-Role Access Control",
-            image: "/images/civic_eye.svg",
+            image: "/images/civic_eye_1.jpg",
+            images: [
+                "/images/civic_eye_1.jpg",
+                "/images/civic_eye_2.jpg"
+            ],
             description: "A community-driven public infrastructure reporting platform built for the Addis Ababa City Administration, Innovation & Technology Development Bureau. Built on an evidence-first, trust-based model enabling citizens to report and validate local problems (roads, utilities, public spaces) with photo and geolocation evidence.",
             problem: "Municipal authorities face delays identifying broken infrastructure, while citizens lack a transparent, accountable channel to submit verifiable evidence without tedious paper bureaucracy.",
             solution: "Built a secure multi-role system for citizens, moderators, and city administrators featuring GPS coordinates, photo evidence validation, and an escalation pipeline connecting directly to municipal bureaus.",
             engineeringStory: "Collaborated directly with city officials to align the platform with real government workflows. Awarded an official freelance completion letter upon delivery.",
-            link: "https://github.com/metiinie"
+            link: "https://github.com/metiinie/public-awareness",
+            github: "https://github.com/metiinie/public-awareness",
+            liveUrl: ""
         },
         {
             id: 2,
@@ -232,12 +238,19 @@ export const config = {
             status: "Production Handover",
             statusBadge: "Government Handover",
             technologies: "Laravel, Filament, Next.js, PWA, Dexie.js (Offline-First), PostgreSQL/MySQL, Full Audit Trails",
-            image: "/images/icams_denb.svg",
+            image: "/images/icams_denb_1.png",
+            images: [
+                "/images/icams_denb_1.png",
+                "/images/icams_denb_2.png",
+                "/images/icams_denb_3.png"
+            ],
             description: "A comprehensive municipal governance platform built for the Addis Ababa city government, digitizing urban code enforcement, illegal construction violation tracking, and public awareness campaigns.",
             problem: "Field enforcement officers encounter spotty mobile connectivity and manual paper records, causing delays, lost citations, inconsistent audit trails, and compliance disputes.",
             solution: "Implemented offline-first synchronization with Dexie local storage, role-based access control, secure multi-actor workflows, and an administrative panel via Laravel Filament.",
             engineeringStory: "Awarded a formal recommendation letter from Fanos Tech P.L.C following successful handover and acceptance by Addis Ababa city authorities.",
-            link: "https://github.com/metiinie/Denb-main"
+            link: "https://github.com/metiinie/Code-Enforcement",
+            github: "https://github.com/metiinie/Code-Enforcement",
+            liveUrl: ""
         },
         {
             id: 3,
@@ -247,12 +260,19 @@ export const config = {
             status: "Production-Grade Build",
             statusBadge: "Hospitality System",
             technologies: "Next.js, Node.js, WebSockets, PostgreSQL, QR Code Routing, Role-Based Dashboards",
-            image: "/images/safeland_cafe.svg",
+            image: "/images/safeland_cafe_1.png",
+            images: [
+                "/images/safeland_cafe_1.png",
+                "/images/safeland_cafe_2.png",
+                "/images/safeland_cafe_3.png"
+            ],
             description: "A complete, role-based QR code restaurant ordering platform for Safeland Cafe, Hawassa, Ethiopia. Customers scan a table QR code, browse menus, and order without app downloads. Kitchen, waiters, and managers each have real-time synchronized dashboards.",
             problem: "Dining bottlenecks during peak cafe hours lead to order errors, delayed table service, and lack of real-time visibility between floor waiters and kitchen staff.",
             solution: "Zero-download QR ordering for patrons synchronized via real-time WebSockets with live kitchen Kanban stations and manager reporting dashboards.",
             engineeringStory: "Structured multi-station state management with low latency, resilient reconnects, and role-separated operational views.",
-            link: "https://github.com/metiinie"
+            link: "https://safe-land-cafe.vercel.app/",
+            github: "https://github.com/metiinie/SafeLand_Cafe",
+            liveUrl: "https://safe-land-cafe.vercel.app/"
         },
         {
             id: 4,
@@ -263,11 +283,17 @@ export const config = {
             statusBadge: "E-Commerce & Showcase",
             technologies: "Django 5, DRF, django-unfold, Next.js (App Router), TypeScript, Tailwind CSS, next-intl, Cloudinary, PostgreSQL (Neon)",
             image: "/images/woodcarvo.jpg",
+            images: [
+                "/images/woodcarvo.jpg",
+                "/images/woodcarvo_2.jpg"
+            ],
             description: "A fast, lightweight showcase and inquiry website for WOOD CARVO, a bespoke furniture workshop in Addis Ababa ('Your Vision, Our Craft'). Designed for Ethiopian mobile networks with trilingual internationalization (English, Amharic, Afaan Oromo), automated Telegram broadcasting, and direct WhatsApp inquiry flows.",
             problem: "Local custom manufacturers need rapid, image-rich catalogs that perform smoothly on mobile data networks, paired with direct conversational commerce via Telegram and WhatsApp.",
             solution: "Edge ISR Next.js frontend with trilingual routing (/en, /am, /om), backed by a modular Django REST Framework backend with separated Render/Vercel deployment and Cloudinary media optimization.",
             engineeringStory: "Monorepo architecture, edge ISR caching, Ethiopic script conditional font loading, and automated social inquiry webhooks.",
-            link: "https://github.com/metiinie"
+            link: "https://wood-carvo-furniture.vercel.app/",
+            github: "https://github.com/metiinie/wood-Carvo-furniture",
+            liveUrl: "https://wood-carvo-furniture.vercel.app/"
         },
         {
             id: 5,
@@ -277,60 +303,107 @@ export const config = {
             status: "B2B Trade Facilitation",
             statusBadge: "AgriTech B2B",
             technologies: "Next.js, Node.js, Express, PostgreSQL, Prisma, Role-Based Commerce",
-            image: "/images/farmers_market.svg",
+            image: "/images/farmers_market_1.png",
+            images: [
+                "/images/farmers_market_1.png",
+                "/images/farmers_market_2.png"
+            ],
             description: "A facilitated B2B agricultural marketplace connecting Ethiopian farmers directly with business buyers (restaurants, hotels, wholesalers, exporters, processors, and retailers) to make agricultural trade transparent, trustworthy, and efficient.",
             problem: "High intermediary markups and opaque pricing disadvantage both farmers and commercial buyers. Traditional marketplace clones fail by trying to replace the physical logistics too early.",
             solution: "Structures transactions and proves demand: farmers list available produce, business buyers discover and place batch orders, and the platform transparently records trade approvals, inspection, and fulfillment status.",
             engineeringStory: "Designed around structured negotiation and transparent fulfillment milestones rather than complex disintermediation.",
-            link: "https://github.com/metiinie"
+            link: "https://github.com/metiinie/B2B-Agri-Tech-Marketplace",
+            github: "https://github.com/metiinie/B2B-Agri-Tech-Marketplace",
+            liveUrl: ""
         },
         {
             id: 6,
+            title: "Edmealem Ejigu Business Group — Corporate Website",
+            category: "HTML · CSS · JavaScript · Responsive B2B Corporate Portal",
+            type: "featured",
+            status: "Corporate Web Architecture",
+            statusBadge: "Corporate Portal",
+            technologies: "HTML5, CSS3, JavaScript, Responsive Layouts, UI/UX Design, B2B Web Presence",
+            image: "/images/edmealem_ejigu_1.png",
+            images: [
+                "/images/edmealem_ejigu_1.png",
+                "/images/edmealem_ejigu_2.png",
+                "/images/edmealem_ejigu_3.png"
+            ],
+            description: "Designed and developed a professional corporate website for an Ethiopian trading and investment company, presenting its business operations to international partners and customers.",
+            problem: "Diversified trading conglomerates operating across industrial imports, agricultural exports, logistics, and hospitality require a cohesive, credible digital identity to instill trust in international B2B partners and foreign stakeholders.",
+            solution: "Engineered a high-performance corporate web portal featuring dedicated sections for industrial imports, agricultural exports, logistics, procurement, and hospitality, complemented by a streamlined business inquiry interface.",
+            engineeringStory: "Focused on clean semantic markup, lightweight responsive design, cross-device compatibility, and professional corporate branding tailored for international trade.",
+            link: "https://edmialem-ejigu.vercel.app/",
+            github: "https://github.com/metiinie/Edmialem-Ejigu",
+            liveUrl: "https://edmialem-ejigu.vercel.app/"
+        },
+        {
+            id: 7,
             title: "Face Recognition-Based Attendance System",
             category: "Python · OpenCV · Facial Recognition · Biometric Dashboard",
             type: "exploration",
             status: "Biometric AI System",
             statusBadge: "Computer Vision & AI",
             technologies: "Python, OpenCV, Face Recognition, Deep Learning, Facial Embeddings, SQLite/PostgreSQL",
-            image: "/images/face_attendance.svg",
+            image: "/images/face_attendance_1.png",
+            images: [
+                "/images/face_attendance_1.png",
+                "/images/face_attendance_2.png"
+            ],
             description: "A biometric attendance management system that automates employee and student attendance logging using facial recognition, eliminating manual sign-in errors and preventing proxy attendance fraud.",
             problem: "Manual paper sign-in sheets and punch cards suffer from buddy-punching, forgery, and time-consuming administrative data entry.",
             solution: "Automated real-time camera face identification against enrolled employee embeddings, auto-logging timestamps into an administrative management dashboard with exportable reporting.",
             engineeringStory: "Optimized frame-rate recognition pipelines, lighting variation normalization, and anti-spoofing heuristics.",
-            link: "https://github.com/metiinie"
+            link: "https://github.com/metiinie/face-recognition",
+            github: "https://github.com/metiinie/face-recognition",
+            liveUrl: ""
         },
         {
-            id: 7,
+            id: 8,
             title: "Lib le Lib — Privacy-First HIV Support Platform",
             category: "React Native · Expo · NestJS · PostgreSQL (Neon)",
             type: "case-study",
             status: "Confidentiality Architecture",
             statusBadge: "Healthcare & Privacy",
             technologies: "React Native, Expo, NestJS, PostgreSQL (Neon), Role-Based Access Control, Data Encryption",
-            image: "/images/liblelib.svg",
+            image: "/images/liblelib_1.png",
+            images: [
+                "/images/liblelib_1.png",
+                "/images/liblelib_2.png",
+                "/images/liblelib_3.png"
+            ],
             description: "A privacy-first mobile support and connection platform for people living with HIV, featuring confidential medical verification before entry. Delivered iOS and Android applications plus an audited administrative dashboard with strict data security controls.",
             problem: "Stigmatized medical conditions demand extreme guarantees of privacy, anonymity, and strict access controls before sensitive user profiles can interact.",
             solution: "Confidential verification gates, zero-leak profile rendering, server-side disclosure rules, and end-to-end data protection boundaries.",
             engineeringStory: "Implemented cryptographic user identifiers and strict administrative separation of verified health records.",
-            link: "https://github.com/metiinie"
+            link: "https://github.com/metiinie/Lib_le_Lib",
+            github: "https://github.com/metiinie/Lib_le_Lib",
+            liveUrl: ""
         },
         {
-            id: 8,
+            id: 9,
             title: "Multi-Vendor Food Delivery Platform",
             category: "React · Redux Toolkit · Node.js · Cloud Functions · Real-Time",
             type: "exploration",
             status: "Multi-Role Logistics",
             statusBadge: "Logistics & Delivery",
             technologies: "React.js, Redux Toolkit, Node.js, Express, Cloud Functions, Push Notifications, Live Dispatch",
-            image: "/images/food_delivery.svg",
+            image: "/images/food_delivery_1.png",
+            images: [
+                "/images/food_delivery_1.png",
+                "/images/food_delivery_2.png"
+            ],
             description: "A multi-role platform connecting customers, delivery couriers, and restaurant kitchen managers with real-time order tracking, live status changes, and in-app communications.",
             problem: "Tri-party synchronization between customer orders, kitchen prep times, and driver pickup routes requires seamless real-time state orchestration.",
             solution: "Centralized Redux Toolkit state machine, push notifications via Node.js cloud functions, and real-time order lifecycle tracking.",
             engineeringStory: "Handled asynchronous dispatch transitions and dynamic status notification flows across mobile and desktop clients.",
-            link: "https://github.com/metiinie"
+            link: "https://github.com/metiinie",
+            github: "https://github.com/metiinie",
+            liveUrl: ""
         },
         {
-            id: 9,
+            id: 10,
             title: "Unique Equb Digital Management System",
             category: "React Native · Expo · TypeScript · Jest Domain Logic",
             type: "featured",
@@ -338,11 +411,17 @@ export const config = {
             statusBadge: "Community Finance",
             technologies: "React Native, Expo, TypeScript, Jest, Domain-Driven Design, Mobile UI",
             image: "/images/unique_equb.jpg",
+            images: [
+                "/images/unique_equb.jpg",
+                "/images/unique_equb_2.png"
+            ],
             description: "A mobile-first digital management platform for traditional Ethiopian rotating savings groups (Equb). Brings structured accounting, transparent payout lotteries, and automated record-keeping to community finance.",
             problem: "Informal savings groups suffer from disputed contributions, lost paper records, and lack of auditable draw schedules.",
             solution: "Expo-powered mobile app with verifiable contribution cycles, immutable payout lottery records, and comprehensive Jest domain logic tests.",
             engineeringStory: "Rigorous domain modeling ensuring round invariance, lottery fairness, and automated offline-ready calculation.",
-            link: "https://github.com/metiinie/Unique_Equb_Mob_App"
+            link: "https://github.com/metiinie/Unique_Equb_Mob_App",
+            github: "https://github.com/metiinie/Unique_Equb_Mob_App",
+            liveUrl: ""
         }
     ],
     contact: {

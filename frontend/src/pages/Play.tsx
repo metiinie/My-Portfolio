@@ -79,6 +79,7 @@ Projects:
 - Safeland Cafe: complete role-based QR code restaurant ordering platform in Hawassa, Ethiopia (Next.js, Node.js, WebSockets, PostgreSQL, real-time KDS & waiter dashboards).
 - WOOD CARVO: bespoke furniture workshop showcase in Addis Ababa with trilingual localization (EN, AM, OM), Django 5 DRF backend, Next.js frontend, Telegram broadcast, and WhatsApp inquiry.
 - Ethiopian Farmers Market Platform: facilitated B2B marketplace connecting farmers directly with business buyers (restaurants, hotels, wholesalers, exporters), structuring transactions and recorded fulfillment.
+- Edmealem Ejigu Business Group: professional B2B corporate web portal for an Ethiopian trading and investment conglomerate across industrial imports, agricultural exports, logistics, and hospitality (https://edmialem-ejigu.vercel.app/).
 - Face Recognition-Based Attendance System: biometric employee attendance system using Python and OpenCV facial recognition with administrative management dashboard.
 - Lib le Lib: privacy-first mobile support and connection platform for people living with HIV (React Native, NestJS, PostgreSQL).
 - Multi-Vendor Food Delivery Platform: real-time multi-role logistics platform connecting customers, drivers, and restaurant kitchens (React, Redux Toolkit, Cloud Functions).
@@ -147,6 +148,8 @@ const Play = () => {
   }, [game, updateGameStatus]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.style.overflowY = "auto";
     const initEngine = async () => {
       redoxchessRef.current = new RedoxChessEngine();
       await redoxchessRef.current.init();
@@ -251,15 +254,7 @@ const Play = () => {
   };
 
   const flipBoard = () => {
-    // If game is in progress, ask to start new game
-    if (moveHistory.length > 0) {
-      if (window.confirm('Start new game?')) {
-        resetGame();
-        setBoardFlipped(!boardFlipped);
-      }
-      return;
-    }
-    setBoardFlipped(!boardFlipped);
+    setBoardFlipped((prev) => !prev);
   };
 
   const sendMessage = async () => {
@@ -392,7 +387,7 @@ const Play = () => {
               placeholder="Type a message..."
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               data-cursor="disable"
             />
             <button className="chat-send-btn" onClick={sendMessage} data-cursor="disable">
