@@ -123,7 +123,7 @@ Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience ac
 - **3D & Visuals**: Three.js, WebGL, GSAP, Lenis Smooth Scroll
 - **Styles**: Custom Vanilla CSS with responsive design system and glassmorphism
 - **Interactive AI Persona & Chess Engine**: Integrated on `/play` with serverless API
-- **Curriculum Vitae View**: Comprehensive printable CV at `/resume.html`
+- **Curriculum Vitae View**: Printable PDF CV at `/resume.pdf`
 
 ---
 
