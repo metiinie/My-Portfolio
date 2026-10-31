@@ -295,7 +295,7 @@ const Play = () => {
         { role: 'user', content: chatInput }
       ];
 
-      const rawApiUrl = import.meta.env.VITE_CHAT_API_URL?.trim();
+      const rawApiUrl = import.meta.env.VITE_CHAT_API_URL?.trim() || 'https://my-portfolio-zqt6.onrender.com';
       const primaryEndpoint = rawApiUrl
         ? rawApiUrl.endsWith('/api/chat')
           ? rawApiUrl
