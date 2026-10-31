@@ -28,8 +28,8 @@ const Loading = ({ percent }: { percent: number }) => {
       setLoaded(true);
       innerTimer = setTimeout(() => {
         setIsLoaded(true);
-      }, 600);
-    }, 250);
+      }, 300);
+    }, 100);
 
     return () => {
       clearTimeout(outerTimer);
@@ -49,7 +49,7 @@ const Loading = ({ percent }: { percent: number }) => {
         });
       }
       setIsLoading(false);
-    }, 600);
+    }, 350);
 
     return () => clearTimeout(timer);
   }, [isLoaded, setIsLoading]);
@@ -118,21 +118,16 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   let interval = setInterval(() => {
     if (percent < 75) {
-      const step = Math.floor(Math.random() * 3) + 2; // 2..4% per tick
+      const step = Math.floor(Math.random() * 4) + 4; // 4..7% per tick
       percent = Math.min(percent + step, 75);
+      setLoading(percent);
+    } else if (percent < 95) {
+      percent = percent + 2;
       setLoading(percent);
     } else {
       clearInterval(interval);
-      interval = setInterval(() => {
-        if (percent < 92) {
-          percent = percent + 1;
-          setLoading(percent);
-        } else {
-          clearInterval(interval);
-        }
-      }, 85);
     }
-  }, 45);
+  }, 25);
 
   function clear() {
     clearInterval(interval);
@@ -144,13 +139,13 @@ export const setProgress = (setLoading: (value: number) => void) => {
       clearInterval(interval);
       interval = setInterval(() => {
         if (percent < 100) {
-          percent = Math.min(percent + 2, 100);
+          percent = Math.min(percent + 5, 100);
           setLoading(percent);
         } else {
           resolve(percent);
           clearInterval(interval);
         }
-      }, 14);
+      }, 10);
     });
   }
   return { loaded, percent, clear };

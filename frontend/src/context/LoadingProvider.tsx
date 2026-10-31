@@ -41,9 +41,8 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
         }
       });
     } else {
-      // Pre-fetch and decrypt the 3D character and preload the 3D scene chunk in parallel
+      // Pre-fetch and decrypt the 3D character in parallel
       decryptFile("/models/character.enc", "Character3D#@").catch(() => {});
-      import("../components/Character").catch(() => {});
     }
   }, []);
 

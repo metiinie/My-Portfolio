@@ -63,13 +63,15 @@ const Scene = () => {
         }
       };
 
-      // Safety fallback: ensure clients never wait more than ~2.2s if network/GPU is slow
+      // Safety fallback: ensure clients never wait more than ~1.5s
       const maxWaitTimer = setTimeout(() => {
         if (!hasFinishedLoading) {
           hasFinishedLoading = true;
-          progress.loaded();
+          progress.loaded().then(() => {
+            light.turnOnLights();
+          });
         }
-      }, 2200);
+      }, 1500);
 
       loadCharacter()
         .then((gltf) => {
@@ -89,14 +91,12 @@ const Scene = () => {
                 introTimer = setTimeout(() => {
                   light.turnOnLights();
                   animations.startIntro();
-                }, 1450);
+                }, 50);
               });
             } else {
               // Loader already completed via maxWaitTimer; reveal character immediately
-              introTimer = setTimeout(() => {
-                light.turnOnLights();
-                animations.startIntro();
-              }, 300);
+              light.turnOnLights();
+              animations.startIntro();
             }
             window.addEventListener("resize", onResize);
           }

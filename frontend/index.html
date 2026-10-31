@@ -21,6 +21,10 @@
     <meta name="twitter:title" content="Awol Ibrahim Ayalew - Full-Stack Developer" />
     <meta name="twitter:description" content="Full-Stack Web &amp; Cross-Platform Mobile Developer | Addis Ababa, Ethiopia" />
     <meta name="twitter:image" content="https://awol-ibrahim.vercel.app/images/mypic.jpeg" />
+
+    <!-- Preload critical 3D assets so they stream in parallel at t=0 -->
+    <link rel="preload" href="/models/character.enc" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" href="/models/char_enviorment.hdr" as="fetch" crossorigin="anonymous" />
   </head>
   <body>
     <div id="root"></div>

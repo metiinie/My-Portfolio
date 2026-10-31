@@ -5,8 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 import MainContainer from "./components/MainContainer";
 import { LoadingProvider } from "./context/LoadingProvider";
+import CharacterModel from "./components/Character";
 
-const CharacterModel = lazy(() => import("./components/Character"));
 const MyWorks = lazy(() => import("./pages/MyWorks"));
 const Play = lazy(() => import("./pages/Play"));
 
@@ -19,9 +19,7 @@ const App = () => {
           element={
             <LoadingProvider>
               <MainContainer>
-                <Suspense fallback={null}>
-                  <CharacterModel />
-                </Suspense>
+                <CharacterModel />
               </MainContainer>
             </LoadingProvider>
           }
