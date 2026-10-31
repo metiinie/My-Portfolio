@@ -35,7 +35,7 @@ export const config = {
         github: "metiinie",
         githubUrl: "https://github.com/metiinie",
         linkedin: "https://www.linkedin.com/in/awolbuilds",
-        portfolio: "https://orion-personal-portfolio.vercel.app",
+        portfolio: "https://awol-ibrahim.vercel.app",
         email: "abumahilkerim@gmail.com",
         phone: "+251 918 982 161",
         location: "Addis Ababa, Ethiopia",
@@ -430,7 +430,7 @@ export const config = {
         location: "Addis Ababa, Ethiopia",
         github: "https://github.com/metiinie",
         linkedin: "https://www.linkedin.com/in/awolbuilds",
-        portfolio: "https://orion-personal-portfolio.vercel.app",
+        portfolio: "https://awol-ibrahim.vercel.app",
         twitter: "https://x.com/awolbuilds",
         facebook: "https://www.facebook.com/awolbuilds",
         instagram: "https://www.instagram.com/awolbuilds"

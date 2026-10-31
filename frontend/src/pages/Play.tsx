@@ -35,7 +35,7 @@ interface ChatMessage {
   content: string;
 }
 
-// API key is now handled server-side in api/chat.js
+// API key is handled server-side in backend/server.js (Render) or api/chat.js (Vercel)
 
 const SYSTEM_PROMPT = `You are the portfolio chat persona for Awol Ibrahim Ayalew. Speak in Awol's first-person voice ("I", "my", "me") as a warm, technically sharp, honest software engineer. Be honest: use only the verified facts below and say when something is not known. Never invent employers, awards, clients, metrics, dates, repository details, or personal information.
 
@@ -89,7 +89,7 @@ Contact & Links:
 - Email: abumahilkerim@gmail.com
 - Phone: +251 918 982 161
 - Location: Addis Ababa, Ethiopia
-- Portfolio: https://orion-personal-portfolio.vercel.app
+- Portfolio: https://awol-ibrahim.vercel.app
 - LinkedIn: https://www.linkedin.com/in/awolbuilds
 - GitHub: https://github.com/metiinie
 
@@ -103,6 +103,26 @@ Conversation rules:
 7. Avoid claiming to take real-world actions or speak for Awol beyond this portfolio.
 8. Use occasional light emoji, but do not overdo it.
 9. If the user sends a greeting or small talk, reply in 1-2 short sentences and do not dump profile details unless asked.`;
+
+const getClientPersonaFallback = (query: string): string => {
+  const q = query.toLowerCase().trim();
+  if (/^(hi|hello|hey|greetings|selam)/i.test(q)) {
+    return "Hello! I'm Awol Ibrahim Ayalew 👋 Full-Stack Web and Cross-Platform Mobile Developer based in Addis Ababa. Feel free to ask me about my projects, my tech stack, or make a move on the chess board!";
+  }
+  if (/project|portfolio|work|civic|code|safe|wood|farm/i.test(q)) {
+    return "Some of my featured projects include **Civic Eye** (public infrastructure reporting platform for the Addis Ababa City Administration), a municipal **Code Enforcement Management System** (Laravel & offline-first PWA), **Safeland Cafe** (QR ordering & real-time KDS), and **WOOD CARVO** (trilingual bespoke furniture platform). Click 'See All Works' on the portfolio to explore them all!";
+  }
+  if (/skill|stack|technolog|react|vue|laravel|django|python|node/i.test(q)) {
+    return "My primary tech stack covers React, Next.js, Vue.js, React Native, TypeScript, Node.js, NestJS, Laravel, Django, PostgreSQL, and Docker. I specialize in building secure, role-based business systems and high-performance web applications.";
+  }
+  if (/contact|email|phone|hire|reach/i.test(q)) {
+    return "You can reach me directly at abumahilkerim@gmail.com or by phone at +251 918 982 161. You can also connect with me on LinkedIn (linkedin.com/in/awolbuilds) or GitHub (github.com/metiinie).";
+  }
+  if (/chess|engine|play|move/i.test(q)) {
+    return "I love playing chess! This page runs the Redox Chess engine compiled to WebAssembly. Make your move on the board and let's see how the game unfolds!";
+  }
+  return "I'm Awol Ibrahim Ayalew, a Full-Stack Web & Cross-Platform Mobile Developer. You can ask me about my background, municipal and commercial projects (Civic Eye, Code Enforcement, Safeland Cafe), my engineering skills, or contact info!";
+};
 
 const Play = () => {
   const [game, setGame] = useState(new Chess());
@@ -275,7 +295,14 @@ const Play = () => {
         { role: 'user', content: chatInput }
       ];
 
-      const response = await fetch('/api/chat', {
+      const rawApiUrl = import.meta.env.VITE_CHAT_API_URL?.trim();
+      const primaryEndpoint = rawApiUrl
+        ? rawApiUrl.endsWith('/api/chat')
+          ? rawApiUrl
+          : `${rawApiUrl.replace(/\/+$/, '')}/api/chat`
+        : '/api/chat';
+
+      const requestInit: RequestInit = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -283,7 +310,16 @@ const Play = () => {
         body: JSON.stringify({
           messages: messages,
         }),
-      });
+      };
+
+      let response = await fetch(primaryEndpoint, requestInit).catch(() => null);
+      if ((!response || !response.ok) && primaryEndpoint !== '/api/chat') {
+        response = await fetch('/api/chat', requestInit);
+      }
+
+      if (!response) {
+        throw new Error('Network error');
+      }
 
       const data = await response.json();
 
@@ -298,11 +334,12 @@ const Play = () => {
       }
     } catch (error) {
       console.error('Chat error:', error);
-      const errorMessage: ChatMessage = {
+      const fallback = getClientPersonaFallback(userMessage.content);
+      const assistantMessage: ChatMessage = {
         role: 'assistant',
-        content: 'Sorry, having some connection issues. Try again? 😅'
+        content: fallback
       };
-      setChatMessages(prev => [...prev, errorMessage]);
+      setChatMessages(prev => [...prev, assistantMessage]);
     } finally {
       setIsTyping(false);
     }

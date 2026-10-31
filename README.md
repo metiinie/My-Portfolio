@@ -1,6 +1,6 @@
 # Awol Ibrahim Ayalew — Professional Portfolio & Engineering Showcase
 
-[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live_Preview-8b5cf6?style=for-the-badge&logo=vercel)](https://orion-personal-portfolio.vercel.app/)
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live_Preview-8b5cf6?style=for-the-badge&logo=vercel)](https://awol-ibrahim.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-metiinie-24292e?style=for-the-badge&logo=github)](https://github.com/metiinie)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-awolbuilds-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/awolbuilds)
 
@@ -17,7 +17,7 @@ Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience ac
 - 📧 **Email**: [abumahilkerim@gmail.com](mailto:abumahilkerim@gmail.com)
 - 📱 **Phone**: +251 918 982 161
 - 📍 **Location**: Addis Ababa, Ethiopia
-- 🌐 **Portfolio**: [orion-personal-portfolio.vercel.app](https://orion-personal-portfolio.vercel.app)
+- 🌐 **Portfolio**: [awol-ibrahim.vercel.app](https://awol-ibrahim.vercel.app)
 - 🔗 **LinkedIn**: [linkedin.com/in/awolbuilds](https://www.linkedin.com/in/awolbuilds)
 - 🐙 **GitHub**: [github.com/metiinie](https://github.com/metiinie)
 
@@ -149,7 +149,7 @@ cd My_Personal_Portfolio
 
 # 1. Start Backend Server
 cd backend
-cp .env.example .env   # Add your GROQ_API_KEY
+cp .env.example .env   # Add your GEMINI_API_KEY (or leave blank to use the built-in AI persona)
 npm run dev
 
 # 2. Start Frontend Application (in a new terminal)
