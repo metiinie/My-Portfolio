@@ -12,7 +12,9 @@
   top: 0;
   z-index: 9999;
   pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
+
 .header ul {
   font-size: 11px;
   display: flex;
@@ -24,7 +26,17 @@
   row-gap: 6px;
   align-items: end;
   pointer-events: auto;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
 }
+
+/* Hide ABOUT, WORK, CAREER, CONTACT navs after scrolling down */
+.header.header-scrolled ul {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-20px) !important;
+  pointer-events: none !important;
+}
+
 .header ul li {
   margin-left: 0px;
   letter-spacing: 0.8px;
@@ -34,6 +46,7 @@
   pointer-events: auto;
   touch-action: manipulation;
 }
+
 .navbar-connect {
   position: absolute;
   display: none;
@@ -45,7 +58,15 @@
   font-weight: 500;
   pointer-events: auto;
   touch-action: manipulation;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
+
+.header.header-scrolled .navbar-connect {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .navbar-title {
   font-weight: 700;
   font-size: 13px;
@@ -53,6 +74,7 @@
   pointer-events: auto;
   touch-action: manipulation;
 }
+
 @media only screen and (min-width: 500px) {
   .header {
     padding: 20px 0px;
@@ -69,11 +91,13 @@
     font-size: 16px;
   }
 }
+
 @media only screen and (min-width: 900px) {
   .navbar-connect {
     display: block;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .header {
     padding: 35px 0px;

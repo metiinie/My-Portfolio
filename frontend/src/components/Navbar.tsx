@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -10,8 +10,26 @@ gsap.registerPlugin(ScrollTrigger);
 export let lenis: Lenis | null = null;
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     let rafId: number;
+
+    const updateScrollState = (scrollY: number) => {
+      setIsScrolled(scrollY > 60);
+    };
+
+    const onWindowScroll = () => {
+      const currentY =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      updateScrollState(currentY);
+    };
+
+    window.addEventListener("scroll", onWindowScroll, { passive: true });
+    onWindowScroll();
 
     if (window.innerWidth > 768) {
       // Initialize Lenis smooth scroll on desktop/tablet
@@ -24,6 +42,10 @@ const Navbar = () => {
         wheelMultiplier: 1.7,
         touchMultiplier: 2,
         infinite: false,
+      });
+
+      lenis.on("scroll", (e: { scroll: number }) => {
+        updateScrollState(e.scroll);
       });
 
       // Start paused on desktop where 3D loader runs; start immediately on tablet
@@ -76,6 +98,7 @@ const Navbar = () => {
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onWindowScroll);
       clickHandlers.forEach(({ el, fn }) => el.removeEventListener("click", fn));
       window.removeEventListener("resize", handleResize);
       lenis?.destroy();
@@ -85,7 +108,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="header">
+      <div className={`header ${isScrolled ? "header-scrolled" : ""}`}>
         <a href="/#" className="navbar-title" data-cursor="disable">
           {config.developer.initials}
         </a>
