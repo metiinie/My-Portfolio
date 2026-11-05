@@ -58,6 +58,7 @@
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  pointer-events: none !important;
 }
 
 .work-flex::after {
@@ -237,18 +238,6 @@
   }
 }
 
-/* @media only screen and (max-width: 900px) {
-  .work-image img {
-    max-height: 200px;
-  }
-  .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .work-box {
-    gap: 20px;
-  }
-} */
 @media only screen and (max-width: 1025px) {
   .work-container {
     align-content: normal;
@@ -265,6 +254,9 @@
   align-items: center;
   justify-content: center;
   border-right: none;
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .see-all-works {
@@ -274,6 +266,9 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  position: relative;
+  z-index: 21;
+  pointer-events: auto;
 }
 
 .see-all-works h3 {
@@ -299,9 +294,16 @@
   text-decoration: none;
   transition: all 0.3s ease;
   margin-top: 10px;
+  position: relative;
+  z-index: 22;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(194, 164, 255, 0.4);
 }
 
-.see-all-btn:hover {
+.see-all-btn:hover,
+.see-all-btn:active {
   transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(194, 164, 255, 0.4);
 }
@@ -309,8 +311,8 @@
 /* Mobile: Stack work items vertically when GSAP pinning is disabled */
 @media only screen and (max-width: 768px) {
   .work-section {
-    height: auto;
-    min-height: auto;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   .work-flex {
@@ -353,8 +355,17 @@
   }
 
   .work-box-cta {
-    padding: 40px 20px;
+    padding: 50px 20px;
     border-bottom: none;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+  }
+
+  .see-all-works {
+    position: relative;
+    z-index: 21;
+    pointer-events: auto;
   }
 
   .see-all-works h3 {
@@ -363,6 +374,16 @@
 
   .see-all-works p {
     font-size: 14px;
+  }
+
+  .see-all-btn {
+    position: relative;
+    z-index: 22;
+    pointer-events: auto;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 14px 32px;
+    display: inline-block;
   }
 }
 

@@ -58,6 +58,7 @@ const Work = () => {
       ScrollTrigger.getById("work")?.kill();
     };
   }, []);
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -119,7 +120,16 @@ const Work = () => {
             <div className="see-all-works">
               <h3>Want to see more?</h3>
               <p>Explore all of my projects and creations</p>
-              <Link to="/myworks" className="see-all-btn" data-cursor="disable">
+              <Link
+                to="/myworks"
+                className="see-all-btn"
+                data-cursor="disable"
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                }}
+              >
                 See All Works →
               </Link>
             </div>

@@ -1,10 +1,14 @@
 /* Override body overflow for myworks page */
+html:has(.myworks-page),
 body:has(.myworks-page) {
   overflow: auto !important;
+  overflow-y: auto !important;
+  height: auto !important;
 }
 
 .myworks-page {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--backgroundColor, #0b080c);
   padding: 80px 40px;
   box-sizing: border-box;
@@ -27,6 +31,8 @@ body:has(.myworks-page) {
   border: 1px solid rgba(196, 129, 255, 0.4);
   border-radius: 30px;
   background: rgba(196, 129, 255, 0.05);
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .back-button:hover {
@@ -76,6 +82,7 @@ body:has(.myworks-page) {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
+  touch-action: manipulation;
 }
 
 .filter-btn:hover {
@@ -295,6 +302,8 @@ body:has(.myworks-page) {
   text-decoration: none;
   transition: all 0.2s ease;
   width: fit-content;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .myworks-card-link:hover {
@@ -321,7 +330,6 @@ body:has(.myworks-page) {
     font-size: 12px;
   }
 }
-
 
 .myworks-card-links-group {
   display: flex;

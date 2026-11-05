@@ -23,7 +23,16 @@
 }
 @media only screen and (max-width: 900px) {
   .section-container {
-    width: 500px;
-    max-width: var(--cWidth);
+    width: 100%;
+    max-width: var(--cWidth, 92%);
+    box-sizing: border-box;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .section-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
   }
 }

@@ -138,8 +138,20 @@ const MyWorks = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.body.style.overflow = "auto";
     document.body.style.overflowY = "auto";
+    document.documentElement.style.overflow = "auto";
+    document.documentElement.style.overflowY = "auto";
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.overflowY = "";
+      document.documentElement.style.overflow = "";
+      document.documentElement.style.overflowY = "";
+    };
   }, []);
 
   const filteredProjects = config.projects.filter((project) => {
@@ -150,7 +162,16 @@ const MyWorks = () => {
   return (
     <div className="myworks-page">
       <div className="myworks-header">
-        <Link to="/" className="back-button" data-cursor="disable">
+        <Link
+          to="/"
+          className="back-button"
+          data-cursor="disable"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }}
+        >
           ← Back to Home
         </Link>
         <h1>
