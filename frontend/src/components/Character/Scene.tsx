@@ -66,7 +66,11 @@ const Scene = () => {
     const clock = new THREE.Clock();
 
     const light = setLighting(scene);
-    let progress = setProgress((value) => setLoading(value));
+    let progress = setProgress((value) => {
+      if (!isDisposed) {
+        setLoading(value);
+      }
+    });
     const { loadCharacter } = setCharacter(renderer, scene, camera);
 
     const onResize = () => {
@@ -75,7 +79,7 @@ const Scene = () => {
       }
     };
 
-    // Safety fallback: ensure clients never wait more than ~1.5s
+    // Safety fallback: ensure clients never wait more than ~1.2s
     const maxWaitTimer = setTimeout(() => {
       if (!isDisposed && !hasFinishedLoading) {
         hasFinishedLoading = true;
@@ -85,7 +89,7 @@ const Scene = () => {
           }
         });
       }
-    }, 1500);
+    }, 1200);
 
     loadCharacter()
       .then((gltf) => {
@@ -99,6 +103,11 @@ const Scene = () => {
         mixer = animations.mixer;
         loadedCharacter = gltf.scene;
         scene.add(loadedCharacter);
+        try {
+          renderer.compile(loadedCharacter, camera, scene);
+        } catch {
+          // Ignore synchronous shader pre-compile warning if any
+        }
         headBone = loadedCharacter.getObjectByName("spine006") || null;
         screenLight = loadedCharacter.getObjectByName("screenlight") || null;
 
@@ -125,7 +134,7 @@ const Scene = () => {
         clearTimeout(maxWaitTimer);
         if (!isDisposed && !hasFinishedLoading) {
           hasFinishedLoading = true;
-          progress.loaded();
+          progress.clear();
         }
       });
 
@@ -183,6 +192,7 @@ const Scene = () => {
 
     return () => {
       isDisposed = true;
+      progress.destroy();
       if (cleanupHover) cleanupHover();
       cancelAnimationFrame(rafId);
       clearTimeout(debounce);

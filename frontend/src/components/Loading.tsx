@@ -23,13 +23,14 @@ const Loading = ({ percent }: { percent: number }) => {
 
   useEffect(() => {
     if (percent < 100) return;
-    let innerTimer: ReturnType<typeof setTimeout>;
+
     const outerTimer = setTimeout(() => {
       setLoaded(true);
-      innerTimer = setTimeout(() => {
-        setIsLoaded(true);
-      }, 300);
-    }, 100);
+    }, 50);
+
+    const innerTimer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 250);
 
     return () => {
       clearTimeout(outerTimer);
@@ -49,7 +50,7 @@ const Loading = ({ percent }: { percent: number }) => {
         });
       }
       setIsLoading(false);
-    }, 350);
+    }, 250);
 
     return () => clearTimeout(timer);
   }, [isLoaded, setIsLoading]);
@@ -83,13 +84,16 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span>&nbsp; Software Engineer &nbsp;</span> <span>&nbsp; Full-Stack Development &nbsp;</span>
-            <span>&nbsp; Python &amp; Django &nbsp;</span> <span>&nbsp; Applied AI &amp; Automation &nbsp;</span>
+            <span>&nbsp; Software Engineer &nbsp;</span>{" "}
+            <span>&nbsp; Full-Stack Development &nbsp;</span>
+            <span>&nbsp; Python &amp; Django &nbsp;</span>{" "}
+            <span>&nbsp; Applied AI &amp; Automation &nbsp;</span>
           </Marquee>
         </div>
         <div
           className={`loading-wrap ${clicked && "loading-clicked"}`}
           onMouseMove={(e) => handleMouseMove(e)}
+          onClick={() => setIsLoaded(true)}
         >
           <div className="loading-hover"></div>
           <div className={`loading-button ${loaded && "loading-complete"}`}>
@@ -115,10 +119,15 @@ export default Loading;
 
 export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
+  let isDestroyed = false;
 
   let interval = setInterval(() => {
+    if (isDestroyed) {
+      clearInterval(interval);
+      return;
+    }
     if (percent < 75) {
-      const step = Math.floor(Math.random() * 4) + 4; // 4..7% per tick
+      const step = Math.floor(Math.random() * 4) + 5;
       percent = Math.min(percent + step, 75);
       setLoading(percent);
     } else if (percent < 95) {
@@ -131,22 +140,38 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   function clear() {
     clearInterval(interval);
-    setLoading(100);
+    if (!isDestroyed) {
+      setLoading(100);
+    }
+  }
+
+  function destroy() {
+    isDestroyed = true;
+    clearInterval(interval);
   }
 
   function loaded() {
     return new Promise<number>((resolve) => {
       clearInterval(interval);
+      if (isDestroyed) {
+        resolve(100);
+        return;
+      }
       interval = setInterval(() => {
+        if (isDestroyed) {
+          clearInterval(interval);
+          resolve(100);
+          return;
+        }
         if (percent < 100) {
-          percent = Math.min(percent + 5, 100);
+          percent = Math.min(percent + 10, 100);
           setLoading(percent);
         } else {
-          resolve(percent);
           clearInterval(interval);
+          resolve(percent);
         }
       }, 10);
     });
   }
-  return { loaded, percent, clear };
+  return { loaded, percent, clear, destroy };
 };

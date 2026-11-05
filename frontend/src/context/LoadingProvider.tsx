@@ -1,6 +1,7 @@
 import {
   createContext,
   PropsWithChildren,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -18,11 +19,16 @@ export const LoadingContext = createContext<LoadingType | null>(null);
 
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(() => {
-    // Skip loading screen whenever 3D character is not rendered (<= 1024px)
+    // Skip loading screen on mobile/tablet viewports (<= 1024px)
     if (window.innerWidth <= 1024) return false;
     return true;
   });
-  const [loading, setLoading] = useState(0);
+  const [loading, setLoadingState] = useState(0);
+
+  // Ensure loading percentage only ever moves forward (monotonic)
+  const setLoading = useCallback((percent: number) => {
+    setLoadingState((prev) => Math.max(prev, percent));
+  }, []);
 
   const value = {
     isLoading,
@@ -31,7 +37,6 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    // Auto-start animations on mobile/tablet since there's no 3D model
     if (window.innerWidth <= 1024) {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {
@@ -45,6 +50,22 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
       decryptFile("/models/character.enc", "Character3D#@").catch(() => {});
     }
   }, []);
+
+  // Hard fail-safe: guarantee the loading screen never hangs longer than 2.0s
+  useEffect(() => {
+    if (!isLoading) return;
+    const failSafeTimer = setTimeout(() => {
+      setLoadingState(100);
+      setTimeout(() => {
+        import("../components/utils/initialFX").then((module) => {
+          module.initialFX?.();
+        });
+        setIsLoading(false);
+      }, 350);
+    }, 2000);
+
+    return () => clearTimeout(failSafeTimer);
+  }, [isLoading]);
 
   return (
     <LoadingContext.Provider value={value as LoadingType}>

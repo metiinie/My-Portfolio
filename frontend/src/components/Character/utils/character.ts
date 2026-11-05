@@ -3,9 +3,9 @@ import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
 import { decryptFile } from "./decrypt";
 
 const setCharacter = (
-  renderer: THREE.WebGLRenderer,
+  _renderer: THREE.WebGLRenderer,
   _scene: THREE.Scene,
-  camera: THREE.PerspectiveCamera
+  _camera: THREE.PerspectiveCamera
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
@@ -25,7 +25,7 @@ const setCharacter = (
         let character: THREE.Object3D;
         loader.load(
           blobUrl,
-          async (gltf) => {
+          (gltf) => {
             URL.revokeObjectURL(blobUrl);
             character = gltf.scene;
             character.traverse((child: any) => {
@@ -39,11 +39,6 @@ const setCharacter = (
                 }
               }
             });
-            try {
-              await renderer.compileAsync(character, camera);
-            } catch {
-              // Ignore compile errors if renderer was disposed during unmount
-            }
             const footR = character.getObjectByName("footR");
             const footL = character.getObjectByName("footL");
             if (footR) footR.position.y = 3.36;
