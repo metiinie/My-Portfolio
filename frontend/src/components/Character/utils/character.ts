@@ -1,11 +1,10 @@
 import * as THREE from "three";
 import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
-import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
 
 const setCharacter = (
   renderer: THREE.WebGLRenderer,
-  scene: THREE.Scene,
+  _scene: THREE.Scene,
   camera: THREE.PerspectiveCamera
 ) => {
   const loader = new GLTFLoader();
@@ -29,7 +28,6 @@ const setCharacter = (
           async (gltf) => {
             URL.revokeObjectURL(blobUrl);
             character = gltf.scene;
-            await renderer.compileAsync(character, camera, scene);
             character.traverse((child: any) => {
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
@@ -41,21 +39,28 @@ const setCharacter = (
                 }
               }
             });
-            resolve(gltf);
-            setCharTimeline(character, camera);
-            setAllTimeline();
-            character!.getObjectByName("footR")!.position.y = 3.36;
-            character!.getObjectByName("footL")!.position.y = 3.36;
+            try {
+              await renderer.compileAsync(character, camera);
+            } catch {
+              // Ignore compile errors if renderer was disposed during unmount
+            }
+            const footR = character.getObjectByName("footR");
+            const footL = character.getObjectByName("footL");
+            if (footR) footR.position.y = 3.36;
+            if (footL) footL.position.y = 3.36;
             dracoLoader.dispose();
+            resolve(gltf);
           },
           undefined,
           (error) => {
             URL.revokeObjectURL(blobUrl);
+            dracoLoader.dispose();
             console.error("Error loading GLTF model:", error);
             reject(error);
           }
         );
       } catch (err) {
+        dracoLoader.dispose();
         reject(err);
         console.error(err);
       }

@@ -40,15 +40,10 @@
   line-height: 1.1;
   font-weight: 600;
   margin-right: 0;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: baseline;
-}
-
-.what-i-do-sub {
-  display: inline-flex;
-  align-items: baseline;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
 }
 
 .hat-h2 {
@@ -315,6 +310,7 @@
 
   .what-box:last-child {
     width: 100% !important;
+    max-width: 100% !important;
   }
 
   .what-box h2,
@@ -325,6 +321,7 @@
     white-space: nowrap !important;
     display: inline-flex !important;
     align-items: baseline !important;
+    flex-wrap: nowrap !important;
   }
 
   .what-box-in {

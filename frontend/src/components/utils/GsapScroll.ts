@@ -2,11 +2,20 @@ import * as THREE from "three";
 import gsap from "gsap";
 
 let intensityInterval: ReturnType<typeof setInterval> | null = null;
+let charTimelines: gsap.core.Timeline[] = [];
+let allTimelines: gsap.core.Timeline[] = [];
 
 export function setCharTimeline(
   character: THREE.Object3D<THREE.Object3DEventMap> | null,
   camera: THREE.PerspectiveCamera
 ) {
+  // Clean up any previously registered timelines/ScrollTriggers
+  charTimelines.forEach((tl) => {
+    tl.scrollTrigger?.kill();
+    tl.kill();
+  });
+  charTimelines = [];
+
   let intensity: number = 0;
   if (intensityInterval) {
     clearInterval(intensityInterval);
@@ -42,6 +51,8 @@ export function setCharTimeline(
       invalidateOnRefresh: true,
     },
   });
+  charTimelines.push(tl1, tl2, tl3);
+
   let screenLight: any, monitor: any;
   character?.children.forEach((object: any) => {
     if (object.name === "Plane004") {
@@ -58,11 +69,14 @@ export function setCharTimeline(
       object.material.transparent = true;
       object.material.opacity = 0;
       object.material.emissive.set("#C8BFFF");
-      gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
-        emissiveIntensity: () => intensity * 8,
-        duration: () => Math.random() * 0.6,
-        delay: () => Math.random() * 0.1,
-      });
+      const pulseTl = gsap
+        .timeline({ repeat: -1, repeatRefresh: true })
+        .to(object.material, {
+          emissiveIntensity: () => intensity * 8,
+          duration: () => Math.random() * 0.6,
+          delay: () => Math.random() * 0.1,
+        });
+      charTimelines.push(pulseTl);
       screenLight = object;
     }
   });
@@ -72,41 +86,42 @@ export function setCharTimeline(
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
         .to(camera.position, { z: 22 }, 0)
-        .fromTo(".character-model", { x: 0 }, { x: "-25%", duration: 1 }, 0)
+        .fromTo(".character-model", { x: 0 }, { x: "-28%", duration: 1 }, 0)
         .to(".landing-container", { opacity: 0, duration: 0.4 }, 0)
         .to(".landing-container", { y: "40%", duration: 0.8 }, 0)
         .fromTo(".about-me", { y: "-50%" }, { y: "0%" }, 0);
 
+      // Fade out .about-section FIRST before bringing monitor up or shifting character toward center
       tl2
+        .to(".about-section", { y: "10%", duration: 3 }, 0)
+        .to(".about-section", { opacity: 0, delay: 0.4, duration: 1.6 }, 0)
         .to(
           camera.position,
-          { z: 75, y: 8.4, duration: 6, delay: 2, ease: "power3.inOut" },
+          { z: 75, y: 8.4, duration: 5.8, delay: 2.2, ease: "power3.inOut" },
           0
         )
-        .to(".about-section", { y: "30%", duration: 6 }, 0)
-        .to(".about-section", { opacity: 0, delay: 3, duration: 2 }, 0)
         .fromTo(
           ".character-model",
           { pointerEvents: "inherit" },
-          { pointerEvents: "none", x: "-12%", delay: 2, duration: 5 },
+          { pointerEvents: "none", x: "-12%", delay: 2.2, duration: 4.8 },
           0
         )
-        .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0);
+        .to(character.rotation, { y: 0.92, x: 0.12, delay: 2.6, duration: 3 }, 0);
 
       if (neckBone) {
-        tl2.to(neckBone.rotation, { x: 0.6, delay: 2, duration: 3 }, 0);
+        tl2.to(neckBone.rotation, { x: 0.6, delay: 2.2, duration: 3 }, 0);
       }
       if (monitor) {
-        tl2.to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0);
+        tl2.to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.0 }, 0);
         tl2.fromTo(
           monitor.position,
           { y: -10, z: 2 },
-          { y: 0, z: 0, delay: 1.5, duration: 3 },
+          { y: 0, z: 0, delay: 2.2, duration: 2.8 },
           0
         );
       }
       if (screenLight) {
-        tl2.to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0);
+        tl2.to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.2 }, 0);
       }
 
       tl2
@@ -143,11 +158,18 @@ export function setCharTimeline(
         },
       });
       tM2.to(".what-box-in", { display: "flex", duration: 0.1, delay: 0 }, 0);
+      charTimelines.push(tM2);
     }
   }
 }
 
 export function setAllTimeline() {
+  allTimelines.forEach((tl) => {
+    tl.scrollTrigger?.kill();
+    tl.kill();
+  });
+  allTimelines = [];
+
   const careerTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".career-section",
@@ -157,6 +179,8 @@ export function setAllTimeline() {
       invalidateOnRefresh: true,
     },
   });
+  allTimelines.push(careerTimeline);
+
   careerTimeline
     .fromTo(
       ".career-timeline",
@@ -164,7 +188,6 @@ export function setAllTimeline() {
       { maxHeight: "100%", duration: 1, ease: "none" },
       0
     )
-
     .fromTo(
       ".career-timeline",
       { opacity: 0 },
