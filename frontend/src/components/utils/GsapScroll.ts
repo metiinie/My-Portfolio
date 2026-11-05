@@ -89,7 +89,12 @@ export function setCharTimeline(
         .fromTo(".character-model", { x: 0 }, { x: "-28%", duration: 1 }, 0)
         .to(".landing-container", { opacity: 0, duration: 0.4 }, 0)
         .to(".landing-container", { y: "40%", duration: 0.8 }, 0)
-        .fromTo(".about-me", { y: "-50%" }, { y: "0%" }, 0);
+        .fromTo(
+          ".about-me",
+          { y: "-15%", opacity: 0 },
+          { y: "0%", opacity: 1, duration: 0.8 },
+          0.2
+        );
 
       // Fade out .about-section FIRST before bringing monitor up or shifting character toward center
       tl2
