@@ -6,7 +6,7 @@ export const config = {
         title: "Full-Stack Web & Cross-Platform Mobile Developer",
         subtitle: "3 Years Experience · Web Apps, Mobile Engineering, RESTful APIs & Business Management Systems",
         headline: "I build secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions.",
-        description: "Full-Stack Web and Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects. Experienced in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions. Contributed to projects including Civic Eye and a Code Enforcement Management System, with a focus on clean, maintainable code, system reliability, and effective collaboration throughout the software development lifecycle.",
+        description: "5th-year Software Engineering student and Full-Stack Web & Cross-Platform Mobile Developer with 3 years of experience across internships, professional engagements, and freelance projects. Experienced in developing web applications, mobile apps, RESTful APIs, and business management systems for government and private-sector clients. Skilled in building secure, role-based applications that translate complex business requirements into practical, reliable, and user-friendly solutions. Contributed to projects including Civic Eye and a Code Enforcement Management System, with a focus on clean, maintainable code, system reliability, and effective collaboration throughout the software development lifecycle.",
         tagline: "Translate complex requirements. Build secure, role-based systems. Deliver practical reliability.",
         phone: "+251 918 982 161",
         roles: [
@@ -45,8 +45,8 @@ export const config = {
     },
     about: {
         title: "About Me",
-        subtitle: "Full-Stack Web · Cross-Platform Mobile · Scalable ERP · Government Systems · Applied AI",
-        description: "I'm a Full-Stack Web, Cross-Platform Mobile, and Applied AI Developer with 3 years of experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. I specialize in developing full-stack web applications, cross-platform mobile apps, scalable ERP architectures, mission-critical government and business systems, and AI-powered intelligent solutions. Skilled in building secure, role-based platforms that translate complex operational workflows into practical, reliable, and user-friendly software. Having contributed to critical platforms including Civic Eye for the Addis Ababa City Administration and a municipal Code Enforcement Management System alongside computer vision biometric systems, I bring a sharp focus on clean code, system reliability, data security, and productive agile collaboration across the entire software development lifecycle.",
+        subtitle: "5th-Year Software Engineering Student · Full-Stack Web · Cross-Platform Mobile · Scalable ERP · Applied AI",
+        description: "I'm a 5th-year Software Engineering student pursuing my B.Sc. in Software Engineering and a Full-Stack Web, Cross-Platform Mobile, and Applied AI Developer with 3 years of practical experience across internships, professional engagements, and freelance projects based in Addis Ababa, Ethiopia. I specialize in developing full-stack web applications, cross-platform mobile apps, scalable ERP architectures, mission-critical government and business systems, and AI-powered intelligent solutions. Skilled in building secure, role-based platforms that translate complex operational workflows into practical, reliable, and user-friendly software. Having contributed to critical platforms including Civic Eye for the Addis Ababa City Administration and a municipal Code Enforcement Management System alongside computer vision biometric systems, I bring a sharp focus on clean code, system reliability, data security, and productive agile collaboration across the entire software development lifecycle.",
         approach: "Understand the problem. Model multi-role permissions and data integrity. Build clean, maintainable code. Test critical paths. Deploy thoughtfully and refine through real-world feedback.",
         whatIBuild: [
             "Secure multi-role web applications and municipal management dashboards",
@@ -58,13 +58,13 @@ export const config = {
     },
     education: {
         institution: "Dire Dawa University",
-        degree: "B.Sc. in Software Engineering",
-        period: "Jan 2021 - Jan 2025",
+        degree: "B.Sc. in Software Engineering (5th-Year Student)",
+        period: "2021 - Present (5th Year)",
         location: "Dire Dawa, Ethiopia",
         highlights: [
-            "Earned a B.Sc. in Software Engineering, applying software development principles to academic and practical projects.",
+            "Currently a 5th-year Software Engineering student pursuing a B.Sc. in Software Engineering, applying software engineering principles to academic and real-world production projects.",
             "Developed strong foundations in algorithms, database engineering, system design, and software architecture.",
-            "Applied engineering knowledge through software development projects and collaborative problem-solving."
+            "Balancing final-year academic excellence with hands-on delivery of full-stack web, mobile, and government software systems."
         ]
     },
     certifications: [
@@ -203,7 +203,7 @@ export const config = {
                 "Engineered responsive UI components and backend REST endpoints with React.js and Node.js",
                 "Engaged in daily standups, sprint retrospectives, and peer code reviews",
                 "Strengthened testable coding practices and collaborative Git version control",
-                "Received formal completion certificate and recommendation letter upon graduation"
+                "Received formal completion certificate and recommendation letter upon completing the internship programme"
             ],
             technologies: ["React.js", "Node.js", "Express", "JavaScript", "Agile", "Team Collaboration"]
         }

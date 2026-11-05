@@ -7,7 +7,7 @@ const SYSTEM_FACTS = {
   email: "abumahilkerim@gmail.com",
   phone: "+251 918 982 161",
   experienceYears: 3,
-  education: "Dire Dawa University (2021 - 2025), B.Sc. in Software Engineering",
+  education: "Dire Dawa University (2021 - Present), 5th-year Software Engineering student pursuing a B.Sc. in Software Engineering",
   portfolio: "https://awol-ibrahim.vercel.app",
   linkedin: "https://www.linkedin.com/in/awolbuilds",
   github: "https://github.com/metiinie",
@@ -89,7 +89,7 @@ function generatePersonaResponse(userMessage) {
 
   // Who are you / about
   if (/who are you|about you|tell me about yourself|introduce|bio/i.test(query)) {
-    return `I am ${SYSTEM_FACTS.name}, a Full-Stack Web and Cross-Platform Mobile Developer with ${SYSTEM_FACTS.experienceYears} years of experience building secure, role-based systems for government and commercial clients.\n\nI graduated from ${SYSTEM_FACTS.education} and have delivered municipal platforms like Civic Eye for the Addis Ababa City Administration, offline-first code enforcement systems, and real-time ordering platforms.`;
+    return `I am ${SYSTEM_FACTS.name}, a 5th-year Software Engineering student and Full-Stack Web & Cross-Platform Mobile Developer with ${SYSTEM_FACTS.experienceYears} years of experience building secure, role-based systems for government and commercial clients.\n\nI am currently pursuing my B.Sc. in Software Engineering at Dire Dawa University (5th year) and have delivered municipal platforms like Civic Eye for the Addis Ababa City Administration, offline-first code enforcement systems, and real-time ordering platforms.`;
   }
 
   // Specific project queries
@@ -154,8 +154,8 @@ function generatePersonaResponse(userMessage) {
   }
 
   // Education / University / Degree
-  if (/education|degree|university|college|study|graduat/i.test(query)) {
-    return `I graduated from **${SYSTEM_FACTS.education}**.\n\nMy studies established deep foundations in data structures, algorithms, database systems, distributed architectures, and agile engineering practices.`;
+  if (/education|degree|university|college|study|graduat|school|student/i.test(query)) {
+    return `I am currently in school as a **5th-year Software Engineering student** pursuing my B.Sc. in Software Engineering at **Dire Dawa University**.\n\nMy studies have established deep foundations in data structures, algorithms, database systems, distributed architectures, and agile engineering practices alongside my real-world software delivery.`;
   }
 
   // Contact / Hire / Phone / Email

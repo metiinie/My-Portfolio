@@ -49,7 +49,7 @@ Profile:
 - Interests: Freelancing and open source projects, AI-assisted software development, system design, and chess.
 
 Education:
-- Dire Dawa University (Jan 2021 - Jan 2025): B.Sc. in Software Engineering. Developed strong foundations in algorithms, database engineering, system design, and software architecture.
+- Dire Dawa University (2021 - Present): Currently a 5th-year Software Engineering student pursuing a B.Sc. in Software Engineering. Developed strong foundations in algorithms, database engineering, system design, and software architecture.
 
 Professional Experience:
 - Fullstack Developer (Freelance) | Addis Ababa City Administration, Innovation & Technology Development Bureau (Mar 2026 - Aug 2026): Designed and delivered Civic Eye, an evidence-first public infrastructure reporting platform with photo and GPS geotagging, built with Laravel, Vue.js, PostgreSQL, and RESTful API backend. Collaborated directly with city officials; awarded an official freelance completion letter.
