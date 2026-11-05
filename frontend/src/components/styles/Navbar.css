@@ -11,6 +11,7 @@
   transform: translateX(-50%);
   top: 0;
   z-index: 9999;
+  pointer-events: none;
 }
 .header ul {
   font-size: 11px;
@@ -22,6 +23,7 @@
   column-gap: 20px;
   row-gap: 6px;
   align-items: end;
+  pointer-events: auto;
 }
 .header ul li {
   margin-left: 0px;
@@ -29,6 +31,8 @@
   color: #ccc;
   font-weight: 600;
   cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 .navbar-connect {
   position: absolute;
@@ -39,11 +43,15 @@
   font-size: 13px;
   letter-spacing: 0.8px;
   font-weight: 500;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 .navbar-title {
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.2px;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 @media only screen and (min-width: 500px) {
   .header {
